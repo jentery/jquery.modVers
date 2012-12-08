@@ -137,21 +137,21 @@
 
 			<l>
 				<app loc="a4">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						BLOOD
 					</rdg>
 				</app>
 			</l>
 			<l>
 				<app loc="a5">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						THROBBS
 					</rdg>
 				</app>		
 			</l>
 			<l>
 				<app loc="a6">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						RAPID
 					</rdg>
 				</app>
@@ -163,34 +163,37 @@
 					</rdg>
 					<rdg wit="#v4n10">
 						SO<emph rend="underline">A</emph>R
-					</rdg>						
+					</rdg>	
+					<rdg wit="#v4n11">
+						SOAR
+					</rdg>											
 				</app>				
 			</l>
 
 			<!--STANZA BREAK-->
 			<app loc="a11n2">
-				<rdg wit="#v4n8 #v4n10">			
+				<rdg wit="#v4n8 #v4n10 #v4n11">			
 					<milestone unit="stanza"/>
 				</rdg>
 			</app>
 
 			<l>
 				<app loc="a8">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						YON
 					</rdg>
 				</app>
 			</l>
 			<l>
 				<app loc="a9">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						GULF
 					</rdg>
 				</app>
 			</l>
 			<l>
 				<app loc="a10">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						OF
 					</rdg>
 				</app>		
@@ -200,6 +203,9 @@
 					<rdg wit="#v4n8">
 						YORE-
 					</rdg>
+					<rdg wit="#v4n11">
+						YORE
+					</rdg>					
 					<rdg wit="#v4n10">
 						YORE<emph rend="underline">_</emph>
 					</rdg>					
@@ -208,13 +214,16 @@
 		
 			<!--STANZA BREAK-->
 			<app loc="a11n2">
-				<rdg wit="#v4n8 #v4n10">			
+				<rdg wit="#v4n8 #v4n10 #v4n11">			
 					<milestone unit="stanza"/>
 				</rdg>
 			</app>
 
 			<l>
 				<app loc="a12">
+					<rdg wit="#v4n11">
+						YOUTHBEND
+					</rdg>
 					<rdg wit="#v4n8">
 						YOUTHBEND-
 					</rdg>
@@ -223,31 +232,41 @@
 					</rdg>					
 				</app>
 			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a12n2">
+				<rdg wit="#v4n11">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>			
 								
 
 			<l>
 				<app loc="a13">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10#v4n11">
 						TO
 					</rdg>
 				</app>
 			</l>
 			<l>
 				<app loc="a14">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						REEL
 					</rdg>
 				</app>
 			</l>
 			<l>
 				<app loc="a15">
-					<rdg wit="#v4n8 #v4n10">
+					<rdg wit="#v4n8 #v4n10 #v4n11">
 						ONCE
 					</rdg>
 				</app>
 			</l>
 			<l>
 				<app loc="a16">
+					<rdg wit="#v4n11">
+						MORE
+					</rdg>
 					<rdg wit="#v4n8">
 						MORE-
 					</rdg>
