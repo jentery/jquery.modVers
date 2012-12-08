@@ -172,6 +172,8 @@
                         var loc = $(this).attr('loc');
                         var wit = $(this).attr('wit');
                         var type = $(this).attr('type');
+                        var place = $(this).attr('place');
+
                         if (!wit) {
                             wit = '';
                         }
@@ -183,48 +185,48 @@
                             switch(tagType) {
                                 
                                 case 'cb':
-                                    $('#' + parentId).append('<span class="tei-type-' + type + ' tei-cb" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
+                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-cb" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;
 
                                 case 'emph':
                                     var rend = $(this).attr('rend')
-                                    $('#' + parentId).append('<span class="tei-type-' + type + ' tei-emph-' + rend + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
+                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-emph-' + rend + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;  
 
                                 case 'del':
-                                    $('#' + parentId).append('<span class="tei-type-' + type + ' tei-del" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
+                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-del" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;  
 
                                 case 'div':
-                                    $('#' + parentId).append('<div class="tei-type-' + type + ' tei-div" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
+                                    $('#' + parentId).append('<div class="tei-place-' + place + ' tei-type-' + type + ' tei-div" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
                                     helpers.appendElement($(this), id);
                                     break;  
 
                                 case 'lg':
-                                    $('#' + parentId).append('<div class="tei-type-' + type + ' tei-lg" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
+                                    $('#' + parentId).append('<div class="tei-place-' + place + ' tei-type-' + type + ' tei-lg" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
                                     helpers.appendElement($(this), id);
                                     break;
 
                                 case 'l':
-                                    $('#' + parentId).append('<div class="tei-type-' + type + ' tei-l" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
+                                    $('#' + parentId).append('<div class="tei-place-' + place + ' tei-type-' + type + ' tei-l" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
                                     helpers.appendElement($(this), id);
                                     break;          
 
                                 case 'app':
-                                    $('#' + parentId).append('<span class="tei-type-' + type + ' tei-app" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
+                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-app" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;
 
                                 case 'rdg':
-                                    $('#' + parentId).append('<span class="tei-type-' + type + ' tei-rdg" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
+                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-rdg" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;                              
 
                                 default:                                            
-                                    $('#' + parentId).append('<span class="tei-type-' + type + ' tei-' + tagType + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
+                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-' + tagType + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;  
                             }

@@ -91,6 +91,10 @@ td { vertical-align: top; }
   border-bottom: 1px solid;
 }
 
+.tei-place-right {
+  margin-left: 40px;
+}
+
 /***GENERAL***/
 .active {
   background-color: pink;
