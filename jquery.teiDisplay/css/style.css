@@ -68,13 +68,21 @@ td { vertical-align: top; }
 
 
 
-/***LEGACY****/
-  #texts .note, .noteicon {
-    display: none;
-  }
-
+/***  add: 00CFFF  ***/
+/***  del: FF005C  ***/
 
 /***TEI ELEMENTS***/
+
+.tei-app, .tei-rdg {
+  position: relative;
+  display:inline-block;
+  width: 100%;
+}
+
+.tei-rdg {
+  display:inline;
+}
+
 .tei-milestone, .tei-cb {
   display: block;
   margin: 1em 0;
@@ -87,17 +95,111 @@ td { vertical-align: top; }
   border-top: 1px dashed #777;
 }
 
+.tei-pb {
+  display: block;
+  float: right;
+  background: transparent url(../img/teiDisplayPageIcon.png) top left no-repeat;
+  height: 16px;
+  width: 16px;
+  margin: 0 6px 0 0;
+  cursor: pointer;
+}
+
 .tei-emph-underline {
   border-bottom: 1px solid;
 }
 
+.tei-add {
+  color: #00CFFF;
+}
+
+.tei-del {
+  color: #FF005C;  
+}
+
 .tei-place-right {
-  margin-left: 40px;
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayRightArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-place-left {
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayLefttArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-place-above {
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayUpArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-place-below {
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayDownArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-add.tei-place-right {
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayRightArrowAddIcon.png) 0 45% no-repeat;
+}
+
+.tei-add.tei-place-left {
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayLefttArrowAddIcon.png) 0 45% no-repeat;
+}
+
+.tei-add.tei-place-above {
+  padding-left: 7px;
+  background: transparent url(../img/teiDisplayUpArrowAddIcon.png) 0 0 no-repeat;
+}
+
+.tei-add.tei-place-below {
+  padding-left: 7px;
+  background: transparent url(../img/teiDisplayDownArrowAddIcon.png) 0 0 no-repeat;
+}
+
+.tei-del.tei-place-right {
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayRightArrowDelIcon.png) 0 45% no-repeat;
+}
+
+.tei-del.tei-place-left {
+  padding-left: 18px;
+  background: transparent url(../img/teiDisplayLefttArrowDelIcon.png) 0 45% no-repeat;
+}
+
+.tei-del.tei-place-above {
+  padding-left: 7px;
+  background: transparent url(../img/teiDisplayUpArrowDelIcon.png) 0 0 no-repeat;
+}
+
+.tei-del.tei-place-below {
+  padding-left: 7px;
+  background: transparent url(../img/teiDisplayDownArrowDelIcon.png) 0 0 no-repeat;
 }
 
 /***GENERAL***/
-.active {
-  background-color: pink;
+.tei-app.active {
+  border-left: 20px solid #ccc;
+  width: 100%;
+  margin-left: -25px;
+  padding-left: 5px;
+  background-color: #F9F9F9;
+}
+
+.teiDisplayAnnotation {
+  display: block;
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+  background: transparent url(../img/teiDisplayNoteIcon.png) 0px 0px no-repeat;
+  position: absolute;
+  left: -23px;
+  top: 0px;
+}
+
+.tei-app.active .teiDisplayAnnotation {
+  left: -18px;
+  /*background: transparent url(../img/teiDisplayNoteIcon.png) 0px -14px no-repeat;*/
 }
 
 .place-above {
@@ -115,12 +217,14 @@ td { vertical-align: top; }
   text-decoration: underline;
 }
 
+/*COLORS*/
+
 .color1 {
   background-color: #556270;
   color: #fff;
 }
 
-  #texts .text.color1 .text-actions {
+  #teiTexts .text.color1 .text-actions {
     background-color: #556270;
   }  
 
@@ -129,7 +233,7 @@ td { vertical-align: top; }
   color: #fff;
 }
 
-  #texts .text.color2 .text-actions {
+  #teiTexts .text.color2 .text-actions {
     background-color: #4ECDC4;
   }  
 
@@ -138,7 +242,7 @@ td { vertical-align: top; }
   color: #fff;
 }
 
-  #texts .text.color3 .text-actions {
+  #teiTexts .text.color3 .text-actions {
     background-color: #AFD758;
   } 
 
@@ -147,25 +251,43 @@ td { vertical-align: top; }
   color: #fff;
 }
 
-  #texts .text.color4 .text-actions {
-    background-color: #FF6B6B;
-  }    
+#teiTexts .text.color4 .text-actions {
+  background-color: #FF6B6B;
+}   
 
-  #screen {
+/*FACSIMILE SCREEN*/
+
+  #teiDisplayScreen {
     display: none;
-    background-color: #fff;
-    opacity: .8;
+    background: transparent url(../img/teiDisplayScreenBg.png) top left repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
     height: 100%;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index:99;
+    z-index: 898;
   }
 
-  #text-advance, #text-regress {
+  #teiDisplayFacsimileOverlay {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 899;
+  } 
+
+  #teiDisplayFacsimileOverlay img {
+    margin: 0px auto;
+    display: block;
+  }   
+
+/*TEXT ADVANCE*/
+
+  #teiDisplayTextAdvance, #teiDisplayTextRegress {
     height: 50%;
-    opacity: .4;
+    opacity: .7;
     width: 100px;
     position: absolute;
     right: 0;
@@ -174,35 +296,66 @@ td { vertical-align: top; }
     cursor: pointer;
   }
 
-  #text-regress {
-    top: 50%;
-    opacity: .7;
+  #teiDisplayTextRegress div, #teiDisplayTextAdvance div {
+    background: #ccc url(../img/teiDisplayAdvanceArrows.png) 0px -85px;
+    margin: 0 auto;
+    display: block;
+    width: 40px;
+    height: 80px;
+    position: relative;
+    top: 25%;
+    cursor: pointer;
   }
 
+  .tei-free-first #teiDisplayTextRegress, .tei-free-first #teiDisplayTextAdvance {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index:999;
+    top: auto;
+  }
 
-/***HEADER***/
-header {
-  position: fixed;
-  background-color: #fff;
-  top: 0;
-  width: 100%;
-  height: 20px;
-  z-index: 9;
-}
+  .tei-free-first #teiDisplayTextAdvance {
+    right: 30px;
+    bottom: 0;
+  } 
+
+  .tei-free-first #teiDisplayTextRegress div, .tei-free-first #teiDisplayTextAdvance div {
+    background: #ccc url(../img/teiDisplayAdvanceArrows.png) 0px -85px;
+    margin: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 0;
+  }
+
+  #teiDisplayTextAdvance div {
+    background: #ccc url(../img/teiDisplayAdvanceArrows.png) 0px 0px;
+    top: 50%;
+  }
+
+  #teiDisplayTextRegress {
+    top: 50%;
+    opacity: .9;
+  }
 
 
 /***TEXTS***/
 
-#texts {
+#teiTexts {
   margin: 0px 20px 0 20px;
   padding: 0 0 0 420px;
   overflow: hidden;
-  position: fixed;
+  position: relative;
   top: 20px;
+  width: 100%;
 }
 
-  #texts .text {
-    line-height: 2.5em;
+  #teiTexts .text {
+    line-height: 1.5em;
     float: left;
     width: 400px;
     margin: 0 20px 0 0;
@@ -216,45 +369,33 @@ header {
     overflow:hidden;
   }
 
-  #texts .text .text-holder {
-    padding: 32px 10px 0;
+  #teiTexts .text .text-holder {
+    padding: 32px 10px 32px 25px;
+    background: transparent url(../img/teiDisplayTextBG.png) top left repeat-y;
   }
 
-  body.overlay #texts .text {
-    opacity: .5;
-  }
-
-  body.overlay #texts .text:first-child {
-    color: #ff0000;
-  }
-
-  body.overlay #texts .text:first-child .visual-holder span {
-    background-color: #ff0000;
-  }
-
-  #texts .text:first-child {
+  #teiTexts .text:first-child {
     position: fixed;
     left: 20px;
+    top: 20px;
     z-index: 99;
   }
 
-  #texts .text.expanded {
+  .tei-free-first #teiTexts .text:first-child {
+    position: absolute;
+    top: 0;
+    left: 0px;
+  }  
+
+  #teiTexts .text.expanded {
     width: 80%;
     position: fixed;
     left: 20px;
     z-index:999;
   }
 
-  #texts .line, #texts .head, #texts .paragraph {
-    padding: 0 20px;
-  }
-
-  #texts .paragraph {
-    padding-bottom: 1em;
-  }
-
-  #texts .text-actions {
-    margin: 0;
+  #teiTexts .text-actions {
+    padding: .5em 0;
     text-align: right;
     position: absolute;
     top: 0;
@@ -263,37 +404,30 @@ header {
     z-index: 98;
   }
 
-    #texts .text-actions a {
+    #teiTexts .text-actions a {
       color: #fff;
       font-weight: bold;
       text-decoration: none;
       margin-right: 20px;
     }
 
-  #texts .text-holder, #texts .visual-holder {
+  #teiTexts .text-holder {
     overflow: scroll;
     padding-top: 30px;
   }
 
-  #texts .text .textHeightFix {
+  #teiTexts .text .textHeightFix {
     display: block;
     height: 200px;
     width: 1px;
   }
 
-  
-      #texts .focused .visual-holder span {
-        width: 3em;
-        height: 3em;
-        margin: 0 2px 2px 0;
-      }
-
       /***FOCUS***/
-      #texts .text.focus .text-holder * {
+      #teiTexts .text.focus .text-holder * {
         display: none;
       }
 
-      #texts .text-holder .focused {
+      #teiTexts .text-holder .focused {
         font-size: 2em;
         display: block;
       }
@@ -301,24 +435,28 @@ header {
       
 
 /***ACTIONS***/
-#actions {
+#teiActions {
   position: fixed;
   bottom: 0;
   /*height: 200px;*/
   border-top: 1px solid #ededed;
   width: 100%;
   background-color: #222;
-  z-index: 999;
+  z-index: 998;
+}
+
+.tei-free-first #teiActions {
+  position: absolute;
 }
 
   /***UTILITY***/
-  #actions #utility {
+  #teiActions #utility {
     position: absolute;
     right: 0;
     top: 0;
   }
 
-    #actions #utility a {
+    #teiActions #utility a {
       height: 20px;
       background-color: #111;
       color: #fff;
@@ -333,7 +471,7 @@ header {
       float: right;
     }
 
-    #actions #utility .hide-notes, #actions #utility .text, #actions #utility .opaque, #notes {
+    #teiActions #utility .hide-notes, #teiActions #utility .text, #teiActions #utility .opaque, #notes {
       display: none;
     }
 
@@ -384,13 +522,13 @@ header {
     }
 
   /***WITNESSES***/
-  #witnesses {
+  #teiDisplayWitnesses {
     height: 30px;
     margin: 0;
     padding: 0;
   }
 
-    #witnesses .witness {
+    #teiDisplayWitnesses .witness {
       max-width: 200px;
       height: 30px;
       margin: 0;
@@ -399,12 +537,13 @@ header {
       border-right: 1px solid #ededed;
     }
 
-    #witnesses .witness:first-child {
+    #teiDisplayWitnesses .witness.active {
       border-top: 3px solid #111;
-      margin-top: -3px;     
-    }
+      margin-top: -3px;
+    }   
 
-      #witnesses .witness p {
+
+      #teiDisplayWitnesses .witness p {
         text-transform: uppercase;
         font-size: .8em;
         font-weight: bold;

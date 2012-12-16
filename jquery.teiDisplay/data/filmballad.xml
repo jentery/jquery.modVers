@@ -89,10 +89,22 @@
 
 			<div1>
 
+				<app loc="a0">
+					<rdg wit="#v4n8">
+						<pb facs="data/images/v4n8.png" />
+					</rdg>
+					<rdg wit="#v4n10">
+						<pb facs="data/images/v4n10.png" />
+					</rdg>	
+					<rdg wit="#v4n11">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>										
+				</app>
+
 			<head>
 
 					<l>					
-						<app loc="a1">
+						<app loc="a1" type="filmic">
 							<rdg wit="#v4n8 #v4n11">
 								<emph rend="underline">FILMBALLAD</emph>
 							</rdg>
@@ -100,7 +112,7 @@
 					</l>
 
 					<l>	
-						<app loc="a2">
+						<app loc="a2" type="pulp">
 							<rdg wit="#v4n8 #v4n11">
 								BLOODMONOTONY							
 							</rdg>
@@ -111,7 +123,7 @@
 					</l>
 
 					<l>
-						<app loc="a2n1">
+						<app loc="a2n1" type="filmic">
 							<rdg wit="#v4n10">
 								<emph rend="underline">FILM</emph>							
 							</rdg>															
@@ -121,7 +133,7 @@
 					<l>
 						<app loc="a3">
 							<rdg wit="#v4n8 #v4n11">
-								*WOMBSPOOK
+								WOMBSPOOK
 							</rdg>														
 						</app>
 					</l>
@@ -136,14 +148,14 @@
 			</app>			
 
 			<l>
-				<app loc="a4">
+				<app loc="a4" type="pulp">
 					<rdg wit="#v4n8 #v4n10 #v4n11">
 						BLOOD
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a5">
+				<app loc="a5" type="pulp">
 					<rdg wit="#v4n8 #v4n10 #v4n11">
 						THROBBS
 					</rdg>
@@ -284,7 +296,7 @@
 			</app>
 
 			<l>
-				<app loc="a17">
+				<app loc="a17" type="filmic">
 					<rdg wit="#v4n8 #v4n10 #v4n11">
 						SCREEN
 					</rdg>
@@ -798,7 +810,7 @@
 				</app>
 			</l>
 			<l>
-				<app loc="a54">
+				<app loc="a54n2">
 					<rdg wit="#v4n8 #v4n11">
 						TIME-
 					</rdg>
@@ -809,7 +821,7 @@
 			</l>
 		
 			<!--STANZA BREAK-->
-			<app loc="a11n2">
+			<app loc="a54n3">
 				<rdg wit="#v4n8 v4n10 #v4n11">			
 					<milestone unit="stanza"/>
 				</rdg>
@@ -1093,35 +1105,35 @@
 
 
 			<l>
-				<app loc="a73n3">
+				<app loc="a73n3" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">GAUNT</add>
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a73n4">
+				<app loc="a73n4" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right"><del>FOUL</del></add>
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a73n5">
+				<app loc="a73n5" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">HAUNTS</add>
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a73n6">
+				<app loc="a73n6" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">FOUL <del>GAUNT</del></add>
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a73n7">
+				<app loc="a73n7" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">GHOULS</add>
 					</rdg>
@@ -1192,7 +1204,7 @@
 			</l>
 
 			<l>
-				<app loc="a78">
+				<app loc="a78" type="pulp">
 					<rdg wit="#v4n8">
 						<del>TOMB</del><add place="above">SPACE</add>-----
 					</rdg>
@@ -1293,7 +1305,7 @@
 				</app>	
 			</l>
 			<l>
-				<app loc="a108">
+				<app loc="a108" type="pulp">
 					<rdg wit="#v4n10">
 						GAS<emph rend="underline">H</emph>
 					</rdg>
@@ -1386,7 +1398,7 @@
 			</app>
 
 			<l>
-				<app loc="a119">
+				<app loc="a119" type="pulp">
 					<rdg wit="#v4n10">
 						GAUNT
 					</rdg>
@@ -1396,7 +1408,7 @@
 				</app>	
 			</l>
 			<l>
-				<app loc="a120">
+				<app loc="a120" type="pulp">
 					<rdg wit="#v4n10 #v4n11">
 						GHOULS
 					</rdg>
@@ -1421,11 +1433,11 @@
 				</app>	
 			</l>
 			<l>
-				<app loc="a123">
+				<app loc="a123" type="pulp">
 					<rdg wit="#v4n10">
 						HAUNT<emph rend="underline">_</emph>
 					</rdg>
-					<rdg wit="#v4n11">
+					<rdg wit="#v4n11" type="pulp">
 						<del>HID</del>GAUNT HAUNT
 					</rdg>
 				</app>	
@@ -1442,28 +1454,28 @@
 
 
 			<l>
-				<app loc="a123n3">
+				<app loc="a123n3" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">FOUL</add>
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a123n4">
+				<app loc="a123n4" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">GHOULS</add>
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a123n5">
+				<app loc="a123n5" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">GAUNT</add>
 					</rdg>
 				</app>
 			</l>
 			<l>
-				<app loc="a123n6">
+				<app loc="a123n6" type="pulp">
 					<rdg wit="#v4n11">
 						<add place="right">HAUNTS</add>
 					</rdg>
@@ -1487,42 +1499,42 @@
 
 
 			<l>
-				<app loc="a123n3">
+				<app loc="a123n9" type="pulp">
 					<rdg wit="#v4n11">
 						<del>HAUNT</del>
 					</rdg>
 				</app>	
 			</l>
 			<l>
-				<app loc="a123n4">
+				<app loc="a123n10" type="pulp">
 					<rdg wit="#v4n11">
 						<del>CAST VAST</del>
 					</rdg>
 				</app>	
 			</l>
 			<l>
-				<app loc="a123n5">
+				<app loc="a123n11" type="pulp">
 					<rdg wit="#v4n11">
 						<unclear>xxxx</unclear> BLAST
 					</rdg>
 				</app>	
 			</l>
 			<l>
-				<app loc="a123n6">
+				<app loc="a123n12" type="pulp">
 					<rdg wit="#v4n11">
 						<del>SPELL</del> UPON
 					</rdg>
 				</app>	
 			</l>
 			<l>
-				<app loc="a123n7">
+				<app loc="a123n13" type="pulp">
 					<rdg wit="#v4n11">
 						<del>UPON</del>
 					</rdg>
 				</app>	
 			</l>
 			<l>
-				<app loc="a123n8">
+				<app loc="a123n14">
 					<rdg wit="#v4n11">
 						<del>AS ON</del>
 					</rdg>
@@ -1551,14 +1563,14 @@
 				</app>	
 			</l>
 			<l>
-				<app loc="a127">
+				<app loc="a127" type="pulp">
 					<rdg wit="#v4n10">
 						'NEATH
 					</rdg>
 				</app>	
 			</l>
 			<l>
-				<app loc="a128">
+				<app loc="a128" type="pulp">
 					<rdg wit="#v4n10">
 						TOMB
 					</rdg>
@@ -1587,7 +1599,7 @@
 				</app>	
 			</l>
 			<l>
-				<app loc="a132">
+				<app loc="a132" type="pulp">
 					<rdg wit="#v4n10">
 						GORE
 					</rdg>
@@ -1616,7 +1628,7 @@
 				</app>	
 			</l>
 			<l>
-				<app loc="a135n2">
+				<app loc="a135n2" type="pulp">
 					<rdg wit="#v4n10">
 						<add>BLOODHIGH</add>
 					</rdg>
@@ -1637,7 +1649,7 @@
 				</app>	
 			</l>				
 			<l>
-				<app loc="a138">
+				<app loc="a138" type="pulp">
 					<rdg wit="#v4n10">
 						SPOOKED
 					</rdg>
@@ -1777,7 +1789,7 @@
 				</app>
 			</l>
 			<l>
-				<app loc="a85">
+				<app loc="a85" type="pulp">
 					<rdg wit="#v4n8">
 						<del>SHIP</del> BRAIN
 					</rdg>
@@ -1846,7 +1858,7 @@
 				</app>	
 			</l>
 			<l>
-				<app loc="a94">
+				<app loc="a94" type="pulp">
 					<rdg wit="#v4n8">
 						<del place="above">BRAIN</del> CHILD
 					</rdg>
@@ -1891,7 +1903,7 @@
 				</app>
 			</l>
 			<l>
-				<app loc="a94n7">
+				<app loc="a94n7" type="pulp">
 					<rdg wit="#v4n11">
 						TOMB
 					</rdg>					

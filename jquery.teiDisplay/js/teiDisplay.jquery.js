@@ -9,13 +9,9 @@
                 return this.each(function() {
                     var $element = $(this), // reference to the jQuery version of the current DOM element
                          element = this;      // reference to the actual DOM element
-                    
-                    // initial variables
-                    var currentText = 1;
-                    var totalTexts = 0;
-                    var xml;
-                    var xmlData;
 
+                    //add elements to document
+                    helpers.addElements($(this));
 
                     //process the xml file
                     $.ajax({
@@ -41,6 +37,27 @@
 
         var helpers = {
 
+            addElements: function(holder) {
+
+                holder.append($(this).teiDisplay.settings.advanceButtons); 
+                holder.append($(this).teiDisplay.settings.textHolder); 
+                holder.append($(this).teiDisplay.settings.utility); 
+
+
+                //Unfix the first text if option
+                if (!$(this).teiDisplay.settings.fixFirst) {
+                    holder.css('overflow', 'hidden');
+                    holder.addClass('tei-free-first').css('position','relative');
+                    $('#teiTexts').css('margin-left', '0px');
+                }
+
+                //Set the holder height if needed.
+                if ($(this).teiDisplay.settings.height) {
+                    holder.css('height', $(this).teiDisplay.settings.height + 'px');
+                }
+
+            },
+
             makeWits: function(xml) {
 
             	//Reads through the xml file and makes a text holder for each witness found.
@@ -52,7 +69,7 @@
                 //get witnesses
                 var witnesses = xml.find('witness');
                 witnesses.each(function() {
-                	console.log('initial witness ' + $(this).attr('xml:id'));
+                	//console.log('initial witness ' + $(this).attr('xml:id'));
                 })
 
                 //if user has specified witnesses in the plugin options, go through and remove
@@ -62,15 +79,15 @@
 	                var includeWitnesses = [];
 	                var includeWitnesses = $.map($(this).teiDisplay.settings.witnesses.split(','), $.trim);
 
-	                console.log('include witnesses: ' + includeWitnesses);
+	                //console.log('include witnesses: ' + includeWitnesses);
 
 					for (var i = witnesses.length; i >= 0; i--) {   
                 		
-                		console.log('testing: ' + $(witnesses[i]).attr('xml:id'));					             		
+                		//console.log('testing: ' + $(witnesses[i]).attr('xml:id'));					             		
                 		
                 		var index = jQuery.inArray($(witnesses[i]).attr('xml:id'), includeWitnesses);
                 		if (index == -1) {
-                			console.log('removing: ' + $(witnesses[i]).attr('xml:id'));
+                			//console.log('removing: ' + $(witnesses[i]).attr('xml:id'));
                 			witnesses.splice(i,1);
                 		}
 					
@@ -85,11 +102,14 @@
 
                 witnesses.reverse().each(function() {
 
+                    //count the total number of witnesses
+                    $(this).teiDisplay.internals.totalTexts++;
+
                     var witId = $(this).attr('xml:id');
                     var witName = $(this).text();
 
                     //make holder
-                    $('#texts').prepend('<div class="text" data-witness-id="' + witId + '" id="' + witId + '" data-color="color' + i + '" data-witness-name="' + witName + '"></div>');
+                    $('#teiTexts').prepend('<div class="text" data-witness-id="' + witId + '" id="' + witId + '" data-color="color' + i + '" data-witness-name="' + witName + '"></div>');
 
                     //loop through elements and add to first holder
                     if (first) {
@@ -104,15 +124,52 @@
 
                 helpers.copyWit(firstWitId);
                 helpers.filterWits();
+
+                if ($(this).teiDisplay.settings.annotations) {
+                    helpers.makeNotes();
+                }
+
                 helpers.addWitHeaders();
                 helpers.setDimensions();
                 helpers.makeWitnesses();
-                helpers.makeSelects();
                 helpers.textActions();
                 helpers.screenActions();
                 helpers.utilityActions();
 
             }, 
+
+            makeNotes: function() {
+
+                //Reads an optional json file with annotation information and adds
+                //annotations to texts.
+
+                $.getJSON($(this).teiDisplay.settings.annotations, function(data) {
+                  
+                  $.each(data.annotations.items, function(i,item) {
+                    if (item.wit) {
+                        var includeWitnesses = [];
+                        var includeWitnesses = $.map(item.wit.split(','), $.trim);
+
+                        for (var i = includeWitnesses.length; i >= 0; i--) {   
+
+                            //console.log(includeWitnesses[i]);
+
+                            $('.text[data-witness-id="' + includeWitnesses[i] + '"] [data-loc="' + item.loc + '"]').append(
+                                '<span class="teiDisplayAnnotation" data-annotation-text="' + item.text + '"></span>'
+                            );
+                        }//foreach wit
+
+                    } else {
+                        $('.text [data-loc="' + item.loc + '"]').append(
+                            '<span class="teiDisplayAnnotation" data-annotation-text="' + item.text + '"></span>'
+                        );
+                    }
+                  });
+
+                })//getJSON
+
+
+            },
 
             copyWit: function(firstWitId) {
 
@@ -128,8 +185,9 @@
             filterWits: function() {
 
                 //Goes through each witness and gets rid of nodes belonging to other witnesses.
+                //Also deletes empty nodes
 
-                $('#texts .text').each(function() {
+                $('#teiTexts .text').each(function() {
                     var witId = $(this).attr('data-witness-id');
                     $(this).find('[data-wit != ""]').each(function() {
                         //console.log($(this).contents());
@@ -141,6 +199,10 @@
                         }
                     })
                 })
+
+                $('.text .tei-rdg:empty').remove();
+                $('.text .tei-app:empty').remove();
+
             }, 
 
             addWitHeaders: function() {
@@ -148,7 +210,7 @@
                 //Adds header markup to each text holder.
 
                 var i = 1;
-                $('#texts .text').each(function() {
+                $('#teiTexts .text').each(function() {
                     $(this).children().wrapAll('<div class="text-holder"></div>')
                     $(this).addClass('color' + i).prepend($(this).teiDisplay.settings.witHeader);
                     i++;
@@ -173,6 +235,8 @@
                         var wit = $(this).attr('wit');
                         var type = $(this).attr('type');
                         var place = $(this).attr('place');
+                        var facs = $(this).attr('facs');
+                        var rend = $(this).attr('rend')
 
                         if (!wit) {
                             wit = '';
@@ -183,50 +247,9 @@
                             $(this).attr('id', id);
 
                             switch(tagType) {
-                                
-                                case 'cb':
-                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-cb" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
-                                    helpers.appendElement($(this), id);
-                                    break;
-
-                                case 'emph':
-                                    var rend = $(this).attr('rend')
-                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-emph-' + rend + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
-                                    helpers.appendElement($(this), id);
-                                    break;  
-
-                                case 'del':
-                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-del" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
-                                    helpers.appendElement($(this), id);
-                                    break;  
-
-                                case 'div':
-                                    $('#' + parentId).append('<div class="tei-place-' + place + ' tei-type-' + type + ' tei-div" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
-                                    helpers.appendElement($(this), id);
-                                    break;  
-
-                                case 'lg':
-                                    $('#' + parentId).append('<div class="tei-place-' + place + ' tei-type-' + type + ' tei-lg" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
-                                    helpers.appendElement($(this), id);
-                                    break;
-
-                                case 'l':
-                                    $('#' + parentId).append('<div class="tei-place-' + place + ' tei-type-' + type + ' tei-l" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></div>')
-                                    helpers.appendElement($(this), id);
-                                    break;          
-
-                                case 'app':
-                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-app" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
-                                    helpers.appendElement($(this), id);
-                                    break;
-
-                                case 'rdg':
-                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-rdg" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
-                                    helpers.appendElement($(this), id);
-                                    break;                              
 
                                 default:                                            
-                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-type-' + type + ' tei-' + tagType + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
+                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-' + tagType + ' tei-emph-' + rend + ' tei-type-' + type + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;  
                             }
@@ -272,113 +295,117 @@
             }, 
 
             screenActions: function() {
-                $('#screen').live('click', function() {
-                    $(this).hide();
-                    $('#texts .text').removeClass('expanded');
+                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').live('click', function() {
+                    helpers.clearOverlays();
+                    $('#teiTexts .text').removeClass('expanded');
                 })
 
-                $('#text-advance').live('click', function() {
+                $('#teiDisplayTextAdvance').live('click', function() {
                     helpers.advanceText();
                 })
-                $('#text-regress').live('click', function() {
+                $('#teiDisplayTextRegress').live('click', function() {
                     helpers.regressText();
                 })  
             }, 
 
             advanceText: function() {
-                if (currentText < totalTexts) {
-                    var offset = $('#texts').position();
-                    var newOffset = offset.left - 421;
-                    $('#texts').animate({
+
+                //Moves the texts 1 to the left.
+
+                if ($(this).teiDisplay.internals.currentText < $(this).teiDisplay.internals.totalTexts) {
+                    var offset = $('#teiTexts').position();
+                    var newOffset = offset.left - $(this).teiDisplay.settings.textWidth;
+                    $('#teiTexts').animate({
                         left: newOffset + 'px',
                     }, 300 );
-                    currentText++;
+                    $(this).teiDisplay.internals.currentText++;
                 }
             }, 
 
             regressText: function() {
-                if (currentText > 1) {
-                    var offset = $('#texts').position();
-                    var newOffset = offset.left + 421;
-                    $('#texts').animate({
+
+                //Moves the texts 1 to the right.
+
+                if ($(this).teiDisplay.internals.currentText > 1) {
+
+                    var offset = $('#teiTexts').position();
+                    var newOffset = offset.left + $(this).teiDisplay.settings.textWidth;
+
+                    $('#teiTexts').animate({
                         left: newOffset + 'px',
                     }, 300 );
-                    currentText--;
+                    $(this).teiDisplay.internals.currentText--;
                 }
             },
 
             setDimensions: function() {
-
-                var textWidth = $('#texts .text').length * 420 + 24;
-                var actionHeight = $('#actions').height();
+                var textWidth = $('#teiTexts .text').length * 420 + 24;
+                var actionHeight = $('#teiActions').height();
                 var newHeight = $(window).height() - actionHeight - 60;
 
-                $('#texts').css('width', textWidth + 'px');
-                $('#texts .text').css('height', newHeight + 'px').append('<div class="textHeightFix"></div>');
+                $('#teiTexts').css('width', textWidth + 'px');
+                $('#teiTexts .text').css('height', newHeight + 'px').append('<div class="textHeightFix"></div>');
                 newHeight -= 20;
-                $('#texts .text-holder, #texts .visual-holder').css('height', newHeight + 'px');
-
+                $('#teiTexts .text-holder, #teiTexts .visual-holder').css('height', newHeight + 'px');
             },
 
             makeWitnesses: function() {
-                $('#texts .text').each(function() {
+                $('#teiTexts .text').each(function() {
                     var color = $(this).attr('data-color');     
                     var id = $(this).attr('data-witness-id');
                     var name = $(this).attr('data-witness-name');
-                    $('#witnesses').append('<div class="witness ' + color + '" data-witness-id="' + id + '"><p>' + name + '</p></div>')
+                    $('#teiDisplayWitnesses').append('<div class="witness ' + color + '" data-witness-id="' + id + '"><p>' + name + '</p></div>')
                 })  
-                $('#witnesses').sortable({ 
+                $('#teiDisplayWitnesses').sortable({ 
                     axis: 'x', 
                     stop: function( event, ui ) {
                         var last, current;
                         var count = 0;
-                        $('#witnesses .witness').each(function() {
-                            current = $('#texts .text[data-witness-id="' + $(this).attr('data-witness-id') + '"]').remove();
+                        $('#teiDisplayWitnesses .witness').each(function() {
+                            current = $('#teiTexts .text[data-witness-id="' + $(this).attr('data-witness-id') + '"]').remove();
                             if (count != 0) {
                                 last.after(current);
                             } else {
-                                $('#texts').prepend(current);
+                                $('#teiTexts').prepend(current);
                             }
                             last = current;
                             count++;
                         })
                     }
                 });
-                $('#witnesses .witness').live('dblclick', function() {
+                $('#teiDisplayWitnesses .witness').live('dblclick', function() {
                     var witnessId = $(this).attr('data-witness-id');
-                    var currentText = $('#texts .text[data-witness-id="' + witnessId + '"]');
-                    $('#texts').prepend(currentText);
+                    var currentText = $('#teiTexts .text[data-witness-id="' + witnessId + '"]');
+                    $('#teiTexts').prepend(currentText);
                     var currentWitness = $(this).remove();
-                    $('#witnesses').prepend(currentWitness);
+                    $('#teiDisplayWitnesses').prepend(currentWitness);
                 })
 
             }, 
 
             textActions: function() {
 
+                //Adds actions to expand texts, display facsimile images, etc.
+
                 $('.text .text-actions .expand').live('click', function() {
                     $(this).parent().parent().addClass('expanded');
-                    $('#screen').show();
+                    $(this).html('-');
                 })
+
+                $('.text.expanded .text-actions .expand').live('click', function() {
+                    $(this).parent().parent().removeClass('expanded');
+                    $(this).html('+');
+                })
+
+                //facsimiles
+                $('.text .tei-pb[data-facs]').live('click', function() {
+                    helpers.addFacsimileOverlay($(this).attr('data-facs'));
+                })
+
+                //Adds a click event to everything with a data-loc attribute that highlights everything
+                //with that data-loc.
 
                 /*
-                $('.text-holder *[data-loc != "undefined"]').live('dblclick', function() {
-                    var identifier = $(this).attr('data-loc');
-                    if ($(this).hasClass('focused')) {
-                        resetFocus();
-                    } else {
-                        $('.text-holder > *').removeClass('focused');
-                        $(this).addClass('focused');
-                        $('#text-holder *[data-loc == "' + identifier + '"]').addClass('focused');
-                        $('#texts .text').addClass('focus');            
-                    }
-
-                })
-                */
-
-            },
-
-            makeSelects: function() {
                 $('.text-holder *[data-loc != "undefined"]').live('click', function() {
                     var identifier = $(this).attr('data-loc');
                     $('.text-holder .active').removeClass('active');
@@ -389,9 +416,51 @@
                             $(this).addClass('active');         
                         }
                     })
+                })
+                */
+                
+                $('.text-holder *[data-loc != "undefined"]').live('click', function() {
+                    var identifier = $(this).attr('data-loc');
+                    
+                    $('.text-holder .active').removeClass('active');
+                    $('#teiDisplayWitnesses .witness').removeClass('active');
+
+                    $('.text *[data-loc = "' + identifier + '"]').each(function() {
+
+                        $(this).addClass('active');
+                        var holder = $(this).parents('.text-holder')
+                        var wit = holder.parent().attr('data-witness-id');
+
+                        $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
+
+                        var newOffset = holder.scrollTop() + $(this).position().top - 200;
+
+                        holder.animate({
+                            scrollTop: newOffset
+                        }, 300);
+
+                    })
 
                 })
+                
+
             },
+
+            addFacsimileOverlay: function(imageUrl) {
+                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();
+                helpers.addOverlay();
+                $('body').append('</div><div id="teiDisplayFacsimileOverlay"><img src="' + imageUrl + '" /></div>');
+                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').show();            
+            },
+
+            addOverlay: function() {
+                $('body').append('<div id="teiDisplayScreen"></div>');
+                $('#teiDisplayScreen').show();  
+            },
+
+            clearOverlays: function() {
+                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();          
+            },            
 
             addStyles: function() {
 
@@ -403,7 +472,7 @@
 	            if (n > 0) {
 		            var cssString = '<style>';
 		            for (var i = 0; i < n; i++) {
-					    cssString += '.' + backgroundElements[i] + '{ ' + $(this).teiDisplay.settings.backgroundStyles[i] + '; }';
+    				    cssString += '.' + backgroundElements[i] + '{ ' + $(this).teiDisplay.settings.backgroundStyles[i] + '; }';
 					}	
 					cssString += '</style>';
 	            	$('body').append(cssString);
@@ -428,17 +497,33 @@
 
     $.fn.teiDisplay.defaults = {
         xmlFile: '',
+        height: '',
+        fixFirst: true,
+        annnotations: '',
         witnesses: '',
         background: '',
+        textWidth: 421,
         witHeader: '<div class="text-actions"><a href="#" class="expand">+</a></div>',
         backgroundStyles: [
-        	'background-color: #ffcccc',
-        	'background-color: #ccffcc',
-        	'background-color: #ccccff'      	
-        ]
+        	'background: transparent url(img/teiDisplayStripeGrey.png) top left repeat',
+            'background: transparent url(img/teiDisplayStripeBlue.png) top left repeat',
+            'background: transparent url(img/teiDisplayStripeRed.png) top left repeat',
+        ],
+        advanceButtons: '<div id="teiDisplayTextAdvance"><div></div></div><div id="teiDisplayTextRegress"><div></div></div>',
+        textHolder: '<div id="teiTexts"><div id="screen"></div></div>',
+        utility: '<div id="teiActions"><div id="teiDisplayWitnesses"></div><div id="notes"></div></div>'
     }
 
     $.fn.teiDisplay.settings = {}
+
+    $.fn.teiDisplay.internals = {
+
+        currentText: 1,
+        totalTexts: 0,
+        xml: '',
+        xmlData:''
+
+    }
 
 })(jQuery);
 
@@ -462,7 +547,7 @@
 
 
 function wrapWords() {
-    $('#texts .text .text-holder .paragraph').each(function() {
+    $('#teiTexts .text .text-holder .paragraph').each(function() {
         var id = $(this).attr('data-identifier');
         var visual = $(this).parent().parent().children('.visual-holder');
         var newString = '<div class="paragraph" data-identifier="' + id + '">';
@@ -475,7 +560,7 @@ function wrapWords() {
         visual.append(newString);
     })
 
-    $('#texts .text .text-holder .line').each(function() {
+    $('#teiTexts .text .text-holder .line').each(function() {
         var id = $(this).attr('data-identifier');
         var visual = $(this).parent().parent().children('.visual-holder');
         var newString = '<div class="line" data-identifier="' + id + '">';
@@ -492,7 +577,7 @@ function wrapWords() {
 
 function resetFocus() {
     $('.text .paragraph, .text .line').removeClass('focused');
-    $('#texts .text').removeClass('focus');
+    $('#teiTexts .text').removeClass('focus');
 }
 
 function loadNotes(notes) {
@@ -507,7 +592,7 @@ function loadNotes(notes) {
                 }
             }
             $('.text div[data-identifier="' + location + '"]').addClass('hasNote').prepend("<span class='note-indicator'>* </span>");
-            $('#actions #notes').append('<div class="note" data-identifier="' + location + '"><a class="close">X</a>' + content + '</div>');
+            $('#teiActions #notes').append('<div class="note" data-identifier="' + location + '"><a class="close">X</a>' + content + '</div>');
         }
     }
     $('#notes .note a.close').live('click', function() {

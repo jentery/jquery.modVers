@@ -28,28 +28,7 @@
     </header>
     <div id="main" role="main">
 
-      <div id="text-advance"></div>
-      <div id="text-regress"></div>
-
-      <div id="texts">
-
-
-        <div id="screen"></div>
-
-      </div>
-
-      <div id="actions">
-        <div id="witnesses"></div>
-        <div id="utility">
-          <a class="hide-notes" href="#">Hide Notes</a>
-          <a class="show-notes" href="#">Show Notes</a>
-          <a class="visual" href="#">Visual</a>
-          <a class="text" href="#">Text</a>
-          <a class="overlay" href="#">Overlay</a>
-          <a class="opaque" href="#">Opaque</a>
-        </div>
-        <div id="notes"></div>
-      </div>
+      <div id="tei-1"></div>
 
     </div>
     <footer>
@@ -70,10 +49,12 @@
 
 
   <script> // Change UA-XXXXX-X to be your site's ID
+    /*
     window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
     Modernizr.load({
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
+    */
   </script>
 
 
