@@ -61,7 +61,6 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
-
 /* ==|== primary styles =====================================================
    Author: Daniel Carter
    ========================================================================== */
@@ -75,12 +74,20 @@ td { vertical-align: top; }
 
 .tei-app, .tei-rdg {
   position: relative;
-  display:inline-block;
+  display:inline;
   width: 100%;
 }
 
 .tei-rdg {
-  display:inline;
+  padding-right: .5em;
+}
+
+.tei-l, .tei-p {
+  display: block;
+}
+
+.tei-p {
+  margin: 0 0 1em;
 }
 
 .tei-milestone, .tei-cb {
@@ -177,23 +184,79 @@ td { vertical-align: top; }
   background: transparent url(../img/teiDisplayDownArrowDelIcon.png) 0 0 no-repeat;
 }
 
-/***GENERAL***/
-.tei-app.active {
-  border-left: 20px solid #ccc;
+/***DEV BAR***/
+#teiDisplayDev {
+  position: fixed;
+  top: 0;
   width: 100%;
-  margin-left: -25px;
-  padding-left: 5px;
-  background-color: #F9F9F9;
+  padding: 0em 2em;
+  color: #fff;
+  background-color: #222;
 }
 
-.teiDisplayAnnotation {
-  display: block;
+  #teiDisplayDev p {
+    margin: .5em 0;
+  }
+
+/***ANNOTATION PANEL***/
+#teiDisplayAnnotationPanel {
+  position: absolute;
+  right: 0;
+  bottom: 31px;
+  width: 500px;
+  background-color: #F9F9F9;
+  border-left: 1px solid #333;
+  border-top: 2px solid #333;
+  display: none;
+  max-height: 300px;
+  overflow: auto;
+  z-index: 999;
+}  
+
+  .teiFreeFirst #teiDisplayAnnotationPanel {
+    width: 100%;
+    z-index: 99;
+  }
+
+  #teiDisplayAnnotationPanel .teiDisplayAnnotation {
+    width: 330px;
+    padding: 20px;
+    background: transparent url(../img/teiDisplayNoteIcon.png) 20px 18px no-repeat; 
+    text-indent: 20px;
+  }
+
+  .teiFreeFirst #teiDisplayAnnotationPanel .teiDisplayAnnotation {
+    width: 80%;
+    max-width: 40em;
+  }
+
+  #teiDisplayAnnotationPanel p {
+    margin: 0 0 1em;
+  }
+
+/***GENERAL***/
+
+.teiFreeFirst {
+  margin: 1em 0;
+}
+
+.tei-app {
+  border-left: 1px dashed #ccc;
+  padding-left: .5em;
+  color: #444;
+}
+
+.tei-app.active {
+  color: #000;
+  border-left: 1px dashedr;
+  font-weight: bold;
+}
+
+.tei-app .teiDisplayAnnotation {
+  display: inline-block;
   height: 14px;
   width: 14px;
-  cursor: pointer;
   background: transparent url(../img/teiDisplayNoteIcon.png) 0px 0px no-repeat;
-  position: absolute;
-  left: -23px;
   top: 0px;
 }
 
@@ -218,70 +281,174 @@ td { vertical-align: top; }
 }
 
 /*COLORS*/
-
-.color1 {
-  background-color: #556270;
-  color: #fff;
+.color1, #teiTexts .text.color1 .text-actions, #teiDisplayFacsimileOverlay.color1 .close {
+  background-color: #ff1417;
+}
+.color2, #teiTexts .text.color2 .text-actions, #teiDisplayFacsimileOverlay.color2 .close {
+  background-color: #ff6611;
+} 
+.color3, #teiTexts .text.color3 .text-actions, #teiDisplayFacsimileOverlay.color3 .close {
+  background-color: #ff8844;
+}
+.color4, #teiTexts .text.color4 .text-actions, #teiDisplayFacsimileOverlay.color4 .close {
+  background-color: #ffee55;
+}
+.color5, #teiTexts .text.color5 .text-actions, #teiDisplayFacsimileOverlay.color5 .close {
+  background-color: #fefe38;
+}
+.color6, #teiTexts .text.color6 .text-actions, #teiDisplayFacsimileOverlay.color6 .close {
+  background-color: #ffff99;
+}
+.color7, #teiTexts .text.color7 .text-actions, #teiDisplayFacsimileOverlay.color7 .close {
+  background-color: #aacc22;
+}
+.color8, #teiTexts .text.color8 .text-actions, #teiDisplayFacsimileOverlay.color8 .close {
+  background-color: #bbdd77;
+}
+.color9, #teiTexts .text.color9 .text-actions, #teiDisplayFacsimileOverlay.color9 .close {
+  background-color: #c8cf82;
+}
+.color10, #teiTexts .text.color10 .text-actions, #teiDisplayFacsimileOverlay.color10 .close {
+  background-color: #92a77e;
+}
+.color11, #teiTexts .text.color11 .text-actions, #teiDisplayFacsimileOverlay.color11 .close {
+  background-color: #5599ee;
+}
+.color12, #teiTexts .text.color12 .text-actions, #teiDisplayFacsimileOverlay.color12 .close {
+  background-color: #0088cc;
+}
+.color13, #teiTexts .text.color13 .text-actions, #teiDisplayFacsimileOverlay.color13 .close {
+  background-color: #226688;
+}
+.color14, #teiTexts .text.color14 .text-actions, #teiDisplayFacsimileOverlay.color14 .close {
+  background-color: #175279;
+}
+.color15, #teiTexts .text.color15 .text-actions, #teiDisplayFacsimileOverlay.color15 .close {
+  background-color: #557777;
+}
+.color16, #teiTexts .text.color16 .text-actions, #teiDisplayFacsimileOverlay.color16 .close {
+  background-color: #ddbb33;
+}
+.color17, #teiTexts .text.color17 .text-actions, #teiDisplayFacsimileOverlay.color17 .close {
+  background-color: #d3a76d;
+}
+.color18, #teiTexts .text.color18 .text-actions, #teiDisplayFacsimileOverlay.color18 .close {
+  background-color: #a9834b;
+}
+.color19, #teiTexts .text.color19 .text-actions, #teiDisplayFacsimileOverlay.color19 .close {
+  background-color: #aa6688;
+}
+.color20, #teiTexts .text.color20 .text-actions, #teiDisplayFacsimileOverlay.color20 .close {
+  background-color: #767676;
+}
+.color21, #teiTexts .text.color21 .text-actions, #teiDisplayFacsimileOverlay.color21 .close {
+  background-color: #fff;
 }
 
-  #teiTexts .text.color1 .text-actions {
-    background-color: #556270;
-  }  
-
-.color2 {
-  background-color: #4ECDC4;
-  color: #fff;
+/*BACKGROUND STYLES*/
+#teiTexts .background0 {
+  background: transparent url(../img/teiDisplayStripeBlue.png) top left repeat;
 }
-
-  #teiTexts .text.color2 .text-actions {
-    background-color: #4ECDC4;
-  }  
-
-.color3 {
-  background-color: #AFD758;
-  color: #fff;
-}
-
-  #teiTexts .text.color3 .text-actions {
-    background-color: #AFD758;
-  } 
-
-.color4 {
-  background-color: #FF6B6B;
-  color: #fff;
-}
-
-#teiTexts .text.color4 .text-actions {
-  background-color: #FF6B6B;
+#teiTexts .background1 {
+  background: transparent url(../img/teiDisplayStripeRed.png) top left repeat;
 }   
+#teiTexts .background2 {
+  background: transparent url(../img/teiDisplayStripeYellow.png) top left repeat;
+}
+#teiTexts .background3 {
+  background: transparent url(../img/teiDisplayStripeGrey.png) top left repeat;
+}
+#teiTexts .background4 {
+  background: transparent url(../img/teiDisplayStripeGreen.png) top left repeat;
+}
+ 
 
 /*FACSIMILE SCREEN*/
 
   #teiDisplayScreen {
     display: none;
     background: transparent url(../img/teiDisplayScreenBg.png) top left repeat;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     height: 100%;
     width: 100%;
-    z-index: 898;
+    z-index: 998;
   }
 
   #teiDisplayFacsimileOverlay {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 20px;
-    right: 0px;
+    left: 20px;
     height: 100%;
     width: 100%;
-    z-index: 899;
+    z-index: 999;
+    background: transparent;
   } 
 
-  #teiDisplayFacsimileOverlay img {
-    margin: 0px auto;
-    display: block;
+  #teiDisplayFacsimileOverlay .close {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: -1.45em;
+    color: white;
+    background-color: #222;
+    padding: .15em .5em;
+    width: .5em;
+    text-align: center;
   }   
+
+/*Info Panel*/
+#teiDisplayInfoPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #F5F5F5;
+  color: #222;
+  z-index: 900;
+  overflow: scroll;
+  display: none;
+}
+
+#teiDisplayInfoPanel.active {
+  display: block;
+}
+
+#teiDisplayInfoPanel div {
+  background-color: #F9F9F9;
+  margin: 0px auto;
+  padding: 20px 20px 100px;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  height: 100%;
+  position: relative;
+} 
+
+#teiDisplayInfoPanel .close {
+  position: absolute;
+  right: 0;
+  background-color: #222;
+  color: #EDEDED;
+  text-decoration: none;
+  padding: .15em .5em;
+  width: .75em;
+  text-align: center;
+} 
+
+#teiDisplayInfoPanel h3 {
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+} 
+
+#teiDisplayInfoPanel p {
+  padding: 0;
+  margin: 0 0 1em;
+}  
 
 /*TEXT ADVANCE*/
 
@@ -307,7 +474,7 @@ td { vertical-align: top; }
     cursor: pointer;
   }
 
-  .tei-free-first #teiDisplayTextRegress, .tei-free-first #teiDisplayTextAdvance {
+  .teiFreeFirst #teiDisplayTextRegress, .teiFreeFirst #teiDisplayTextAdvance {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -317,19 +484,30 @@ td { vertical-align: top; }
     top: auto;
   }
 
-  .tei-free-first #teiDisplayTextAdvance {
+  .teiFreeFirst #teiDisplayTextAdvance {
     right: 30px;
     bottom: 0;
   } 
 
-  .tei-free-first #teiDisplayTextRegress div, .tei-free-first #teiDisplayTextAdvance div {
-    background: #ccc url(../img/teiDisplayAdvanceArrows.png) 0px -85px;
-    margin: 0;
+  .teiFreeFirst #teiDisplayTextRegress, .teiFreeFirst #teiDisplayTextAdvance {
+      background-color: transparent;
+      opacity: 1;
+      width: 30px;
+      height: 30px;
+  }
+
+  .teiFreeFirst #teiDisplayTextRegress div, .teiFreeFirst #teiDisplayTextAdvance div {
+    background: transparent url(../img/teiDisplayAdvanceArrowsSmall.png) 0px 0px no-repeat;
+    margin: 6px auto;
     display: block;
-    width: 30px;
-    height: 30px;
     position: relative;
-    top: 0;
+    top: 3px;
+    height: 13px;
+    width: 12px;
+  }
+
+  .teiFreeFirst #teiDisplayTextRegress div {
+    background: transparent url(../img/teiDisplayAdvanceArrowsSmall.png) 0px -13px no-repeat;    
   }
 
   #teiDisplayTextAdvance div {
@@ -349,10 +527,18 @@ td { vertical-align: top; }
   margin: 0px 20px 0 20px;
   padding: 0 0 0 420px;
   overflow: hidden;
-  position: relative;
+  position: fixed;
   top: 20px;
   width: 100%;
 }
+
+  #teiTexts.expanded {
+    position: absolute;
+  }
+
+  .teiFreeFirst #teiTexts {
+    position: relative;
+  }
 
   #teiTexts .text {
     line-height: 1.5em;
@@ -369,10 +555,14 @@ td { vertical-align: top; }
     overflow:hidden;
   }
 
-  #teiTexts .text .text-holder {
+  #teiTexts .text .teiTextHolder {
     padding: 32px 10px 32px 25px;
     background: transparent url(../img/teiDisplayTextBG.png) top left repeat-y;
   }
+
+    .teiFreeFirst #teiTexts .text .teiTextHolder {
+      padding-top: 16px;
+    }
 
   #teiTexts .text:first-child {
     position: fixed;
@@ -381,7 +571,7 @@ td { vertical-align: top; }
     z-index: 99;
   }
 
-  .tei-free-first #teiTexts .text:first-child {
+  .teiFreeFirst #teiTexts .text:first-child {
     position: absolute;
     top: 0;
     left: 0px;
@@ -389,10 +579,16 @@ td { vertical-align: top; }
 
   #teiTexts .text.expanded {
     width: 80%;
-    position: fixed;
-    left: 20px;
+    max-width: 50em;
+    position: absolute;
+    left: 0px;
+    top: 0;
     z-index:999;
   }
+
+    #teiTexts .text.expanded .teiTextHolder {
+      max-width: 40em;
+    }
 
   #teiTexts .text-actions {
     padding: .5em 0;
@@ -408,12 +604,16 @@ td { vertical-align: top; }
       color: #fff;
       font-weight: bold;
       text-decoration: none;
-      margin-right: 20px;
+      padding-right: 20px;
+      padding-left: 10px;
     }
 
-  #teiTexts .text-holder {
+    .teiFreeFirst #teiTexts .text-actions .expand {
+      display: none;
+    }
+
+  #teiTexts .teiTextHolder {
     overflow: scroll;
-    padding-top: 30px;
   }
 
   #teiTexts .text .textHeightFix {
@@ -423,11 +623,11 @@ td { vertical-align: top; }
   }
 
       /***FOCUS***/
-      #teiTexts .text.focus .text-holder * {
+      #teiTexts .text.focus .teiTextHolder * {
         display: none;
       }
 
-      #teiTexts .text-holder .focused {
+      #teiTexts .teiTextHolder .focused {
         font-size: 2em;
         display: block;
       }
@@ -435,7 +635,7 @@ td { vertical-align: top; }
       
 
 /***ACTIONS***/
-#teiActions {
+#teiDisplayActions {
   position: fixed;
   bottom: 0;
   /*height: 200px;*/
@@ -445,18 +645,35 @@ td { vertical-align: top; }
   z-index: 998;
 }
 
-.tei-free-first #teiActions {
+.teiFreeFirst #teiDisplayActions {
   position: absolute;
 }
 
+#teiDisplayActions .teiDisplayShowInfo {
+  background-color: #222;
+  text-decoration: none;
+  text-indent: -999em;
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: transparent url(../img/teiDisplayInfoIcon.png) 11px 9px no-repeat;
+  top: 0px;
+}
+
+.teiFreeFirst #teiDisplayActions .teiDisplayShowInfo {
+  right: 60px;
+}
+
   /***UTILITY***/
-  #teiActions #utility {
+  #teiDisplayActions #utility {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 999;
   }
 
-    #teiActions #utility a {
+    #teiDisplayActions #utility a {
       height: 20px;
       background-color: #111;
       color: #fff;
@@ -471,7 +688,7 @@ td { vertical-align: top; }
       float: right;
     }
 
-    #teiActions #utility .hide-notes, #teiActions #utility .text, #teiActions #utility .opaque, #notes {
+    #teiDisplayActions #utility .hide-notes, #teiDisplayActions #utility .text, #teiDisplayActions #utility .opaque, #notes {
       display: none;
     }
 
@@ -549,6 +766,53 @@ td { vertical-align: top; }
         font-weight: bold;
       }
 
+
+/***STYLES FOR jQZoom***/
+.magnifyarea { /* CSS to add shadow to magnified image. Optional */
+  background: transparent url(../img/teiDisplayScreenBgDark.png) top left repeat;
+  border: none !important;
+}
+
+.targetarea { /* CSS for container div(s) of the zoomable image */
+  width: 325px; /* wide or wider than the widest zoomable image */
+  height: 338px; /* high or higher than the tallest zoomable image */
+  margin-top:3px;
+}
+
+#two { /* Added CSS for second target div of zoomable images */
+  height: 243px; /* high or higher than the tallest zoomable image */
+}
+
+.targetarea img { /* zoomable image */
+  margin: auto; /* for horizontal centering */
+  display: block; /* also for horizontal centering */
+  position: relative; /* along with on the fly calculations in script, for vertical centering */
+  border-width: 0;
+}
+
+.thumbs { /* divs holding the trigger links - styles optional, used here to center their links below their respective zoomable image */
+  padding-top: 25px;
+  width: 325px;
+  text-align: center;
+}
+
+.thumbs a { /* trigger links on the thumbnail images */
+  text-decoration: none; /* avoid underlines of images, text or spaces in these links */
+}
+
+.thumbs img { /* trigger images - the thumbnails used to load new zoomable images into the targetarea */
+  border-width: 0; /* avoid default borders in some browsers */
+}
+
+#description, #description2 {
+  position: absolute; /* required for description folows image bottom (descpos: true) */
+  width: 325px; /* should be width of zoomable image container (.targetarea) */
+  text-align: center;
+  font: bold 95% sans-serif;
+  margin-top: 3px; /* when following image bottom, this sets a fixed distance for that */
+  color: #222;
+  background-color: #fff;
+}
 
 
 

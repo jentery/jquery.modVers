@@ -37,20 +37,20 @@
 					<p>The images are JPEGS derived from TIFFS scanned at 600 dpi.</p>
 				</note> 
 
-				<!--<note type="image" anchored="true"> 
+				<note type="image" anchored="true"> 
 					
 					<witDetail wit="#v1" target="#v1" place="apparatus">[Firstling] 1.1 <graphic url="images/litmss-012892-0001.jpg"/> </witDetail> 
 
 					<witDetail wit="#v2" target="#v2" place="apparatus">Firstling 1.2 <emph rend="italic">typescript</emph> <graphic url="images/litmss-012892-0001.jpg"/> </witDetail> 
 				
-				</note>--> 
+				</note>
 
-				<!--<note anchored="true">
+				<note anchored="true">
 					<p>Draft clusters of this poetic event may be found on microfilm and in three folders in the Elsa von Freytag-Loringhoven papers archived within Special Collections at the University of Maryland, College Park. <list> 
 						<item>Firstling (Erstling, He): circa 1923-1924; Reel 4, Frames 54-65; series 3, box 2, folder 3</item> <item>Liebe; Sonnsang: undated; Reel 4, Frame 472; series 3, box 2, folder 67</item> <item>Lilac Old (Alter Flieder); He; Pfingsten: undated; Reel 4, Frames 479 and 481; series 3, box 2, folder 68</item> <item>Pfingst (Fanfare, Pfingstjubel, Pfingsten; Erstling; Ritter in Gold Verzieter Rüstung): circa 1923-1924; Reel 5, Frame 244-246, series 3, box 3, folder 23</item>
 					</list>
 					For more information, please see the Finding Aid at <ref target="http://hdl.handle.net/1903.1/1501">http://hdl.handle.net/1903.1/1501</ref>.</p>
-				</note>-->
+				</note>
 			</notesStmt>
 
 			<sourceDesc> 
@@ -64,7 +64,7 @@
 
 			<editorialDecl>
 				<p>DTD constructed from TEI P5 poetry base with tagsets for linking, figures, analysis, transcr, textcrit.</p>
-				</editorialDecl>
+			</editorialDecl>
 
 			<variantEncoding method="location-referenced" location="internal"/>
 
@@ -81,6 +81,7 @@
 				<witness xml:id="v4n8">4.8</witness>
 				<witness xml:id="v4n10">4.10</witness>
 				<witness xml:id="v4n11">4.11</witness>
+
 
 			</listWit>
 		</front>
