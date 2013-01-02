@@ -42,6 +42,10 @@
                 holder.append($(this).teiDisplay.settings.textHolder); 
                 holder.append($(this).teiDisplay.settings.utility); 
                 holder.append($(this).teiDisplay.settings.annotationPanel); 
+                
+                vizPanel = '<div id="teiDisplayVizPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a></div>';
+
+                holder.append(vizPanel); 
 
                 //Unfix the first text if option
                 if (holder.data('teiDisplay').fixFirst != true && holder.data('teiDisplay').fixFirst != undefined) {
@@ -169,19 +173,18 @@
 
                 helpers.copyWit(firstWitId, holder);
                 helpers.filterWits(holder);
+                helpers.addWitHeaders(holder);
+                helpers.setDimensions(holder);
+                helpers.makeWitnesses(holder);
+                helpers.textActions(holder);
 
                 if ($(holder).data('teiDisplay').annotations) {
                     helpers.makeNotes(holder);
                 }
 
-                if ($(holder).data('teiDisplay').annotations) {
+                if ($(holder).data('teiDisplay').highlights) {
                     helpers.makeHighlights(holder);
-                }                
-
-                helpers.addWitHeaders(holder);
-                helpers.setDimensions(holder);
-                helpers.makeWitnesses(holder);
-                helpers.textActions(holder);
+                }  
 
             }, 
 
@@ -192,7 +195,17 @@
 
                 $.getJSON($(holder).data('teiDisplay').highlights, function(data) {
 
+                    //add legend
+                    if (data.highlights.items.length > 0) {
+                        $('#teiDisplayActions').append('<a id="teiDisplayShowLegend" href="#"><span class="first"></span><span class="second"></span><span class="third"></span><span class="fourth"></span></a>');
+
+                        legendPanel = '<div id="teiDisplayLegendPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a><h3>Legend</h3>';
+
+                    }
+
                   $.each(data.highlights.items, function(i,item) {
+
+                    legendPanel += '<p class="background' + i + '">' + item.description + '</p>';
 
                     var includeLocs = [];
                     var includeLocs = $.map(item.loc.split(','), $.trim);
@@ -215,14 +228,14 @@
 
                         for (var j = 0; j < includeLocs.length; j++) {   
 
-                            console.log(includeLocs[j]);
-
-
                             $('.text [data-loc="' + includeLocs[j] + '"]').addClass('background' + i);
 
                         }//foreach loc
-                    }
-                  });
+                    } //else
+
+                  }); //each
+
+                $(holder).append(legendPanel);
 
                 })//getJSON
 
@@ -243,9 +256,6 @@
                         var includeWitnesses = $.map(item.wit.split(','), $.trim);
 
                         for (var i = includeWitnesses.length; i >= 0; i--) {   
-
-                            //console.log(includeWitnesses[i]);
-
                             $('.text[data-witness-id="' + includeWitnesses[i] + '"] [data-loc="' + item.loc + '"]').prepend(
                                 '<span class="teiDisplayAnnotation" data-annotation-text="' + item.text + '"></span>'
                             );
@@ -266,12 +276,16 @@
             copyWit: function(firstWitId, holder) {
 
                 //Copies the contents of the first text into all other text holders. At this
-                //point, the text holders contains text from all witnesses.
+                //point, the text holders contains text from all witnesses. Also copies contents
+                //into the visualization panel.
 
                 var texts = $('.text:not(#' + firstWitId + ')');
                 texts.each(function() {
                     $('#' + firstWitId).children().clone().appendTo($(this));
                 })
+
+                 $('#' + firstWitId).children().clone().appendTo($('#teiDisplayVizPanel div:first'));                
+
             }, 
 
             filterWits: function(holder) {
@@ -312,16 +326,18 @@
             appendElement: function(element, parentId) {
 
                 $(element).contents().each(function() {
+                    
                     var nodeType = this.nodeType;
+
                     if (nodeType == 3) {
-                        //console.log('appending ' + $(this).text() + ' to ' + parentId);
+
                         var text = $.trim($(this).text());
                         if (text != "") {
-                            //console.log($(this).text());                  
                             $('#' + parentId).append($(this).text());
                         }
+                    
                     } else if (nodeType == 1) {
-                        //console.log('appending ' + $(this).prop('tagName') + ' to ' + parentId);
+
                         var tagType = $(this).prop('tagName');
                         var loc = $(this).attr('loc');
                         var wit = $(this).attr('wit');
@@ -347,12 +363,13 @@
                                     $('#' + parentId).append('<span class="tei-place-' + place + ' tei-' + tagType + ' tei-emph-' + rend + ' tei-type-' + type + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '" data-facs="' + facs + '"></span>')
                                     helpers.appendElement($(this), id);
                                     break;  
-                            }
+                            }//switch
 
-                        }
+                        }//if
 
-                    }
-                })
+                    }//elseif tag node
+                
+                })//each element
 
             }, 
 
@@ -410,7 +427,7 @@
                
                 
                 if ($(holder).data('teiDisplay').fixFirst != true && $(holder).data('teiDisplay').fixFirst != undefined) {
-                    newHeight -= 260;
+                    newHeight -= 210;
                 } else {
                     newHeight -= 55;
                 }
@@ -480,7 +497,13 @@
                 $('#teiDisplayTextRegress').live('click', function() {
                     helpers.regressText();
                     return false;
-                })                 
+                })       
+
+                //Annotations
+                $('#teiDisplayAnnotationPanel .teiDisplayAnnotation a.close').live('click', function () {
+                    helpers.clearOverlays();
+                    return false;
+                })          
 
                 //Text Expansion
                 $('.text .text-actions .expand').live('click', function() {
@@ -510,8 +533,8 @@
                     return false;
                 });
 
-                //Info Panel
-                $('#teiDisplayInfoPanel .close').live('click', function() {
+                //Info/Legend/Viz Panel
+                $('#teiDisplayInfoPanel .close, #teiDisplayLegendPanel .close, #teiDisplayVizPanel .close').live('click', function() {
                     helpers.clearOverlays();
                     return false;
                 })
@@ -520,10 +543,31 @@
                     if ($('#teiDisplayInfoPanel').hasClass('active')) {
                         helpers.clearOverlays();
                     } else {
+                        helpers.clearOverlays();
                         helpers.showInfoPanel();
                     }
                     return false;
-                })                
+                })  
+
+                $('#teiDisplayActions #teiDisplayShowLegend').live('click', function() {
+                    if ($('#teiDisplayLegendPanel').hasClass('active')) {
+                        helpers.clearOverlays();
+                    } else {
+                        helpers.clearOverlays();
+                        helpers.showLegendPanel();
+                    }
+                    return false;
+                })  
+
+                $('#teiDisplayActions #teiDisplayShowViz').live('click', function() {
+                    if ($('#teiDisplayVizPanel').hasClass('active')) {
+                        helpers.clearOverlays();
+                    } else {
+                        helpers.clearOverlays();
+                        helpers.showVizPanel();
+                    }
+                    return false;
+                })                                                
 
                 //Adds a click event to everything with a data-loc attribute that highlights everything
                 //with that data-loc.
@@ -575,7 +619,7 @@
 
                 //Removes all annotations from the annotation panel.
 
-                $('#teiDisplayAnnotationPanel').append('<div class="teiDisplayAnnotation">' + text + '</div>');
+                $('#teiDisplayAnnotationPanel').append('<div class="teiDisplayAnnotation">' + text + '<a href="#" class="close">x</a></div>');
             
             },
 
@@ -623,11 +667,22 @@
                 $('#teiDisplayInfoPanel').addClass('active');     
             }, 
 
+            showLegendPanel: function() { 
+                $('#teiDisplayLegendPanel').addClass('active');     
+            }, 
+
+            showVizPanel: function() { 
+                $('#teiDisplayVizPanel').addClass('active');     
+            },                         
+
             clearOverlays: function() {
                 $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();   
                 $('.featuredimagezoomerhidden, .zoomtracker').remove();
                 $('#teiTexts .text-actions a.expand').html('+');  
                 $('#teiDisplayInfoPanel').removeClass('active');     
+                $('#teiDisplayLegendPanel').removeClass('active');   
+                $('#teiDisplayVizPanel').removeClass('active');   
+                helpers.closeAnnotationPanel();  
             }
 
         }//helpers
@@ -653,8 +708,8 @@
         witHeader: '<div class="text-actions"><a href="#" class="expand">+</a></div>',
         advanceButtons: '<div id="teiDisplayTextAdvance"><div></div></div><div id="teiDisplayTextRegress"><div></div></div>',
         textHolder: '<div id="teiTexts"><div id="screen"></div></div>',
-        utility: '<div id="teiDisplayActions"><a href="#" class="teiDisplayShowInfo" title="Show Information">i</a><div id="teiDisplayWitnesses"></div><div id="notes"></div></div>',
-        annotationPanel: '<div id="teiDisplayAnnotationPanel"></div>',
+        utility: '<div id="teiDisplayActions"><a href="#" id="teiDisplayShowViz" title="Show Visualization">v</a><a href="#" class="teiDisplayShowInfo" title="Show Information">i</a><div id="teiDisplayWitnesses"></div><div id="notes"></div></div>',
+        annotationPanel: '<div id="teiDisplayAnnotationPanel"><div><a href="#" class="close">x</a></div></div>',
         zoomOptions: {  
             magnifiersize: [700,630],
             curshade: true

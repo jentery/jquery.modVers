@@ -198,6 +198,49 @@ td { vertical-align: top; }
     margin: .5em 0;
   }
 
+/***VISUALIZATION PANEL***/
+
+#teiDisplayShowViz {
+  display: none;
+}
+
+#teiDisplayVizPanel {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+} 
+
+#teiDisplayVizPanel span.tei-app {
+  float: left;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 1px;
+}
+
+#teiDisplayVizPanel span.tei-rdg {
+  border-bottom: 1px solid;
+  height: 10px;
+  width: 10px;
+  text-indent: -999em;
+  margin: 0 3px 3px 0;
+  padding: 0;
+  display: block;
+}
+
+#teiDisplayVizPanel span.tei-pb {
+  background: transparent;
+}
+
+#teiDisplayVizPanel span.tei-app {
+  clear: both;
+}
+
 /***ANNOTATION PANEL***/
 #teiDisplayAnnotationPanel {
   position: absolute;
@@ -232,6 +275,19 @@ td { vertical-align: top; }
 
   #teiDisplayAnnotationPanel p {
     margin: 0 0 1em;
+  }
+
+  #teiDisplayAnnotationPanel .teiDisplayAnnotation a.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #222;
+    color: #EDEDED;
+    text-decoration: none;
+    padding: .15em .5em;
+    width: .75em;
+    text-align: center;
+    text-indent: 0;
   }
 
 /***GENERAL***/
@@ -346,22 +402,47 @@ td { vertical-align: top; }
 }
 
 /*BACKGROUND STYLES*/
-#teiTexts .background0 {
+#teiTexts .background0, #teiDisplayShowLegend .first, #teiDisplayLegendPanel .background0 {
   background: transparent url(../img/teiDisplayStripeBlue.png) top left repeat;
 }
-#teiTexts .background1 {
+#teiTexts .background1, #teiDisplayShowLegend .second, #teiDisplayLegendPanel .background1 {
   background: transparent url(../img/teiDisplayStripeRed.png) top left repeat;
 }   
-#teiTexts .background2 {
+#teiTexts .background2, #teiDisplayShowLegend .third, #teiDisplayLegendPanel .background2 {
   background: transparent url(../img/teiDisplayStripeYellow.png) top left repeat;
 }
-#teiTexts .background3 {
+#teiTexts .background3, #teiDisplayShowLegend .fourth, #teiDisplayLegendPanel .background3 {
   background: transparent url(../img/teiDisplayStripeGrey.png) top left repeat;
 }
-#teiTexts .background4 {
+#teiTexts .background4, #teiDisplayLegendPanel .background4 {
   background: transparent url(../img/teiDisplayStripeGreen.png) top left repeat;
 }
  
+/*BACKGROUND LEGEND*/
+#teiDisplayShowLegend {
+  display: block;
+  text-indent: -999em;
+  position: absolute;
+  right: 48px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #333;
+}
+
+.teiFreeFirst #teiDisplayShowLegend {
+  right: 99px;
+}
+
+#teiDisplayShowLegend .first, #teiDisplayShowLegend .second, #teiDisplayShowLegend .third, #teiDisplayShowLegend .fourth {
+  height: 50%;
+  width: 50%;
+  display: block;
+  float: left;
+}
+
+
+
 
 /*FACSIMILE SCREEN*/
 
@@ -400,7 +481,7 @@ td { vertical-align: top; }
   }   
 
 /*Info Panel*/
-#teiDisplayInfoPanel {
+#teiDisplayInfoPanel, #teiDisplayLegendPanel, #teiDisplayVizPanel {
   position: absolute;
   top: 0;
   left: 0;
@@ -413,21 +494,21 @@ td { vertical-align: top; }
   display: none;
 }
 
-#teiDisplayInfoPanel.active {
+#teiDisplayInfoPanel.active, #teiDisplayLegendPanel.active, #teiDisplayVizPanel.active {
   display: block;
 }
 
-#teiDisplayInfoPanel div {
+#teiDisplayInfoPanel div, #teiDisplayLegendPanel div, #teiDisplayVizPanel div {
   background-color: #F9F9F9;
   margin: 0px auto;
-  padding: 20px 20px 100px;
+  padding: 20px 20px 150px;
   border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
   height: 100%;
   position: relative;
 } 
 
-#teiDisplayInfoPanel .close {
+#teiDisplayInfoPanel .close, #teiDisplayLegendPanel .close, #teiDisplayVizPanel .close {
   position: absolute;
   right: 0;
   background-color: #222;
@@ -438,14 +519,18 @@ td { vertical-align: top; }
   text-align: center;
 } 
 
-#teiDisplayInfoPanel h3 {
+#teiDisplayInfoPanel h3, #teiDisplayLegendPanel h3 {
   text-transform: uppercase;
   font-size: 1em;
   padding: 0;
   margin: 0;
 } 
 
-#teiDisplayInfoPanel p {
+#teiDisplayLegendPanel h3 {
+  padding: 0 0 1em 0;
+}
+
+#teiDisplayInfoPanel p, #teiDisplayLegendPanel p {
   padding: 0;
   margin: 0 0 1em;
 }  

@@ -10,7 +10,7 @@ $(document).ready(function(){
 		highlights: 'data/annotations.json',
 		//witnesses: 'v4n8,v4n11',
 		//fixFirst: true
-		dev: true
+		//dev: true
 	});
 
 	$('#tei-1').teiDisplay({
@@ -23,6 +23,7 @@ $(document).ready(function(){
 		fixFirst: false,
 		height: 500,
 		annotations: 'data/annotations.json',
+		//highlights: 'data/annotations.json',		
 		//witnesses: 'v4n8,v4n11',
 		//background: 'tei-type-filmic, tei-type-pulp'
 	});
