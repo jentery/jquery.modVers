@@ -21,10 +21,12 @@
                     //process the xml file
                     $.ajax({
                       url: data.xmlFile,
-                      cache: false
+                      cache: false,
+                      dataType: "text",
                     }).done(function( xml ) {
+                        xml = xml.replace('<?xml version="1.0" ?>', '');
                         xmlData = $.parseXML( xml );
-                        helpers.makeWits(xml, element);
+                        helpers.makeWits(xmlData, element);
                     });
 
                 });
@@ -43,7 +45,7 @@
                 holder.append($(this).teiDisplay.settings.utility); 
                 holder.append($(this).teiDisplay.settings.annotationPanel); 
                 
-                vizPanel = '<div id="teiDisplayVizPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a></div>';
+                vizPanel = '<div id="teiDisplayVizPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a></div>';
 
                 holder.append(vizPanel); 
 
@@ -91,7 +93,7 @@
                 notes = notesStatement.children('note');
                 sourceDescription = xml.find("sourceDesc");
 
-                infoPanel = '<div id="teiDisplayInfoPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a>';
+                infoPanel = '<div id="teiDisplayInfoPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a>';
                 if (title) {
                     infoPanel += '<h3>Title</h3><p>' + title + '</p>';
                 }
@@ -174,6 +176,7 @@
                 helpers.copyWit(firstWitId, holder);
                 helpers.filterWits(holder);
                 helpers.addWitHeaders(holder);
+                helpers.filterLocs(holder);
                 helpers.setDimensions(holder);
                 helpers.makeWitnesses(holder);
                 helpers.textActions(holder);
@@ -199,7 +202,7 @@
                     if (data.highlights.items.length > 0) {
                         $('#teiDisplayActions').append('<a id="teiDisplayShowLegend" href="#"><span class="first"></span><span class="second"></span><span class="third"></span><span class="fourth"></span></a>');
 
-                        legendPanel = '<div id="teiDisplayLegendPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a><h3>Legend</h3>';
+                        legendPanel = '<div id="teiDisplayLegendPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a><h3>Legend</h3>';
 
                     }
 
@@ -311,6 +314,30 @@
 
             }, 
 
+            filterLocs: function(holder) {
+
+                //If specific locs are included in the data object, gets rid of others. 
+
+                var includeLocs;
+                
+                if ($(holder).data('teiDisplay').locs) {
+                    includeLocs = $.map($(holder).data('teiDisplay').locs.split(','), $.trim);
+                }
+
+                if (includeLocs) {
+                    $('.teiTextHolder *[data-loc != "undefined"]').each(function() {
+                    
+                        if (includeLocs.indexOf($(this).attr('data-loc')) !== -1) {
+                        
+                        } else {  
+                            $(this).remove();                                
+                        }
+
+                    })//each
+                }//if 
+
+            },             
+
             addWitHeaders: function(holder) {
 
                 //Adds header markup to each text holder.
@@ -323,7 +350,9 @@
                 })
             },
 
-            appendElement: function(element, parentId) {
+            appendElement: function(element, parentId, holder) {
+
+                //Recursively adds each element from the XML document to the HTML document.
 
                 $(element).contents().each(function() {
                     
@@ -348,7 +377,6 @@
                             facs = '';
                         }
                         var rend = $(this).attr('rend')
-
                         if (!wit) {
                             wit = '';
                         }
@@ -356,16 +384,17 @@
                         if (id = 'undefined') {
                             id = Math.floor(Math.random()*999999);
                             $(this).attr('id', id);
-
-                            switch(tagType) {
-
-                                default:                                            
-                                    $('#' + parentId).append('<span class="tei-place-' + place + ' tei-' + tagType + ' tei-emph-' + rend + ' tei-type-' + type + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '" data-facs="' + facs + '"></span>')
-                                    helpers.appendElement($(this), id);
-                                    break;  
-                            }//switch
-
                         }//if
+
+
+                        switch(tagType) {
+                            default:                                            
+
+                                $('#' + parentId).append('<span class="tei-place-' + place + ' tei-' + tagType + ' tei-emph-' + rend + ' tei-type-' + type + '" id="' + id + '" data-loc="' + loc + '" data-wit="' + wit + '" data-facs="' + facs + '"></span>');
+                                helpers.appendElement($(this), id, holder);
+                                break;  
+                        }//switch
+
 
                     }//elseif tag node
                 
@@ -373,7 +402,7 @@
 
             }, 
 
-            addChildren: function(xml, parentId) {
+            addChildren: function(xml, parentId, holder) {
 
                 //Gets the XML elements and passes them each to appendElement().
 
@@ -534,7 +563,7 @@
                 });
 
                 //Info/Legend/Viz Panel
-                $('#teiDisplayInfoPanel .close, #teiDisplayLegendPanel .close, #teiDisplayVizPanel .close').live('click', function() {
+                $('.teiDisplayPanel .close').live('click', function() {
                     helpers.clearOverlays();
                     return false;
                 })
@@ -613,6 +642,55 @@
                     }
                 })
 
+                //Adds a double click event to everything with a data-loc attribute that brings up
+                //a panel with the text differences highlighted.
+                
+                $('.teiTextHolder *[data-loc != "undefined"]').live('dblclick', function() {
+
+                    var identifier = $(this).attr('data-loc');
+                    var baseText = $(this).text();
+                    var baseHolder = $(this).parents('.teiTextHolder')
+                    var baseWit = baseHolder.parent().attr('data-witness-id');
+
+                    $('.teiTextHolder .active').removeClass('active');
+                    $('#teiDisplayWitnesses .witness').removeClass('active');
+
+                    diffPanel = '<div id="teiDisplayDiffPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a>';
+
+                    $('.text *[data-loc = "' + identifier + '"]').each(function() {
+
+                        $(this).addClass('active');
+                        var holder = $(this).parents('.teiTextHolder')
+                        var wit = holder.parent().attr('data-witness-id');
+                        var compText = $(this).text();
+
+                        var witPrefix = ''
+                        if (wit == baseWit) {
+                            witPrefix = 'Base: ';
+                        }
+
+                        $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
+                        var witTitle = $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').text();
+
+                        var newOffset = holder.scrollTop() + $(this).position().top - 200;
+
+                        holder.animate({
+                            scrollTop: newOffset
+                        }, 300);
+
+                        diffPanel += '<h3>' + witPrefix + witTitle + '</h3>';
+                        diffPanel += '<p>' + diffString(baseText, compText) + '</p>';
+
+
+                        
+                    })
+
+                    $(holder).append(diffPanel);
+
+                    helpers.showDiffPanel();
+
+                })
+
             },
 
             addAnnotation: function(text) {
@@ -673,15 +751,18 @@
 
             showVizPanel: function() { 
                 $('#teiDisplayVizPanel').addClass('active');     
-            },                         
+            }, 
+
+            showDiffPanel: function() { 
+                $('#teiDisplayDiffPanel').addClass('active');     
+            },                                     
 
             clearOverlays: function() {
                 $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();   
                 $('.featuredimagezoomerhidden, .zoomtracker').remove();
                 $('#teiTexts .text-actions a.expand').html('+');  
-                $('#teiDisplayInfoPanel').removeClass('active');     
-                $('#teiDisplayLegendPanel').removeClass('active');   
-                $('#teiDisplayVizPanel').removeClass('active');   
+                $('.teiDisplayPanel').removeClass('active');  
+                $('#teiDisplayDiffPanel').remove();    
                 helpers.closeAnnotationPanel();  
             }
 
@@ -709,7 +790,7 @@
         advanceButtons: '<div id="teiDisplayTextAdvance"><div></div></div><div id="teiDisplayTextRegress"><div></div></div>',
         textHolder: '<div id="teiTexts"><div id="screen"></div></div>',
         utility: '<div id="teiDisplayActions"><a href="#" id="teiDisplayShowViz" title="Show Visualization">v</a><a href="#" class="teiDisplayShowInfo" title="Show Information">i</a><div id="teiDisplayWitnesses"></div><div id="notes"></div></div>',
-        annotationPanel: '<div id="teiDisplayAnnotationPanel"><div><a href="#" class="close">x</a></div></div>',
+        annotationPanel: '<div id="teiDisplayAnnotationPanel"><div></div></div>',
         zoomOptions: {  
             magnifiersize: [700,630],
             curshade: true
@@ -1133,3 +1214,169 @@ var featuredimagezoomer = { // the two options for Featured Image Zoomer:
     };
 
 })(jQuery);
+
+
+
+
+
+/*
+ * Javascript Diff Algorithm
+ *  By John Resig (http://ejohn.org/)
+ *  Modified by Chu Alan "sprite"
+ *
+ * Released under the MIT license.
+ *
+ * More Info:
+ *  http://ejohn.org/projects/javascript-diff-algorithm/
+ */
+
+function escape(s) {
+    var n = s;
+    n = n.replace(/&/g, "&amp;");
+    n = n.replace(/</g, "&lt;");
+    n = n.replace(/>/g, "&gt;");
+    n = n.replace(/"/g, "&quot;");
+
+    return n;
+}
+
+function diffString( o, n ) {
+  o = o.replace(/\s+$/, '');
+  n = n.replace(/\s+$/, '');
+
+  var out = diff(o == "" ? [] : o.split(/\s+/), n == "" ? [] : n.split(/\s+/) );
+  var str = "";
+
+  var oSpace = o.match(/\s+/g);
+  if (oSpace == null) {
+    oSpace = ["\n"];
+  } else {
+    oSpace.push("\n");
+  }
+  var nSpace = n.match(/\s+/g);
+  if (nSpace == null) {
+    nSpace = ["\n"];
+  } else {
+    nSpace.push("\n");
+  }
+
+  if (out.n.length == 0) {
+      for (var i = 0; i < out.o.length; i++) {
+        str += '<del>' + escape(out.o[i]) + oSpace[i] + "</del>";
+      }
+  } else {
+    if (out.n[0].text == null) {
+      for (n = 0; n < out.o.length && out.o[n].text == null; n++) {
+        str += '<del>' + escape(out.o[n]) + oSpace[n] + "</del>";
+      }
+    }
+
+    for ( var i = 0; i < out.n.length; i++ ) {
+      if (out.n[i].text == null) {
+        str += '<ins>' + escape(out.n[i]) + nSpace[i] + "</ins>";
+      } else {
+        var pre = "";
+
+        for (n = out.n[i].row + 1; n < out.o.length && out.o[n].text == null; n++ ) {
+          pre += '<del>' + escape(out.o[n]) + oSpace[n] + "</del>";
+        }
+        str += " " + out.n[i].text + nSpace[i] + pre;
+      }
+    }
+  }
+  
+  return str;
+}
+
+function randomColor() {
+    return "rgb(" + (Math.random() * 100) + "%, " + 
+                    (Math.random() * 100) + "%, " + 
+                    (Math.random() * 100) + "%)";
+}
+function diffString2( o, n ) {
+  o = o.replace(/\s+$/, '');
+  n = n.replace(/\s+$/, '');
+
+  var out = diff(o == "" ? [] : o.split(/\s+/), n == "" ? [] : n.split(/\s+/) );
+
+  var oSpace = o.match(/\s+/g);
+  if (oSpace == null) {
+    oSpace = ["\n"];
+  } else {
+    oSpace.push("\n");
+  }
+  var nSpace = n.match(/\s+/g);
+  if (nSpace == null) {
+    nSpace = ["\n"];
+  } else {
+    nSpace.push("\n");
+  }
+
+  var os = "";
+  var colors = new Array();
+  for (var i = 0; i < out.o.length; i++) {
+      colors[i] = randomColor();
+
+      if (out.o[i].text != null) {
+          os += '<span style="background-color: ' +colors[i]+ '">' + 
+                escape(out.o[i].text) + oSpace[i] + "</span>";
+      } else {
+          os += "<del>" + escape(out.o[i]) + oSpace[i] + "</del>";
+      }
+  }
+
+  var ns = "";
+  for (var i = 0; i < out.n.length; i++) {
+      if (out.n[i].text != null) {
+          ns += '<span style="background-color: ' +colors[out.n[i].row]+ '">' + 
+                escape(out.n[i].text) + nSpace[i] + "</span>";
+      } else {
+          ns += "<ins>" + escape(out.n[i]) + nSpace[i] + "</ins>";
+      }
+  }
+
+  return { o : os , n : ns };
+}
+
+function diff( o, n ) {
+  var ns = new Object();
+  var os = new Object();
+  
+  for ( var i = 0; i < n.length; i++ ) {
+    if ( ns[ n[i] ] == null )
+      ns[ n[i] ] = { rows: new Array(), o: null };
+    ns[ n[i] ].rows.push( i );
+  }
+  
+  for ( var i = 0; i < o.length; i++ ) {
+    if ( os[ o[i] ] == null )
+      os[ o[i] ] = { rows: new Array(), n: null };
+    os[ o[i] ].rows.push( i );
+  }
+  
+  for ( var i in ns ) {
+    if ( ns[i].rows.length == 1 && typeof(os[i]) != "undefined" && os[i].rows.length == 1 ) {
+      n[ ns[i].rows[0] ] = { text: n[ ns[i].rows[0] ], row: os[i].rows[0] };
+      o[ os[i].rows[0] ] = { text: o[ os[i].rows[0] ], row: ns[i].rows[0] };
+    }
+  }
+  
+  for ( var i = 0; i < n.length - 1; i++ ) {
+    if ( n[i].text != null && n[i+1].text == null && n[i].row + 1 < o.length && o[ n[i].row + 1 ].text == null && 
+         n[i+1] == o[ n[i].row + 1 ] ) {
+      n[i+1] = { text: n[i+1], row: n[i].row + 1 };
+      o[n[i].row+1] = { text: o[n[i].row+1], row: i + 1 };
+    }
+  }
+  
+  for ( var i = n.length - 1; i > 0; i-- ) {
+    if ( n[i].text != null && n[i-1].text == null && n[i].row > 0 && o[ n[i].row - 1 ].text == null && 
+         n[i-1] == o[ n[i].row - 1 ] ) {
+      n[i-1] = { text: n[i-1], row: n[i].row - 1 };
+      o[n[i].row-1] = { text: o[n[i].row-1], row: i - 1 };
+    }
+  }
+  
+  return { o: o, n: n };
+}
+

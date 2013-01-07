@@ -6,15 +6,15 @@ $(document).ready(function(){
 
 	$('#tei-1').data('teiDisplay', {
 		xmlFile: 'data/filmballad.xml',
-		annotations: 'data/annotations.json',
-		highlights: 'data/annotations.json',
+		//annotations: 'data/annotations.json',
+		//highlights: 'data/annotations.json',
+		//locs: 'a3,a4,a5',
 		//witnesses: 'v4n8,v4n11',
 		//fixFirst: true
 		//dev: true
 	});
 
-	$('#tei-1').teiDisplay({
-	});	
+	$('#tei-1').teiDisplay();	
 
 
 
