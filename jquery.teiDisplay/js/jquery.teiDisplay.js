@@ -71,9 +71,9 @@
 
             makeWits: function(xml, holder) {
 
-            	//Reads through the xml file and makes a text holder for each witness found.
-            	//Then sends the xml to addChildren to be parsed into html and added to the
-            	//first text holder. Also adds a div that contains general information about
+                //Reads through the xml file and makes a text holder for each witness found.
+                //Then sends the xml to addChildren to be parsed into html and added to the
+                //first text holder. Also adds a div that contains general information about
                 //the text.
 
                 xml = $(xml);
@@ -91,7 +91,7 @@
                 publisherAddress = publicationStatement.children('address').text();
                 availability = publicationStatement.children('availability').text();
                 notes = notesStatement.children('note');
-                sourceDescription = xml.find("sourceDesc");
+                sourceDescription = xml.find("sourceDesc").text();
 
                 infoPanel = '<div id="teiDisplayInfoPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a>';
                 if (title) {
@@ -133,17 +133,17 @@
                 //If user has specified witnesses in the plugin options, go through and remove
                 //others from the array.
                 if ($(holder).data('teiDisplay').witnesses) {
-	
-	                var includeWitnesses = [];
-	                var includeWitnesses = $.map($(holder).data('teiDisplay').witnesses.split(','), $.trim);
+    
+                    var includeWitnesses = [];
+                    var includeWitnesses = $.map($(holder).data('teiDisplay').witnesses.split(','), $.trim);
 
-					for (var i = witnesses.length; i >= 0; i--) {   
-                		                		
-                		var index = jQuery.inArray($(witnesses[i]).attr('xml:id'), includeWitnesses);
-                		if (index == -1) {
-                			witnesses.splice(i,1);
-                		}
-					}
+                    for (var i = witnesses.length; i >= 0; i--) {   
+                                                
+                        var index = jQuery.inArray($(witnesses[i]).attr('xml:id'), includeWitnesses);
+                        if (index == -1) {
+                            witnesses.splice(i,1);
+                        }
+                    }
                 }
 
                 var body = xml.find('body');

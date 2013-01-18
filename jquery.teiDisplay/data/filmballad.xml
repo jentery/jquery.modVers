@@ -12,59 +12,32 @@
 				<respStmt> 
 					<resp>Text Encoding and Interface Development by</resp> <name>Daniel Carter</name> 
 				</respStmt>
-				
-				<!--<respStmt>
-					<resp>TIFF images scanned at 600 dpi from manuscript pages; Web-ready derivatives created by</resp> <name>Tanya Clement</name>
-				</respStmt>--> 
 			</titleStmt>
 
 			<publicationStmt> 
 				<publisher>Daniel Carter</publisher>
 
 				<address>
-					<addrLine>Office of Digital Collections and Research (DCR), University of Maryland, College Park, MD 20742</addrLine>
+					<addrLine>School of Information, University of Texas at Austin</addrLine>
 				</address>
 
-				<!--<availability status="unknown">
-					<p>Baroness Elsa von Freytag-Loringhoven's poetry is printed here with the support of the University of Maryland Libraries. Permission to reproduce images of Freytag-Loringhoven's manuscripts has also been generously granted by the libraries.</p> 
-
-					<p>This poem and manuscript drafts are available from this site for demonstration purposes only. Though the intellectual property of <name>Elsa von Freytag-Loringhoven</name> is in the public domain, all annotations and editorial commentary are copyrighted. They may not be reproduced without explicit permission from the copyright holder. For copyright information, please contact Tanya Clement.</p>
-				</availability>-->
 			</publicationStmt>
 
 			<notesStmt> 
-				<note type="image" anchored="true"> 
-					<p>The images are JPEGS derived from TIFFS scanned at 600 dpi.</p>
+				<note> 
+					This document is currently being used as a demonstration for the jquery.teiDisplay plugin.
 				</note> 
-
-				<note type="image" anchored="true"> 
-					
-					<witDetail wit="#v1" target="#v1" place="apparatus">[Firstling] 1.1 <graphic url="images/litmss-012892-0001.jpg"/> </witDetail> 
-
-					<witDetail wit="#v2" target="#v2" place="apparatus">Firstling 1.2 <emph rend="italic">typescript</emph> <graphic url="images/litmss-012892-0001.jpg"/> </witDetail> 
-				
-				</note>
-
-				<note anchored="true">
-					<p>Draft clusters of this poetic event may be found on microfilm and in three folders in the Elsa von Freytag-Loringhoven papers archived within Special Collections at the University of Maryland, College Park. <list> 
-						<item>Firstling (Erstling, He): circa 1923-1924; Reel 4, Frames 54-65; series 3, box 2, folder 3</item> <item>Liebe; Sonnsang: undated; Reel 4, Frame 472; series 3, box 2, folder 67</item> <item>Lilac Old (Alter Flieder); He; Pfingsten: undated; Reel 4, Frames 479 and 481; series 3, box 2, folder 68</item> <item>Pfingst (Fanfare, Pfingstjubel, Pfingsten; Erstling; Ritter in Gold Verzieter Rüstung): circa 1923-1924; Reel 5, Frame 244-246, series 3, box 3, folder 23</item>
-					</list>
-					For more information, please see the Finding Aid at <ref target="http://hdl.handle.net/1903.1/1501">http://hdl.handle.net/1903.1/1501</ref>.</p>
-				</note>
 			</notesStmt>
 
 			<sourceDesc> 
 				<p>Encoded documents and images are derived from manuscripts in the <ref target="http://www.lib.umd.edu/litmss/holdings.html#evfl">Papers of Elsa von Freytag-Loringhoven</ref> in Special Collections at the University of Maryland, College Park, Libraries.</p>
-				<p>Each version and note is numbered according to the order in which it appears in the folders in special collections and in the order that they appear on a given manuscript page, from left to right and top to bottom (e.g. versions 1.1-1.6 all appear on the first manuscript page in the first folder related to this complex).</p>
+
+				<p>Each version and note is numbered according to the order in which it appears in the folders in special collections.</p>
 			</sourceDesc>
 
 		</fileDesc> 
 
 		<encodingDesc>
-
-			<editorialDecl>
-				<p>DTD constructed from TEI P5 poetry base with tagsets for linking, figures, analysis, transcr, textcrit.</p>
-			</editorialDecl>
 
 			<variantEncoding method="location-referenced" location="internal"/>
 
@@ -100,7 +73,13 @@
 					</rdg>	
 					<rdg wit="#v4n11">
 						<pb facs="data/images/v4n11.png" />
-					</rdg>										
+					</rdg>	
+					<rdg wit="#v4n13">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>		
+					<rdg wit="#v4n19">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>																			
 				</app>
 
 			<head>
@@ -822,15 +801,7 @@
 					</rdg>					
 				</app>								
 			</l>
-
-				<app loc="a0999">
-					<rdg wit="#v4n10">
-						<pb facs="data/images/v4n10.png" />
-					</rdg>	
-					<rdg wit="#v4n11">
-						<pb facs="data/images/v4n11.png" />
-					</rdg>										
-				</app>			
+		
 		
 			<!--STANZA BREAK-->
 			<app loc="a11n2">
