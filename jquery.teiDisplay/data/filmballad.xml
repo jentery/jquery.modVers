@@ -822,6 +822,15 @@
 					</rdg>					
 				</app>								
 			</l>
+
+				<app loc="a0999">
+					<rdg wit="#v4n10">
+						<pb facs="data/images/v4n10.png" />
+					</rdg>	
+					<rdg wit="#v4n11">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>										
+				</app>			
 		
 			<!--STANZA BREAK-->
 			<app loc="a11n2">

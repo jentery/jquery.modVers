@@ -93,15 +93,10 @@ td { vertical-align: top; }
 
 .tei-app .teiDisplayAnnotation {
   display: inline-block;
-  height: 14px;
+  height: 16px;
   width: 14px;
-  background: transparent url(../img/teiDisplayNoteIcon.png) 0px 0px no-repeat;
-  top: 0px;
-}
-
-.tei-app.active .teiDisplayAnnotation {
-  left: -18px;
-  /*background: transparent url(../img/teiDisplayNoteIcon.png) 0px -14px no-repeat;*/
+  background: transparent url(../img/teiDisplayNoteIcon.png) 0px 2px no-repeat;
+  padding-right: 3px;
 }
 
 .tei-l, .tei-p {
@@ -130,12 +125,23 @@ td { vertical-align: top; }
 
 .tei-pb {
   display: block;
-  float: right;
-  background: transparent url(../img/teiDisplayPageIcon.png) top left no-repeat;
-  height: 16px;
+  margin: 2em 0;
+  border-top: 1px solid #333;
+}
+
+.tei-pb .tei-pb-icon {
+  display: inline-block;
+  background: transparent url(../img/teiDisplayPageIcon.png) 18px 0px no-repeat;
+  height: 14px;
   width: 16px;
-  margin: 0 6px 0 0;
+  margin: -.5em 0px 0 0;
+  padding: 0 0 0 36px;
+  display: block;
+  float: right;
+  font-weight: bold;
+  font-size: .8em;
   cursor: pointer;
+  background-color: #F5F5F5;
 }
 
 .tei-emph-underline {

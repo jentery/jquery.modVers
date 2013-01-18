@@ -176,6 +176,7 @@
                 helpers.copyWit(firstWitId, holder);
                 helpers.filterWits(holder);
                 helpers.addWitHeaders(holder);
+                helpers.processFacs(holder);
                 helpers.filterLocs(holder);
                 helpers.setDimensions(holder);
                 helpers.makeWitnesses(holder);
@@ -350,6 +351,27 @@
                 })
             },
 
+            processFacs: function(holder) {
+
+                //Adds total number of pages to page breaks.
+
+                $('#teiTexts .text').each(function() {
+
+                    var currentPage = 1;
+                    var totalPages = 0;
+
+                    $(this).find('.tei-pb').each(function() {
+                        $(this).append('<span class="tei-pb-icon"> ' + currentPage + '/<span class="teiTotalPages"></span></span>')
+                        currentPage++;
+                        totalPages++;
+                    })
+
+                    $(this).find('.tei-pb .teiTotalPages').html(totalPages);
+
+                })
+
+            },
+
             appendElement: function(element, parentId, holder) {
 
                 //Recursively adds each element from the XML document to the HTML document.
@@ -443,6 +465,17 @@
                 }
             },
 
+            resetTexts: function(holder) {
+
+                //Moves the texts to their original position
+
+                $('#teiTexts').animate({
+                    left: '0px',
+                }, 300 );
+                $(this).teiDisplay.internals.currentText = 1;                
+
+            },
+
             setDimensions: function(holder) {
 
                 //Sets dimensions relative to size of window.
@@ -465,7 +498,7 @@
                 $('#teiTexts .teiTextHolder').css('height', newHeight + 'px');
             },
 
-            makeWitnesses: function() {
+            makeWitnesses: function(holder) {
 
                 //Creates the witnesses in the bottom bar.
 
@@ -497,14 +530,32 @@
 
                 //Double-click action
                 $('#teiDisplayWitnesses .witness').live('dblclick', function() {
-                    var witnessId = $(this).attr('data-witness-id');
-                    var currentText = $('#teiTexts .text[data-witness-id="' + witnessId + '"]');
-                    $('#teiTexts').prepend(currentText);
-                    var currentWitness = $(this).remove();
-                    $('#teiDisplayWitnesses').prepend(currentWitness);
+
+                    helpers.makeWitnessActive($(this).attr('data-witness-id'), holder);
+
                 })
 
             }, 
+
+            makeWitnessActive: function(witnessId, holder) {
+
+                    console.log('1');
+
+                    //Moves a witness to first in the set of texts.
+
+                    var currentText = $('#teiTexts .text[data-witness-id="' + witnessId + '"]');
+                    $('#teiTexts').prepend(currentText);
+                    var activeElement = $('#teiTexts .text[data-witness-id="' + witnessId + '"] .active:first');
+                    var elementHolder = activeElement.parents('.teiTextHolder')
+
+                    helpers.scrollToElement(activeElement, elementHolder, 1);
+                   
+                    var currentWitness = $('#teiDisplayWitnesses .witness[data-witness-id="' + witnessId + '"]').remove();
+                    $('#teiDisplayWitnesses').prepend(currentWitness);
+
+                    helpers.resetTexts(holder);
+
+            },
 
             textActions: function(holder) {
 
@@ -536,9 +587,12 @@
 
                 //Text Expansion
                 $('.text .text-actions .expand').live('click', function() {
+                    var textParent = $(this).parent().parent();
+                    var witnessId = textParent.attr('data-witness-id');
+                    helpers.makeWitnessActive(witnessId, holder);
                     helpers.addOverlay();
                     $('#teiTexts').addClass('expanded');
-                    $(this).parent().parent().addClass('expanded');
+                    textParent.addClass('expanded');
                     $(this).html('-');
                     return false;
                 })
@@ -589,16 +643,19 @@
                 })  
 
                 $('#teiDisplayActions #teiDisplayShowViz').live('click', function() {
+                    
                     if ($('#teiDisplayVizPanel').hasClass('active')) {
                         helpers.clearOverlays();
                     } else {
                         helpers.clearOverlays();
                         helpers.showVizPanel();
                     }
+                    
                     return false;
+                
                 })                                                
 
-                //Adds a click event to everything with a data-loc attribute that highlights everything
+                //Adds a click event to elements with a data-loc attribute that highlights all elements
                 //with that data-loc.
                 
                 $('.teiTextHolder *[data-loc != "undefined"]').live('click', function() {
@@ -611,21 +668,23 @@
                     $('.teiTextHolder .active').removeClass('active');
                     $('#teiDisplayWitnesses .witness').removeClass('active');
 
-                    $('.text *[data-loc = "' + identifier + '"]').each(function() {
+                    if (identifier != undefined) {
 
-                        $(this).addClass('active');
-                        var holder = $(this).parents('.teiTextHolder')
-                        var wit = holder.parent().attr('data-witness-id');
+                        $('.text *[data-loc="' + identifier + '"]').each(function() {
 
-                        $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
+                            console.log('1');
 
-                        var newOffset = holder.scrollTop() + $(this).position().top - 200;
+                            $(this).addClass('active');
+                            var holder = $(this).parents('.teiTextHolder')
+                            var wit = holder.parent().attr('data-witness-id');
 
-                        holder.animate({
-                            scrollTop: newOffset
-                        }, 300);
+                            $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
 
-                    })
+                            helpers.scrollToElement($(this), holder);
+
+                        })
+
+                    }
 
                     //Annotations
                     var annotation = $(this).children('.teiDisplayAnnotation');
@@ -647,6 +706,8 @@
                 
                 $('.teiTextHolder *[data-loc != "undefined"]').live('dblclick', function() {
 
+                    helpers.clearOverlays();
+
                     var identifier = $(this).attr('data-loc');
                     var baseText = $(this).text();
                     var baseHolder = $(this).parents('.teiTextHolder')
@@ -660,7 +721,7 @@
                     $('.text *[data-loc = "' + identifier + '"]').each(function() {
 
                         $(this).addClass('active');
-                        var holder = $(this).parents('.teiTextHolder')
+                        var holder = $(this).parents('.teiTextHolder');
                         var wit = holder.parent().attr('data-witness-id');
                         var compText = $(this).text();
 
@@ -672,16 +733,10 @@
                         $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
                         var witTitle = $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').text();
 
-                        var newOffset = holder.scrollTop() + $(this).position().top - 200;
-
-                        holder.animate({
-                            scrollTop: newOffset
-                        }, 300);
+                        helpers.scrollToElement($(this), holder);
 
                         diffPanel += '<h3>' + witPrefix + witTitle + '</h3>';
                         diffPanel += '<p>' + diffString(baseText, compText) + '</p>';
-
-
                         
                     })
 
@@ -690,6 +745,28 @@
                     helpers.showDiffPanel();
 
                 })
+
+            },
+
+            scrollToElement: function(element, holder, duration) {
+
+                //Scrolls the text holder to the specified element
+
+                if ($(element).position()) {
+
+                    var newOffset = $(holder).scrollTop() + $(element).position().top - 200;
+
+                    if (duration == 1) {
+                        $(holder).animate({
+                            scrollTop: newOffset
+                        }, 0);
+                    } else {
+                        $(holder).animate({
+                            scrollTop: newOffset
+                        }, 300);                    
+                    }
+
+                }
 
             },
 
@@ -723,13 +800,19 @@
 
                 $('#teiDisplayAnnotationPanel').hide();
             
-            },                       
+            },   
 
-            addFacsimileOverlay: function(imageUrl, color) {
+            clearExpanded: function() {
+
                 $('#teiTexts').removeClass('expanded');
                 $('.text').removeClass('expanded');
                 $('.text-actions .expand').html('+');
                 $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();
+
+            },       
+
+            addFacsimileOverlay: function(imageUrl, color) {
+                helpers.clearExpanded();
                 helpers.addOverlay();
                 $('body').append('<div id="teiDisplayFacsimileOverlay" class="' + color + '"><a href="#" title="Close Facsimile" class="close">x</a><img id="teiDisplayFacsimile" src="' + imageUrl + '" style="width: 200px;"/></div>');
                 $('#teiDisplayFacsimile').addimagezoom($(this).teiDisplay.settings.zoomOptions); 
@@ -763,6 +846,7 @@
                 $('#teiTexts .text-actions a.expand').html('+');  
                 $('.teiDisplayPanel').removeClass('active');  
                 $('#teiDisplayDiffPanel').remove();    
+                helpers.clearExpanded();
                 helpers.closeAnnotationPanel();  
             }
 

@@ -1,0 +1,362 @@
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Lestrygonians</title>
+        <author>James Joyce</author>
+        <respStmt>
+          <resp>Text Encoding by </resp>
+          <name>Daniel Carter</name>
+        </respStmt>
+      </titleStmt>
+      <notesStmt>
+      	<note>
+      		This is where the notes go.
+      	</note>
+      </notesStmt>
+      <sourceDesc>
+      	This is the source description.
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <editorialDecl>
+        
+      </editorialDecl>
+      <variantEncoding location="internal" method="parallel-segmentation"></variantEncoding>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <front>
+		<listWit>
+          <witness xml:id="lr">The Little Review</witness>
+          <witness xml:id="sb">Sylvia Beach</witness>
+          <witness xml:id="g">Gabler</witness>
+        </listWit>
+    </front>
+    <body>
+
+    <div>
+
+    	<p>
+	    	<app loc="1">
+	    		<rdg wit="#sb #g">
+	    			Pineapple rock, lemon platt, butter scotch.
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			PINEAPPLE rock, lemon platt, butter-scotch.
+	    		</rdg>
+	    	</app>
+	   	    
+	   	    <app loc="2">
+	    		<rdg wit="#all">
+	    			A sugarsticky girl shovelling scoopfuls of creams for a christian brother. Some school treat. Bad for their tummies. Lozenge and comfit manufacturer to His Majesty the King. God. Save. Our.
+	    		</rdg>
+	    	</app>
+
+	   	    <app loc="3">
+	    		<rdg wit="#g">
+	    			Sitting on his throne sucking red jujubes white. 
+	    		</rdg>
+	    		<rdg wit="#sb">
+	    			Sitting on his throne, sucking red jujubes white. 
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			Sitting on his throne, sucking jujubes. 
+	    		</rdg>	    			    		
+	    	</app>	    	
+	    </p>
+
+	    <p>
+	    	<app loc="4">
+	    		<rdg wit="#sb #g">
+	    			A sombre Y. M. C. A. young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr Bloom.
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			A sombre young man, watchful among the warm sweet fumes of Graham Lemon's, placed a throwaway in a hand of Mr. Bloom.
+	    		</rdg>	  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app loc="5">
+	    		<rdg wit="#sb #g">
+	    			Heart to heart talks.
+	    		</rdg>
+	    		<rdg wit="#lr">
+	    			Heart to heart talks. Bloo .... Me? No.
+	    		</rdg>	    			  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app loc="6">
+	    		<rdg wit="#sb">
+	    			Bloo... Me? No.
+	    		</rdg>	
+	    		<rdg wit="#g">
+	    			Bloo .... Me? No.
+	    		</rdg>		    		  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app loc="7">
+	    		<rdg wit="#g #sb">
+	    			Blood of the Lamb. 
+	    		</rdg>			    		  	    		  		
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app loc="8">
+	    		<rdg wit="#all">
+	    			His slow feet walked him riverward, reading. 
+	    		</rdg>
+	    	</app>
+	    	<app loc="8a">
+	    		<rdg wit="#lr">
+	    			All are washed in the blood of the lamb.
+	    		</rdg>
+	    		<rdg wit="#g #sb">
+	    			All are washed in the blood of the lamb. God wants blood victim. Birth, hymen, martyr, war, foundation of a building, sacrifice, kidney burntoffering, druids' altars.
+	    		</rdg>
+	    	</app>
+	    	<app loc="9">
+	    		<rdg wit="#lr">
+	    			Dr. John Alexander Dowie restorer of the church in Zion is coming. 
+	    		</rdg>
+	    		<rdg wit="#g">
+	    			Elijah is coming. Dr John Alexander Dowie restorer of the church in Zion is coming.
+	    		</rdg>
+	    		<rdg wit="#sb">
+	    			Elijah is coming. Dr John Alexander Dowie, restorer of the church in Zion, is coming.
+	    		</rdg>	    		
+	    	</app>	    		    	
+	    </p>
+
+	    <p>
+	    	<app loc="10">
+	    		<rdg wit="#all">
+	    			Is coming! Is coming!! Is coming!!! 
+	    		</rdg>
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app loc="11">
+	    		<rdg wit="#all">
+	    			All heartily welcome. 
+	    		</rdg>
+	    	</app>
+	    </p>
+
+	    <p>
+	    	<app loc="12">
+	    		<rdg wit="#all">
+	    			Paying game.
+	    		</rdg>
+	    	</app>
+	    	<app loc="13">
+	    		<rdg wit="#sb #g">
+	    			Torry and Alexander last year. Polygamy. His wife will put the stopper on that.
+	    		</rdg>  		
+	    	</app>
+	    	<app loc="14">
+	    		<rdg wit="#lr #sb">
+	    			Where was that ad some Birmingham firm the luminous crucifix? Our saviour.
+	    		</rdg>  
+	    		<rdg wit="#g">
+	    			Where was that ad some Birmingham firm the luminous crucifix. Our Saviour.
+	    		</rdg>  	    				
+	    	</app>	
+	    	<app loc="15">
+	    		<rdg wit="#all">
+	    			Wake up in the dead of night and see him on the wall, hanging. Pepper's ghost idea.
+	    		</rdg>  	    				
+	    	</app>	
+	    	<app loc="16">
+	    		<rdg wit="#g">
+	    			Iron Nails Ran In.
+	    		</rdg>  
+	    		<rdg wit="#sb #lr">
+	    			Iron nails ran in.
+	    		</rdg>   	    			    				
+	    	</app>		    		    	    		    	
+	    </p>
+
+	    <p>
+	    	<app loc="17">
+	    		<rdg wit="#lr #sb">
+	    			Phosphorous it must be done with.
+	    		</rdg>
+	    		<rdg wit="#g">
+	    			Phosphorus it must be done with.
+	    		</rdg>
+	    	</app>
+	    	<app loc="18">
+	    		<rdg wit="#all">
+	    			If you leave a bit of codfish for instance. I could see the bluey silver over it. Night I went down to the pantry in the kitchen.
+	    		</rdg>
+	    	</app>
+	    	<app loc="19">
+	    		<rdg wit="#g #sb">
+	    			Don't like all the smells in it waiting to rush out.
+	    		</rdg> 		
+	    	</app>	    	
+	    	<app loc="20">
+	    		<rdg wit="#all">
+	    			What was it she wanted? The Malaga raisins.
+	    		</rdg> 		
+	    	</app>
+	    	<app loc="21">
+	    		<rdg wit="#sb #g">
+	    			Thinking of Spain.
+	    		</rdg>    				
+	    	</app>	
+	    	<app loc="22">
+	    		<rdg wit="#all">
+	    			Before Rudy was born. The phosphorescence, that bluey greeny. Very good for the brain. 
+	    		</rdg>    				
+	    	</app>		    	    	
+		</p>
+
+		<p>
+			<app loc="23">
+				<rdg wit="#all">
+					From Butler's monument house corner he glanced along Bachelor's walk.
+				</rdg>
+			</app>
+			<app loc="24">
+				<rdg wit="#g #sb">
+					Dedalus' daughter there still outside Dillon's auctionrooms.
+				</rdg>
+				<rdg wit="#lr">
+					Dedalus' daughter there still outside Dillon's auction rooms.
+				</rdg>
+			</app>
+			<app loc="25">
+				<rdg wit="#all">
+					Must be selling off some old furniture. Knew her eyes at once from the father. Lobbing about waiting for him. Home always breaks up when the mother goes. Fifteen children he had. Birth every year almost. That's in their theology or the priest won't give the poor woman the confession, the absolution. Increase and multiply. Did you ever hear such an idea?
+				</rdg>
+			</app>
+			<app loc="26">
+				<rdg wit="#sb #g">
+					Eat you out of house and home.
+				</rdg>			
+			</app>
+			<app loc="27">
+				<rdg wit="#all">
+					No families themselves to feed. Living on the fat of the land.
+				</rdg>			
+			</app>	
+			<app loc="28">
+				<rdg wit="#g #sb">
+					Their butteries and larders. I'd like to see them do the black fast Yom Kippur. Crossbuns. One meal and a collation for fear he'd collapse on the altar.
+				</rdg>						
+			</app>							
+			<app loc="29">
+				<rdg wit="#g #sb">
+					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her.
+				</rdg>	
+				<rdg wit="#lr">
+					A housekeeper of one of those fellows if you could pick it out of her. Never pick it out of her:
+				</rdg>										
+			</app>
+			<app loc="30">
+				<rdg wit="#g #sb">
+					His reverence: mum's the word.
+				</rdg>	
+				<rdg wit="#lr">
+					his reverence: mum's the word. 
+				</rdg>										
+			</app>									
+		</p>
+
+		<p>
+			<app loc="31">
+				<rdg wit="#lr">
+					Good Lord that poor child's dress is in flitters.
+				</rdg>
+				<rdg wit="g">
+					Good lord, that poor child's dress is in flitters.
+				</rdg>
+				<rdg wit="sb">
+					Good Lord, that poor child's dress is in flitters.
+				</rdg>
+			</app>
+			<app loc="32">
+				<rdg wit="#sb #g">
+					Underfed she looks too.
+				</rdg>
+				<rdg wit="#lr">
+					Under fed she looks too.
+				</rdg>
+			</app>
+			<app loc="33">
+				<rdg wit="#g #sb">
+					Potatoes and marge, marge and potatoes.
+				</rdg>
+			</app>	
+			<app loc="34">
+				<rdg wit="#all">
+					It's after they feel it.
+				</rdg>
+			</app>
+			<app loc="35">
+				<rdg wit="#g #sb">
+					Proof of the pudding.
+				</rdg>
+			</app>	
+			<app loc="36">
+				<rdg wit="#all">
+					Undermines the constitution. 
+				</rdg>
+			</app>												
+		</p>
+
+		<p>
+			<app loc="37">
+				<rdg wit="all">
+					As he set foot on O'Connell bridge a puffball of smoke plumed up from the parapet. Brewery barge with export stout. England. Sea air sours it, I heard. Be interesting some day get a pass through Hancock to see the brewery.
+				</rdg>
+			</app>
+			<app loc="38">
+				<rdg wit="#sb #g">
+					Regular world in itself.
+				</rdg>
+				<rdg wit="#lr">
+					Regular town in itself.
+				</rdg>				
+			</app>	
+			<app loc="39">
+				<rdg wit="#sb">
+					Vats of porter, wonderful.
+				</rdg>
+				<rdg wit="#lr #g">
+					Vats of porter wonderful.
+				</rdg>				
+			</app>	
+			<app loc="40">
+				<rdg wit="#all">
+					Rats get in too. Drink themselves bloated as big as a collie floating. Dead drunk on the porter. Drink till they puke again like christians. Imagine drinking that! Rats : vats.
+				</rdg>				
+			</app>
+			<app loc="41">
+				<rdg wit="#lr #sb">
+					Well of course if we knew all the things. 
+				</rdg>	
+				<rdg wit="#g">
+					Well, of course, if we knew all the things. 
+				</rdg>								
+			</app>												
+		</p>
+
+	
+	</div>
+
+        
+    </body>
+  </text>
+</TEI>
+            
