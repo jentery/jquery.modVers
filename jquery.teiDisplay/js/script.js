@@ -6,11 +6,10 @@ $(document).ready(function(){
 
 	$('#tei').data('teiDisplay', {
 		xmlFile: 'data/filmballad.xml',
-		annotations: 'data/annotations.json',
-		highlights: 'data/annotations.json',
+		//annotations: 'data/annotations.json',
+		//highlights: 'data/annotations.json',
 		//locs: 'a3,a4,a5',
 		//witnesses: 'v4n8,v4n11',
-		//fixFirst: false,
 		//dev: true
 	});
 
@@ -27,7 +26,6 @@ $(document).ready(function(){
 		annotations: 'data/annotations_joyce.json',
 		//highlights: 'data/annotations.json',		
 		//witnesses: 'v4n8,v4n11',
-		//background: 'tei-type-filmic, tei-type-pulp'
 	});
 
 	$('#tei-single').teiDisplay();		

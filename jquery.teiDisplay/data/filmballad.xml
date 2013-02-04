@@ -50,13 +50,11 @@
 
 		<front>
 			<listWit xml:id="first">
-
 				<witness xml:id="v4n8">4.8</witness>
 				<witness xml:id="v4n10">4.10</witness>
 				<witness xml:id="v4n11">4.11</witness>
 				<witness xml:id="v4n13">4.13</witness>
 				<witness xml:id="v4n19">4.19</witness>
-
 			</listWit>
 		</front>
 

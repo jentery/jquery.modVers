@@ -345,8 +345,14 @@
 
                 var i = 1;
                 $('#teiTexts .text').each(function() {
+
+                    var witTitle = $(this).attr('data-witness-name');
+
                     $(this).children().wrapAll('<div class="teiTextHolder"></div>')
                     $(this).addClass('color' + i).prepend($(this).teiDisplay.settings.witHeader);
+
+                    $(this).children('.teiDisplayTextActions').prepend('<p class="teiDisplayWitnessTitle">' + witTitle + '</p>');
+                    
                     i++;
                 })
             },
@@ -506,7 +512,7 @@
                     var color = $(this).attr('data-color');     
                     var id = $(this).attr('data-witness-id');
                     var name = $(this).attr('data-witness-name');
-                    $('#teiDisplayWitnesses').append('<div class="witness ' + color + '" data-witness-id="' + id + '"><p>' + name + '</p></div>')
+                    $('#teiDisplayWitnesses').append('<div class="witness ' + color + '" data-witness-id="' + id + '"><span class="teiWitnessGrip"></span><p>' + name + '</p></div>')
                 })  
 
                 //Sortable
@@ -586,7 +592,7 @@
                 })          
 
                 //Text Expansion
-                $('.text .text-actions .expand').live('click', function() {
+                $('.text .teiDisplayTextActions .expand').live('click', function() {
                     var textParent = $(this).parent().parent();
                     var witnessId = textParent.attr('data-witness-id');
                     helpers.makeWitnessActive(witnessId, holder);
@@ -597,7 +603,7 @@
                     return false;
                 })
 
-                $('.text.expanded .text-actions .expand').live('click', function() {
+                $('.text.expanded .teiDisplayTextActions .expand').live('click', function() {
                     helpers.clearOverlays();
                     $('#teiTexts').removeClass('expanded');
                     $(this).parent().parent().removeClass('expanded');
@@ -704,12 +710,13 @@
                 //Adds a double click event to everything with a data-loc attribute that brings up
                 //a panel with the text differences highlighted.
                 
+                /**
                 $('.teiTextHolder *[data-loc != "undefined"]').live('dblclick', function() {
 
                     helpers.clearOverlays();
 
                     var identifier = $(this).attr('data-loc');
-                    var baseText = $(this).text();
+                    var baseText = $(this).clone().removeAttributes().text();
                     var baseHolder = $(this).parents('.teiTextHolder')
                     var baseWit = baseHolder.parent().attr('data-witness-id');
 
@@ -723,7 +730,7 @@
                         $(this).addClass('active');
                         var holder = $(this).parents('.teiTextHolder');
                         var wit = holder.parent().attr('data-witness-id');
-                        var compText = $(this).text();
+                        var compText = $(this).clone().removeAttributes().text();
 
                         var witPrefix = ''
                         if (wit == baseWit) {
@@ -744,7 +751,7 @@
 
                     helpers.showDiffPanel();
 
-                })
+                })**/
 
             },
 
@@ -806,7 +813,7 @@
 
                 $('#teiTexts').removeClass('expanded');
                 $('.text').removeClass('expanded');
-                $('.text-actions .expand').html('+');
+                $('.teiDisplayTextActions .expand').html('+');
                 $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();
 
             },       
@@ -843,7 +850,7 @@
             clearOverlays: function() {
                 $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();   
                 $('.featuredimagezoomerhidden, .zoomtracker').remove();
-                $('#teiTexts .text-actions a.expand').html('+');  
+                $('#teiTexts .teiDisplayTextActions a.expand').html('+');  
                 $('.teiDisplayPanel').removeClass('active');  
                 $('#teiDisplayDiffPanel').remove();    
                 helpers.clearExpanded();
@@ -870,7 +877,7 @@
         witnesses: '',
         background: '',
         textWidth: 421,
-        witHeader: '<div class="text-actions"><a href="#" class="expand">+</a></div>',
+        witHeader: '<div class="teiDisplayTextActions"><a href="#" class="expand">+</a></div>',
         advanceButtons: '<div id="teiDisplayTextAdvance"><div></div></div><div id="teiDisplayTextRegress"><div></div></div>',
         textHolder: '<div id="teiTexts"><div id="screen"></div></div>',
         utility: '<div id="teiDisplayActions"><a href="#" id="teiDisplayShowViz" title="Show Visualization">v</a><a href="#" class="teiDisplayShowInfo" title="Show Information">i</a><div id="teiDisplayWitnesses"></div><div id="notes"></div></div>',
@@ -897,7 +904,19 @@ jQuery.fn.reverse = [].reverse;
 
 
 
+//Remove all attributes from an element. Code from http://stackoverflow.com/questions/1870441/remove-all-attributes
 
+jQuery.fn.removeAttributes = function() {
+  return this.each(function() {
+    var attributes = $.map(this.attributes, function(item) {
+      return item.name;
+    });
+    var img = $(this);
+    $.each(attributes, function(i, item) {
+    img.removeAttr(item);
+    });
+  });
+}
 
 
 
@@ -1463,4 +1482,6 @@ function diff( o, n ) {
   
   return { o: o, n: n };
 }
+
+
 

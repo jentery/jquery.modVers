@@ -232,67 +232,68 @@ td { vertical-align: top; }
 }
 
 /*COLORS*/
-.color1, #teiTexts .text.color1 .text-actions, #teiDisplayFacsimileOverlay.color1 .close {
+.color1, #teiTexts .text.color1 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color1 .close {
   background-color: #ff1417;
 }
-.color2, #teiTexts .text.color2 .text-actions, #teiDisplayFacsimileOverlay.color2 .close {
+.color2, #teiTexts .text.color2 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color2 .close {
   background-color: #ff6611;
 } 
-.color3, #teiTexts .text.color3 .text-actions, #teiDisplayFacsimileOverlay.color3 .close {
+.color3, #teiTexts .text.color3 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color3 .close {
   background-color: #ff8844;
 }
-.color4, #teiTexts .text.color4 .text-actions, #teiDisplayFacsimileOverlay.color4 .close {
+.color4, #teiTexts .text.color4 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color4 .close {
   background-color: #FECF3E;
 }
-.color5, #teiTexts .text.color5 .text-actions, #teiDisplayFacsimileOverlay.color5 .close {
+.color5, #teiTexts .text.color5 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color5 .close, #teiTexts .color5 .expand, #teiTexts .color5 .teiDisplayTextActions .teiDisplayWitnessTitle {
   background-color: #fefe38;
+  color: #333;
 }
-.color6, #teiTexts .text.color6 .text-actions, #teiDisplayFacsimileOverlay.color6 .close {
+.color6, #teiTexts .text.color6 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color6 .close {
   background-color: #ffff99;
 }
-.color7, #teiTexts .text.color7 .text-actions, #teiDisplayFacsimileOverlay.color7 .close {
+.color7, #teiTexts .text.color7 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color7 .close {
   background-color: #aacc22;
 }
-.color8, #teiTexts .text.color8 .text-actions, #teiDisplayFacsimileOverlay.color8 .close {
+.color8, #teiTexts .text.color8 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color8 .close {
   background-color: #bbdd77;
 }
-.color9, #teiTexts .text.color9 .text-actions, #teiDisplayFacsimileOverlay.color9 .close {
+.color9, #teiTexts .text.color9 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color9 .close {
   background-color: #c8cf82;
 }
-.color10, #teiTexts .text.color10 .text-actions, #teiDisplayFacsimileOverlay.color10 .close {
+.color10, #teiTexts .text.color10 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color10 .close {
   background-color: #92a77e;
 }
-.color11, #teiTexts .text.color11 .text-actions, #teiDisplayFacsimileOverlay.color11 .close {
+.color11, #teiTexts .text.color11 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color11 .close {
   background-color: #5599ee;
 }
-.color12, #teiTexts .text.color12 .text-actions, #teiDisplayFacsimileOverlay.color12 .close {
+.color12, #teiTexts .text.color12 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color12 .close {
   background-color: #0088cc;
 }
-.color13, #teiTexts .text.color13 .text-actions, #teiDisplayFacsimileOverlay.color13 .close {
+.color13, #teiTexts .text.color13 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color13 .close {
   background-color: #226688;
 }
-.color14, #teiTexts .text.color14 .text-actions, #teiDisplayFacsimileOverlay.color14 .close {
+.color14, #teiTexts .text.color14 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color14 .close {
   background-color: #175279;
 }
-.color15, #teiTexts .text.color15 .text-actions, #teiDisplayFacsimileOverlay.color15 .close {
+.color15, #teiTexts .text.color15 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color15 .close {
   background-color: #557777;
 }
-.color16, #teiTexts .text.color16 .text-actions, #teiDisplayFacsimileOverlay.color16 .close {
+.color16, #teiTexts .text.color16 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color16 .close {
   background-color: #ddbb33;
 }
-.color17, #teiTexts .text.color17 .text-actions, #teiDisplayFacsimileOverlay.color17 .close {
+.color17, #teiTexts .text.color17 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color17 .close {
   background-color: #d3a76d;
 }
-.color18, #teiTexts .text.color18 .text-actions, #teiDisplayFacsimileOverlay.color18 .close {
+.color18, #teiTexts .text.color18 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color18 .close {
   background-color: #a9834b;
 }
-.color19, #teiTexts .text.color19 .text-actions, #teiDisplayFacsimileOverlay.color19 .close {
+.color19, #teiTexts .text.color19 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color19 .close {
   background-color: #aa6688;
 }
-.color20, #teiTexts .text.color20 .text-actions, #teiDisplayFacsimileOverlay.color20 .close {
+.color20, #teiTexts .text.color20 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color20 .close {
   background-color: #767676;
 }
-.color21, #teiTexts .text.color21 .text-actions, #teiDisplayFacsimileOverlay.color21 .close {
+.color21, #teiTexts .text.color21 .teiDisplayTextActions, #teiDisplayFacsimileOverlay.color21 .close {
   background-color: #fff;
 }
 
@@ -692,7 +693,7 @@ td { vertical-align: top; }
       max-width: 40em;
     }
 
-  #teiTexts .text-actions {
+  #teiTexts .teiDisplayTextActions {
     padding: .5em 0;
     text-align: right;
     position: absolute;
@@ -702,7 +703,19 @@ td { vertical-align: top; }
     z-index: 98;
   }
 
-    #teiTexts .text-actions a {
+    #teiTexts .teiDisplayTextActions .teiDisplayWitnessTitle {
+      position: absolute;
+      left: 23px;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+    }
+
+    #tei-single #teiTexts .teiDisplayTextActions .teiDisplayWitnessTitle {
+      display: none;
+    }    
+
+    #teiTexts .teiDisplayTextActions a {
       color: #fff;
       font-weight: bold;
       text-decoration: none;
@@ -710,7 +723,7 @@ td { vertical-align: top; }
       padding-left: 10px;
     }
 
-    .teiFreeFirst #teiTexts .text-actions .expand {
+    .teiFreeFirst #teiTexts .teiDisplayTextActions .expand {
       display: none;
     }
 
@@ -853,19 +866,31 @@ td { vertical-align: top; }
       margin: 0;
       float: left;
       padding: 0 10px;
-      border-right: 1px solid #ededed;
+      border-right: 1px solid #999;
+      cursor: move;
+      position: relative;
     }
 
     #teiDisplayWitnesses .witness.active {
-      border-top: 3px solid #111;
       margin-top: -3px;
+      border-bottom: 3px solid #333;
     }   
 
+      #teiDisplayWitnesses .witness .teiWitnessGrip {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: transparent url(../img/teiDisplayGripTexture.png) 50%  0px no-repeat;
+      }
 
       #teiDisplayWitnesses .witness p {
         text-transform: uppercase;
         font-size: .8em;
         font-weight: bold;
+        padding-top: 3px;
       }
 
 
