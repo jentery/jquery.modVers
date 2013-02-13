@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<?xml-stylesheet href="../src/vmachine_evfl.xsl" type="text/xsl" ?> 
-<!DOCTYPE TEI SYSTEM "tei_all.dtd"> 
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
 
 	<teiHeader> 
@@ -49,7 +46,7 @@
 	<text>
 
 		<front>
-			<listWit xml:id="first">
+			<listWit>
 				<witness xml:id="v4n8">4.8</witness>
 				<witness xml:id="v4n10">4.10</witness>
 				<witness xml:id="v4n11">4.11</witness>

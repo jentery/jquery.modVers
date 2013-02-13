@@ -369,7 +369,7 @@ td { vertical-align: top; }
   z-index: 999;
 }  
 
-  .teiFreeFirst #teiDisplayAnnotationPanel {
+  .teiNotFullScreen #teiDisplayAnnotationPanel {
     width: 100%;
     z-index: 99;
   }
@@ -381,7 +381,7 @@ td { vertical-align: top; }
     text-indent: 20px;
   }
 
-  .teiFreeFirst #teiDisplayAnnotationPanel .teiDisplayAnnotation {
+  .teiNotFullScreen #teiDisplayAnnotationPanel .teiDisplayAnnotation {
     width: 80%;
     max-width: 40em;
   }
@@ -405,7 +405,7 @@ td { vertical-align: top; }
 
 /***GENERAL***/
 
-.teiFreeFirst {
+.teiNotFullScreen {
   margin: 1em 0;
 }
 
@@ -440,7 +440,7 @@ td { vertical-align: top; }
   border: 1px solid #333;
 }
 
-.teiFreeFirst #teiDisplayShowLegend {
+.teiNotFullScreen #teiDisplayShowLegend {
   right: 99px;
 }
 
@@ -577,7 +577,7 @@ td { vertical-align: top; }
     cursor: pointer;
   }
 
-  .teiFreeFirst #teiDisplayTextRegress, .teiFreeFirst #teiDisplayTextAdvance {
+  .teiNotFullScreen #teiDisplayTextRegress, .teiNotFullScreen #teiDisplayTextAdvance {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -587,19 +587,19 @@ td { vertical-align: top; }
     top: auto;
   }
 
-  .teiFreeFirst #teiDisplayTextAdvance {
+  .teiNotFullScreen #teiDisplayTextAdvance {
     right: 30px;
     bottom: 0;
   } 
 
-  .teiFreeFirst #teiDisplayTextRegress, .teiFreeFirst #teiDisplayTextAdvance {
+  .teiNotFullScreen #teiDisplayTextRegress, .teiNotFullScreen #teiDisplayTextAdvance {
       background-color: transparent;
       opacity: 1;
       width: 30px;
       height: 30px;
   }
 
-  .teiFreeFirst #teiDisplayTextRegress div, .teiFreeFirst #teiDisplayTextAdvance div {
+  .teiNotFullScreen #teiDisplayTextRegress div, .teiNotFullScreen #teiDisplayTextAdvance div {
     background: transparent url(../img/teiDisplayAdvanceArrowsSmall.png) 0px 0px no-repeat;
     margin: 6px auto;
     display: block;
@@ -609,7 +609,7 @@ td { vertical-align: top; }
     width: 12px;
   }
 
-  .teiFreeFirst #teiDisplayTextRegress div {
+  .teiNotFullScreen #teiDisplayTextRegress div {
     background: transparent url(../img/teiDisplayAdvanceArrowsSmall.png) 0px -13px no-repeat;    
   }
 
@@ -639,7 +639,7 @@ td { vertical-align: top; }
     position: absolute;
   }
 
-  .teiFreeFirst #teiTexts {
+  .teiNotFullScreen #teiTexts {
     position: relative;
   }
 
@@ -663,7 +663,7 @@ td { vertical-align: top; }
     background: transparent url(../img/teiDisplayTextBG.png) top left repeat-y;
   }
 
-    .teiFreeFirst #teiTexts .text .teiTextHolder {
+    .teiNotFullScreen #teiTexts .text .teiTextHolder {
       padding-top: 16px;
     }
 
@@ -674,7 +674,7 @@ td { vertical-align: top; }
     z-index: 99;
   }
 
-  .teiFreeFirst #teiTexts .text:first-child {
+  .teiFreeFirst #teiTexts .text:first-child, .teiNotFullScreen #teiTexts .text:first-child {
     position: absolute;
     top: 0;
     left: 0px;
@@ -723,7 +723,7 @@ td { vertical-align: top; }
       padding-left: 10px;
     }
 
-    .teiFreeFirst #teiTexts .teiDisplayTextActions .expand {
+    .teiNotFullScreen #teiTexts .teiDisplayTextActions .expand {
       display: none;
     }
 
@@ -760,7 +760,7 @@ td { vertical-align: top; }
   z-index: 998;
 }
 
-.teiFreeFirst #teiDisplayActions {
+.teiNotFullScreen #teiDisplayActions {
   position: absolute;
 }
 
@@ -776,7 +776,7 @@ td { vertical-align: top; }
   top: 0px;
 }
 
-.teiFreeFirst #teiDisplayActions .teiDisplayShowInfo {
+.teiNotFullScreen #teiDisplayActions .teiDisplayShowInfo {
   right: 60px;
 }
 

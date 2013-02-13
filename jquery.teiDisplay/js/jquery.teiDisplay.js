@@ -49,12 +49,18 @@
 
                 holder.append(vizPanel); 
 
+                console.log(holder.data('teiDisplay').fixFirst);
+
                 //Unfix the first text if option
                 if (holder.data('teiDisplay').fixFirst != true && holder.data('teiDisplay').fixFirst != undefined) {
-                    holder.css('overflow', 'hidden');
-                    holder.addClass('teiFreeFirst').css('position','relative');
-                    $('#teiTexts').css('margin-left', '0px');
+                    holder.addClass('teiFreeFirst');
                 }
+
+                 if (holder.data('teiDisplay').fullscreen != true && holder.data('teiDisplay').fullscreen != undefined) {
+                    holder.css('overflow', 'hidden');
+                    holder.addClass('teiNotFullScreen').css('position','relative');
+                    $('#teiTexts').css('margin-left', '0px');
+                }               
 
                 //Set the holder height if needed.
                 if (holder.data('teiDisplay').height) {
@@ -488,16 +494,21 @@
 
                 var textWidth = $('#teiTexts .text').length * $(this).teiDisplay.settings.textWidth + 24;
                 var actionHeight = $('#teiDisplayActions').height();
-                var newHeight = $(window).height() - actionHeight - 60;
+
+                if ($(holder).data('teiDisplay').fullscreen == true || $(holder).data('teiDisplay').fullscreen == undefined) {
+                    var newHeight = $(window).height() - actionHeight - 60;                    
+                } else {
+                    var newHeight = $(holder).height() - actionHeight - 60;                    
+                }
 
                 $('#teiTexts').css('width', textWidth + 'px');
                 $('#teiTexts .text').css('height', newHeight + 'px').append('<div class="textHeightFix"></div>');
                
                 
-                if ($(holder).data('teiDisplay').fixFirst != true && $(holder).data('teiDisplay').fixFirst != undefined) {
-                    newHeight -= 210;
-                } else {
+                if ($(holder).data('teiDisplay').fullscreen == true || $(holder).data('teiDisplay').fullscreen == undefined) {
                     newHeight -= 55;
+                } else {
+                    newHeight -= 20;
                 }
 
                 
