@@ -26,26 +26,26 @@ TEI files to be displayed using this plugin should:
 *   **contain a [][12] element.** The  element describes the witnesses that are included in the TEI file. Each  element should include an xml:id attribute that identifies the witness. Example: 
     
         
-                &lt;listWit&gt;
-                  &lt;witness xml:id="v1"&gt;First Version&lt;/witness&gt;
-                  &lt;witness xml:id="v2"&gt;Second Version&lt;/witness&gt;
-                  &lt;witness xml:id="v3"&gt;Third Version&lt;/witness&gt;
-                &lt;/listWit&gt;
+                <listWit>
+                  <witness xml:id="v1">First Version</witness>
+                  <witness xml:id="v2">Second Version</witness>
+                  <witness xml:id="v3">Third Version</witness>
+                </listWit>
                         
                     
 
 *   **encode textual variants using the [parallel segmentation method][11].** 
     
         
-                &lt;l&gt;
+                <l>
                   The
-                  &lt;app&gt;
-                    &lt;rdg wit="v1"&gt;cow&lt;/rdg&gt;
-                    &lt;rdg wit="v2"&gt;cat&lt;/rdg&gt;
-                    &lt;rdg wit="v3"&gt;horse&lt;/rdg&gt;
-                  &lt;/app&gt;
+                  <app>
+                    <rdg wit="v1">cow</rdg>
+                    <rdg wit="v2">cat</rdg>
+                    <rdg wit="v3">horse</rdg>
+                  </app>
                   jumped over the moon.
-                &lt;/l&gt;
+                </l>
                         
                     
     
@@ -53,10 +53,10 @@ TEI files to be displayed using this plugin should:
 
 *   **wrap text to be displayed in a  tag.** 
         
-                &lt;div&gt;
-                  &lt;l&gt;The cow jumped over the moon.&lt;/l&gt;
-                  &lt;l&gt;The fork ran away with the spoon.&lt;/l&gt;
-                &lt;/div&gt;
+                <div>
+                  <l>The cow jumped over the moon.</l>
+                  <l>The fork ran away with the spoon.</l>
+                </div>
                         
                       
 
@@ -158,16 +158,8 @@ The interface created by this plugin can be modified using the following options
 
 *   **xmlFile**: Specifies the TEI file to be displayed. 
 
-### Customization   ')
-
  [1]: http://holden.ischool.utexas.edu/www.daniel.inletters.com
  [2]: mailto:carter.daniel.w%40gmail.com
- [3]: http://holden.ischool.utexas.edu#about_this_plugin
- [4]: http://holden.ischool.utexas.edu#about_the_tei
- [5]: http://holden.ischool.utexas.edu#preparing_tei_files
- [6]: http://holden.ischool.utexas.edu#basic_usage
- [7]: http://holden.ischool.utexas.edu#options
- [8]: http://holden.ischool.utexas.edu#customization
  [9]: http://www.tei-c.org/
  [10]: http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html
  [11]: http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS
