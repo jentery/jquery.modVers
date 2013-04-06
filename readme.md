@@ -2,17 +2,6 @@
 
 Plugin and documentation by [Daniel Carter][1] ([carter.daniel.w@gmail.com][2]) 
 
-## Contents
-
-### Background
-
-*   [About this plugin][3]
-*   [About the TEI][4]
-*   [Requirements for TEI files][5]
-*   [Basic Usage][6]
-*   [Options][7]
-*   [Customization][8]
-
 ### About this plugin
 
 ### About the Text Encoding Initiative
