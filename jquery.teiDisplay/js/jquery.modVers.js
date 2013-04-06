@@ -80,7 +80,7 @@
                 //Reads through the xml file and makes a text holder for each witness found.
                 //Then sends the xml to addChildren to be parsed into html and added to the
                 //first text holder. Also adds a div that contains general information about
-                //the text.
+                //the text and adds the title to the title panel.
 
                 xml = $(xml);
 
@@ -132,6 +132,13 @@
                 } 
                 infoPanel += '</div></div>';
                 $(holder).append(infoPanel);
+
+                //Add the title to the title panel.
+                if (author != '') {
+                    $('#modVersTitlePanel').append('<h1>' + title + ' by ' + author + '</h1>');                    
+                } else {
+                    $('#modVersTitlePanel').append('<h1>' + title + '</h1>');                    
+                }
 
                 //Get witnesses.
                 var witnesses = xml.find('witness');
@@ -496,9 +503,9 @@
                 var actionHeight = $('#modVersActions').height();
 
                 if ($(holder).data('modVers').fullscreen == true || $(holder).data('modVers').fullscreen == undefined) {
-                    var newHeight = $(window).height() - actionHeight - 60;                    
+                    var newHeight = $(window).height() - actionHeight - 80;                    
                 } else {
-                    var newHeight = $(holder).height() - actionHeight - 60;                    
+                    var newHeight = $(holder).height() - actionHeight - 80;                    
                 }
 
                 $('#teiTexts').css('width', textWidth + 'px');

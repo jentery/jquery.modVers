@@ -354,6 +354,25 @@ td { vertical-align: top; }
   clear: both;
 }
 
+/***TITLE PANEL***/
+#modVersTitlePanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  background-color: #222;
+  height: 30px;
+}
+
+#modVersTitlePanel h1 {
+  text-transform: uppercase;
+  font-size: .8em;
+  font-weight: bold;
+  padding-top: 3px;
+  padding-left: 23px;
+}
+
 /***ANNOTATION PANEL***/
 #modVersAnnotationPanel {
   position: absolute;
@@ -631,7 +650,7 @@ td { vertical-align: top; }
   padding: 0 0 0 420px;
   overflow: hidden;
   position: fixed;
-  top: 20px;
+  top: 40px;
   width: 100%;
 }
 
@@ -670,7 +689,7 @@ td { vertical-align: top; }
   #teiTexts .text:first-child {
     position: fixed;
     left: 20px;
-    top: 20px;
+    top: 40px;
     z-index: 99;
   }
 
