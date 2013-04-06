@@ -1,0 +1,989 @@
+/* HTML5 ✰ Boilerplate
+ * ==|== normalize ==========================================================
+ */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; *overflow: visible; }
+table button, table input { *overflow: auto; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* ==|== primary styles =====================================================
+   Author: Daniel Carter
+   ========================================================================== */
+
+
+
+/***  add: 00CFFF  ***/
+/***  del: FF005C  ***/
+
+/***TEI ELEMENTS***/
+
+.tei-app, .tei-rdg {
+  position: relative;
+  display:inline;
+  width: 100%;
+}
+
+.tei-app {
+  border-left: 1px dashed #ccc;
+  padding-left: .5em;
+  margin-left: .5em;
+  color: #444;
+}
+
+.tei-app.active {
+  color: #000;
+  border-left: 1px dashedr;
+  font-weight: bold;
+}
+
+.tei-app .modVersAnnotation {
+  display: inline-block;
+  height: 16px;
+  width: 14px;
+  background: transparent url(../img/modVersNoteIcon.png) 0px 2px no-repeat;
+  padding-right: 3px;
+}
+
+.tei-l, .tei-p {
+  display: block;
+}
+
+.tei-p {
+  margin: 0 0 1em;
+}
+
+.tei-milestone, .tei-cb {
+  display: block;
+  margin: 1em 0;
+  border-top: 1px dotted #ccc;
+}
+
+.tei-cb {
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-top: 1px dashed #777;
+}
+
+.tei-note {
+  display: none;
+}
+
+.tei-pb {
+  display: block;
+  margin: 2em 0;
+  border-top: 1px solid #333;
+}
+
+.tei-pb .tei-pb-icon {
+  display: inline-block;
+  background: transparent url(../img/modVersPageIcon.png) 18px 0px no-repeat;
+  height: 14px;
+  width: 16px;
+  margin: -.5em 0px 0 0;
+  padding: 0 0 0 36px;
+  display: block;
+  float: right;
+  font-weight: bold;
+  font-size: .8em;
+  cursor: pointer;
+  background-color: #F5F5F5;
+}
+
+.tei-emph-underline {
+  border-bottom: 1px solid;
+}
+
+.tei-add {
+  color: #00CFFF;
+}
+
+.tei-del {
+  color: #FF005C;  
+}
+
+.tei-place-right {
+  padding-left: 18px;
+  background: transparent url(../img/modVersRightArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-place-left {
+  padding-left: 18px;
+  background: transparent url(../img/modVersLefttArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-place-above {
+  padding-left: 18px;
+  background: transparent url(../img/modVersUpArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-place-below {
+  padding-left: 18px;
+  background: transparent url(../img/modVersDownArrowIcon.png) 0 45% no-repeat;
+}
+
+.tei-add.tei-place-right {
+  padding-left: 18px;
+  background: transparent url(../img/modVersRightArrowAddIcon.png) 0 45% no-repeat;
+}
+
+.tei-add.tei-place-left {
+  padding-left: 18px;
+  background: transparent url(../img/modVersLeftArrowAddIcon.png) 0 45% no-repeat;
+}
+
+.tei-add.tei-place-above {
+  padding-left: 7px;
+  background: transparent url(../img/modVersUpArrowAddIcon.png) 0 0 no-repeat;
+}
+
+.tei-add.tei-place-below {
+  padding-left: 7px;
+  background: transparent url(../img/modVersDownArrowAddIcon.png) 0 0 no-repeat;
+}
+
+.tei-del.tei-place-right {
+  padding-left: 18px;
+  background: transparent url(../img/modVersRightArrowDelIcon.png) 0 45% no-repeat;
+}
+
+.tei-del.tei-place-left {
+  padding-left: 18px;
+  background: transparent url(../img/modVersLeftArrowDelIcon.png) 0 45% no-repeat;
+}
+
+.tei-del.tei-place-above {
+  padding-left: 7px;
+  background: transparent url(../img/modVersUpArrowDelIcon.png) 0 0 no-repeat;
+}
+
+.tei-del.tei-place-below {
+  padding-left: 7px;
+  background: transparent url(../img/modVersDownArrowDelIcon.png) 0 0 no-repeat;
+}
+
+.place-above {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;  
+  font-size: .75em;
+}
+
+.tei-del {
+  text-decoration: line-through;
+}
+
+.rend-underline {
+  text-decoration: underline;
+}
+
+/*COLORS*/
+.color1, #teiTexts .text.color1 .modVersTextActions, #modVersFacsimileOverlay.color1 .close {
+  background-color: #ff1417;
+}
+.color2, #teiTexts .text.color2 .modVersTextActions, #modVersFacsimileOverlay.color2 .close {
+  background-color: #ff6611;
+} 
+.color3, #teiTexts .text.color3 .modVersTextActions, #modVersFacsimileOverlay.color3 .close {
+  background-color: #ff8844;
+}
+.color4, #teiTexts .text.color4 .modVersTextActions, #modVersFacsimileOverlay.color4 .close {
+  background-color: #FECF3E;
+}
+.color5, #teiTexts .text.color5 .modVersTextActions, #modVersFacsimileOverlay.color5 .close, #teiTexts .color5 .expand, #teiTexts .color5 .modVersTextActions .modVersWitnessTitle {
+  background-color: #fefe38;
+  color: #333;
+}
+.color6, #teiTexts .text.color6 .modVersTextActions, #modVersFacsimileOverlay.color6 .close {
+  background-color: #ffff99;
+}
+.color7, #teiTexts .text.color7 .modVersTextActions, #modVersFacsimileOverlay.color7 .close {
+  background-color: #aacc22;
+}
+.color8, #teiTexts .text.color8 .modVersTextActions, #modVersFacsimileOverlay.color8 .close {
+  background-color: #bbdd77;
+}
+.color9, #teiTexts .text.color9 .modVersTextActions, #modVersFacsimileOverlay.color9 .close {
+  background-color: #c8cf82;
+}
+.color10, #teiTexts .text.color10 .modVersTextActions, #modVersFacsimileOverlay.color10 .close {
+  background-color: #92a77e;
+}
+.color11, #teiTexts .text.color11 .modVersTextActions, #modVersFacsimileOverlay.color11 .close {
+  background-color: #5599ee;
+}
+.color12, #teiTexts .text.color12 .modVersTextActions, #modVersFacsimileOverlay.color12 .close {
+  background-color: #0088cc;
+}
+.color13, #teiTexts .text.color13 .modVersTextActions, #modVersFacsimileOverlay.color13 .close {
+  background-color: #226688;
+}
+.color14, #teiTexts .text.color14 .modVersTextActions, #modVersFacsimileOverlay.color14 .close {
+  background-color: #175279;
+}
+.color15, #teiTexts .text.color15 .modVersTextActions, #modVersFacsimileOverlay.color15 .close {
+  background-color: #557777;
+}
+.color16, #teiTexts .text.color16 .modVersTextActions, #modVersFacsimileOverlay.color16 .close {
+  background-color: #ddbb33;
+}
+.color17, #teiTexts .text.color17 .modVersTextActions, #modVersFacsimileOverlay.color17 .close {
+  background-color: #d3a76d;
+}
+.color18, #teiTexts .text.color18 .modVersTextActions, #modVersFacsimileOverlay.color18 .close {
+  background-color: #a9834b;
+}
+.color19, #teiTexts .text.color19 .modVersTextActions, #modVersFacsimileOverlay.color19 .close {
+  background-color: #aa6688;
+}
+.color20, #teiTexts .text.color20 .modVersTextActions, #modVersFacsimileOverlay.color20 .close {
+  background-color: #767676;
+}
+.color21, #teiTexts .text.color21 .modVersTextActions, #modVersFacsimileOverlay.color21 .close {
+  background-color: #fff;
+}
+
+/***DEV BAR***/
+#modVersDev {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0em 2em;
+  color: #fff;
+  background-color: #222;
+}
+
+  #modVersDev p {
+    margin: .5em 0;
+  }
+
+/***VISUALIZATION PANEL***/
+
+#modVersShowViz {
+  display: none;
+}
+
+#modVersVizPanel {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+} 
+
+#modVersVizPanel span.tei-app {
+  float: left;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 1px;
+}
+
+#modVersVizPanel span.tei-rdg {
+  border-bottom: 1px solid;
+  height: 10px;
+  width: 10px;
+  text-indent: -999em;
+  margin: 0 3px 3px 0;
+  padding: 0;
+  display: block;
+}
+
+#modVersVizPanel span.tei-pb {
+  background: transparent;
+}
+
+#modVersVizPanel span.tei-app {
+  clear: both;
+}
+
+/***ANNOTATION PANEL***/
+#modVersAnnotationPanel {
+  position: absolute;
+  right: 0;
+  bottom: 31px;
+  width: 500px;
+  background-color: #F9F9F9;
+  border-left: 1px solid #333;
+  border-top: 2px solid #333;
+  display: none;
+  max-height: 300px;
+  overflow: auto;
+  z-index: 999;
+}  
+
+  .teiNotFullScreen #modVersAnnotationPanel {
+    width: 100%;
+    z-index: 99;
+  }
+
+  #modVersAnnotationPanel .modVersAnnotation {
+    width: 330px;
+    padding: 20px;
+    background: transparent url(../img/modVersNoteIcon.png) 20px 18px no-repeat; 
+    text-indent: 20px;
+  }
+
+  .teiNotFullScreen #modVersAnnotationPanel .modVersAnnotation {
+    width: 80%;
+    max-width: 40em;
+  }
+
+  #modVersAnnotationPanel p {
+    margin: 0 0 1em;
+  }
+
+  #modVersAnnotationPanel .modVersAnnotation a.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #222;
+    color: #EDEDED;
+    text-decoration: none;
+    padding: .15em .5em;
+    width: .75em;
+    text-align: center;
+    text-indent: 0;
+  }
+
+/***GENERAL***/
+
+.teiNotFullScreen {
+  margin: 1em 0;
+}
+
+
+
+/*BACKGROUND STYLES*/
+#teiTexts .background0, #modVersShowLegend .first, #modVersLegendPanel .background0 {
+  background: transparent url(../img/modVersStripeBlue.png) top left repeat;
+}
+#teiTexts .background1, #modVersShowLegend .second, #modVersLegendPanel .background1 {
+  background: transparent url(../img/modVersStripeRed.png) top left repeat;
+}   
+#teiTexts .background2, #modVersShowLegend .third, #modVersLegendPanel .background2 {
+  background: transparent url(../img/modVersStripeYellow.png) top left repeat;
+}
+#teiTexts .background3, #modVersShowLegend .fourth, #modVersLegendPanel .background3 {
+  background: transparent url(../img/modVersStripeGrey.png) top left repeat;
+}
+#teiTexts .background4, #modVersLegendPanel .background4 {
+  background: transparent url(../img/modVersStripeGreen.png) top left repeat;
+}
+ 
+/*BACKGROUND LEGEND*/
+#modVersShowLegend {
+  display: block;
+  text-indent: -999em;
+  position: absolute;
+  right: 48px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #333;
+}
+
+.teiNotFullScreen #modVersShowLegend {
+  right: 99px;
+}
+
+#modVersShowLegend .first, #modVersShowLegend .second, #modVersShowLegend .third, #modVersShowLegend .fourth {
+  height: 50%;
+  width: 50%;
+  display: block;
+  float: left;
+}
+
+
+
+
+/*FACSIMILE SCREEN*/
+
+  #modVersScreen {
+    display: none;
+    background: transparent url(../img/modVersScreenBg.png) top left repeat;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 998;
+  }
+
+  #modVersFacsimileOverlay {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
+  } 
+
+  #modVersFacsimileOverlay .close {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: -1.45em;
+    color: white;
+    background-color: #222;
+    padding: .15em .5em;
+    width: .5em;
+    text-align: center;
+  }   
+
+/*Info Panels*/
+.modVersPanel  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #F5F5F5;
+  color: #222;
+  z-index: 900;
+  overflow: scroll;
+  display: none;
+}
+
+.modVersPanel.active {
+  display: block;
+}
+
+.modVersPanel  div {
+  background-color: #F9F9F9;
+  margin: 0px auto;
+  padding: 20px 20px 150px;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  height: 100%;
+  position: relative;
+} 
+
+.modVersPanel .close {
+  position: absolute;
+  right: 0;
+  background-color: #222;
+  color: #EDEDED;
+  text-decoration: none;
+  padding: 1px 5px;
+  width: .75em;
+  text-align: center;
+} 
+
+.modVersPanel  h3 {
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+} 
+
+#modVersLegendPanel h3 {
+  margin: 0 0 .5em 0;
+}
+
+.modVersPanel  p {
+  padding: 0;
+  margin: 0 0 1em;
+}  
+
+#modVersDiffPanel del {
+  color: #FF005C;
+}
+
+#modVersDiffPanel ins {
+  color: #00CFFF;
+}
+
+/*TEXT ADVANCE*/
+
+  #modVersTextAdvance, #modVersTextRegress {
+    height: 50%;
+    opacity: .7;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    background-color: #ccc;
+    z-index: 99;
+    cursor: pointer;
+  }
+
+  #modVersTextRegress div, #modVersTextAdvance div {
+    background: #ccc url(../img/modVersAdvanceArrows.png) 0px -85px;
+    margin: 0 auto;
+    display: block;
+    width: 40px;
+    height: 80px;
+    position: relative;
+    top: 25%;
+    cursor: pointer;
+  }
+
+  .teiNotFullScreen #modVersTextRegress, .teiNotFullScreen #modVersTextAdvance {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index:999;
+    top: auto;
+  }
+
+  .teiNotFullScreen #modVersTextAdvance {
+    right: 30px;
+    bottom: 0;
+  } 
+
+  .teiNotFullScreen #modVersTextRegress, .teiNotFullScreen #modVersTextAdvance {
+      background-color: transparent;
+      opacity: 1;
+      width: 30px;
+      height: 30px;
+  }
+
+  .teiNotFullScreen #modVersTextRegress div, .teiNotFullScreen #modVersTextAdvance div {
+    background: transparent url(../img/modVersAdvanceArrowsSmall.png) 0px 0px no-repeat;
+    margin: 6px auto;
+    display: block;
+    position: relative;
+    top: 3px;
+    height: 13px;
+    width: 12px;
+  }
+
+  .teiNotFullScreen #modVersTextRegress div {
+    background: transparent url(../img/modVersAdvanceArrowsSmall.png) 0px -13px no-repeat;    
+  }
+
+  #modVersTextAdvance div {
+    background: #ccc url(../img/modVersAdvanceArrows.png) 0px 0px;
+    top: 50%;
+  }
+
+  #modVersTextRegress {
+    top: 50%;
+    opacity: .9;
+  }
+
+
+/***TEXTS***/
+
+#teiTexts {
+  margin: 0px 20px 0 20px;
+  padding: 0 0 0 420px;
+  overflow: hidden;
+  position: fixed;
+  top: 20px;
+  width: 100%;
+}
+
+  #teiTexts.expanded {
+    position: absolute;
+  }
+
+  .teiNotFullScreen #teiTexts {
+    position: relative;
+  }
+
+  #teiTexts .text {
+    line-height: 1.5em;
+    float: left;
+    width: 400px;
+    margin: 0 20px 0 0;
+    padding: 10px 0px 10px 0px;
+    background-color: #f5f5f5;
+    color: #111;
+    height: 100%;
+    overflow: auto;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow:hidden;
+  }
+
+  #teiTexts .text .teiTextHolder {
+    padding: 32px 10px 32px 25px;
+    background: transparent url(../img/modVersTextBG.png) top left repeat-y;
+  }
+
+    .teiNotFullScreen #teiTexts .text .teiTextHolder {
+      padding-top: 16px;
+    }
+
+  #teiTexts .text:first-child {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 99;
+  }
+
+  .teiFreeFirst #teiTexts .text:first-child, .teiNotFullScreen #teiTexts .text:first-child {
+    position: absolute;
+    top: 0;
+    left: 0px;
+  }  
+
+  #teiTexts .text.expanded {
+    width: 80%;
+    max-width: 50em;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    z-index:999;
+  }
+
+    #teiTexts .text.expanded .teiTextHolder {
+      max-width: 40em;
+    }
+
+  #teiTexts .modVersTextActions {
+    padding: .5em 0;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 100%;
+    z-index: 98;
+  }
+
+    #teiTexts .modVersTextActions .modVersWitnessTitle {
+      position: absolute;
+      left: 23px;
+      font-weight: bold;
+      color: #fff;
+      margin: 0;
+    }
+
+    #tei-single #teiTexts .modVersTextActions .modVersWitnessTitle {
+      display: none;
+    }    
+
+    #teiTexts .modVersTextActions a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding-right: 20px;
+      padding-left: 10px;
+    }
+
+    .teiNotFullScreen #teiTexts .modVersTextActions .expand {
+      display: none;
+    }
+
+  #teiTexts .teiTextHolder {
+    overflow: scroll;
+  }
+
+  #teiTexts .text .textHeightFix {
+    display: block;
+    height: 200px;
+    width: 1px;
+  }
+
+      /***FOCUS***/
+      #teiTexts .text.focus .teiTextHolder * {
+        display: none;
+      }
+
+      #teiTexts .teiTextHolder .focused {
+        font-size: 2em;
+        display: block;
+      }
+
+      
+
+/***ACTIONS***/
+#modVersActions {
+  position: fixed;
+  bottom: 0;
+  /*height: 200px;*/
+  border-top: 1px solid #ededed;
+  width: 100%;
+  background-color: #222;
+  z-index: 998;
+}
+
+.teiNotFullScreen #modVersActions {
+  position: absolute;
+}
+
+#modVersActions .modVersShowInfo {
+  background-color: #222;
+  text-decoration: none;
+  text-indent: -999em;
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: transparent url(../img/modVersInfoIcon.png) 11px 9px no-repeat;
+  top: 0px;
+}
+
+.teiNotFullScreen #modVersActions .modVersShowInfo {
+  right: 60px;
+}
+
+  /***UTILITY***/
+  #modVersActions #utility {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+  }
+
+    #modVersActions #utility a {
+      height: 20px;
+      background-color: #111;
+      color: #fff;
+      text-decoration: none;
+      border-left: 1px solid #333;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px 10px 0 10px;
+      font-size: .8em;
+      font-weight: bold;
+      float: right;
+    }
+
+    #modVersActions #utility .hide-notes, #modVersActions #utility .text, #modVersActions #utility .opaque, #notes {
+      display: none;
+    }
+
+  /***NOTES***/
+  #notes {
+    background-color: #111;
+    color: #ededed;
+    margin: 0;
+    padding: 10px 1.25% 20px;
+    width: 97.5%;   
+    border-top: 1px solid #444;
+    height: 150px;
+  }
+
+    #notes .note {
+      display:none;
+      background: transparent;
+      width: 370px;
+      padding: 15px;
+      margin: 0 15px 0 0;
+      border: 1px solid #333;
+      background-color: #222;
+      float:left;
+      position: relative;
+    }
+
+      #notes .note a.close {
+        display: block;
+        border: 1px solid #333;
+        font-weight: bold;
+        color: #fff;
+        height: 1em;
+        width: 1em;
+        padding: 3px;
+        text-align: center;
+        cursor: pointer;
+        line-height: 1em;
+        background-color: #111;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+
+
+    #notes .note.active {
+      display: block;
+    }
+
+  /***WITNESSES***/
+  #modVersWitnesses {
+    height: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+    #modVersWitnesses .witness {
+      max-width: 200px;
+      height: 30px;
+      margin: 0;
+      float: left;
+      padding: 0 10px;
+      border-right: 1px solid #999;
+      cursor: move;
+      position: relative;
+    }
+
+    #modVersWitnesses .witness.active {
+      margin-top: -3px;
+      border-bottom: 3px solid #333;
+    }   
+
+      #modVersWitnesses .witness .teiWitnessGrip {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: transparent url(../img/modVersGripTexture.png) 50%  0px no-repeat;
+      }
+
+      #modVersWitnesses .witness p {
+        text-transform: uppercase;
+        font-size: .8em;
+        font-weight: bold;
+        padding-top: 3px;
+      }
+
+
+/***STYLES FOR jQZoom***/
+.magnifyarea { /* CSS to add shadow to magnified image. Optional */
+  background: transparent url(../img/modVersScreenBgDark.png) top left repeat;
+  border: none !important;
+}
+
+.targetarea { /* CSS for container div(s) of the zoomable image */
+  width: 325px; /* wide or wider than the widest zoomable image */
+  height: 338px; /* high or higher than the tallest zoomable image */
+  margin-top:3px;
+}
+
+#two { /* Added CSS for second target div of zoomable images */
+  height: 243px; /* high or higher than the tallest zoomable image */
+}
+
+.targetarea img { /* zoomable image */
+  margin: auto; /* for horizontal centering */
+  display: block; /* also for horizontal centering */
+  position: relative; /* along with on the fly calculations in script, for vertical centering */
+  border-width: 0;
+}
+
+.thumbs { /* divs holding the trigger links - styles optional, used here to center their links below their respective zoomable image */
+  padding-top: 25px;
+  width: 325px;
+  text-align: center;
+}
+
+.thumbs a { /* trigger links on the thumbnail images */
+  text-decoration: none; /* avoid underlines of images, text or spaces in these links */
+}
+
+.thumbs img { /* trigger images - the thumbnails used to load new zoomable images into the targetarea */
+  border-width: 0; /* avoid default borders in some browsers */
+}
+
+#description, #description2 {
+  position: absolute; /* required for description folows image bottom (descpos: true) */
+  width: 325px; /* should be width of zoomable image container (.targetarea) */
+  text-align: center;
+  font: bold 95% sans-serif;
+  margin-top: 3px; /* when following image bottom, this sets a fixed distance for that */
+  color: #222;
+  background-color: #fff;
+}
+
+
+
+
+
+
+/* ==|== non-semantic helper classes ======================================== */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== media queries ====================================================== */
+
+@media only screen and (min-width: 480px) {
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+
+
+/* ==|== print styles ======================================================= */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

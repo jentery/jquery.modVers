@@ -27,7 +27,7 @@
   <div id="container" class="container_12">
     <header>
 
-      <h1>jquery.modVers Documentation</h1>
+      <h1>jquery.teiDisplay Documentation</h1>
       <p>Plugin and documentation by <a href="www.daniel.inletters.com">Daniel Carter</a> (<a href="mailto:carter.daniel.w@gmail.com">carter.daniel.w@gmail.com</a>)</p>
 
     </header>
@@ -116,10 +116,10 @@
         <ol>
           <li>
             <p>
-              <strong>Include jquery.modVers.css in your document's head.</strong>
+              <strong>Include jquery.teiDisplay.css in your document's head.</strong>
             </p>
               <pre class="sh_xml">
-                &lt;link rel="stylesheet" href="css/jquery.modVers.css"&gt;
+                &lt;link rel="stylesheet" href="css/jquery.teiDisplay.css"&gt;
               </pre>            
           </li>
           <li>
@@ -129,9 +129,9 @@
             </pre>
           </li>
           <li>
-            <p><strong>Include jQuery.modVers.js.</strong></p>
+            <p><strong>Include jQuery.teiDisplay.js.</strong></p>
             <pre class="sh_xml">
-                &lt;script src="js/jquery.modVers.js" type="text/javascript"&gt;&lt;/script&gt;
+                &lt;script src="js/jquery.teiDisplay.js" type="text/javascript"&gt;&lt;/script&gt;
             </pre>
           </li>   
           <li>
@@ -147,7 +147,7 @@
               <strong>Specify TEI files and other options.</strong> This will usually be done within a $(document).ready function.
             </p>
             <pre class="sh_javascript">
-              $('#teiHolder').data('modVers', {
+              $('#teiHolder').data('teiDisplay', {
                 xmlFile: 'data/yourTeiFile.xml'
               });
             </pre>
@@ -157,10 +157,10 @@
           </li>
           <li>
             <p>
-              <strong>Call the modVers function.</strong> This will create an interface for the TEI file specified in the previous step in the element specified.
+              <strong>Call the teiDisplay function.</strong> This will create an interface for the TEI file specified in the previous step in the element specified.
             </p>
             <pre class="sh_javascript">
-              $('#tei').modVers(); 
+              $('#tei').teiDisplay(); 
             </pre>
           </li>
 
@@ -173,7 +173,7 @@
         The interface created by this plugin can be modified using the following options, specified as follows:
       </p>
       <pre class="sh_javascript">
-        $('#teiHolder').data('modVers', {
+        $('#teiHolder').data('teiDisplay', {
           annotations: 'data/annotations.json',
           dev: true,
           fixFirst: false,

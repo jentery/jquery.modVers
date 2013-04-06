@@ -1,0 +1,2613 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+
+	<teiHeader> 
+		<fileDesc>
+			<titleStmt>
+				<title>Filmballad</title>
+				<author>Baroness Elsa von Freytag-Loringhoven</author> 
+				<editor>Daniel Carter</editor>
+				<respStmt> 
+					<resp>Text Encoding and Interface Development by</resp> <name>Daniel Carter</name> 
+				</respStmt>
+			</titleStmt>
+
+			<publicationStmt> 
+				<publisher>Daniel Carter</publisher>
+
+				<address>
+					<addrLine>School of Information, University of Texas at Austin</addrLine>
+				</address>
+
+			</publicationStmt>
+
+			<notesStmt> 
+				<note> 
+					This document is currently being used as a demonstration for the jquery.teiDisplay plugin.
+				</note> 
+			</notesStmt>
+
+			<sourceDesc> 
+				<p>Encoded documents and images are derived from manuscripts in the <ref target="http://www.lib.umd.edu/litmss/holdings.html#evfl">Papers of Elsa von Freytag-Loringhoven</ref> in Special Collections at the University of Maryland, College Park, Libraries.</p>
+
+				<p>Each version and note is numbered according to the order in which it appears in the folders in special collections.</p>
+			</sourceDesc>
+
+		</fileDesc> 
+
+		<encodingDesc>
+
+			<variantEncoding method="location-referenced" location="internal"/>
+
+		</encodingDesc>
+
+	</teiHeader>
+
+
+	<text>
+
+		<front>
+			<listWit>
+				<witness xml:id="v4n8">4.8</witness>
+				<witness xml:id="v4n10">4.10</witness>
+				<witness xml:id="v4n11">4.11</witness>
+				<witness xml:id="v4n13">4.13</witness>
+				<witness xml:id="v4n19">4.19</witness>
+			</listWit>
+		</front>
+
+		<body>
+
+			<div1>
+
+				<app loc="a0">
+					<rdg wit="#v4n8">
+						<pb facs="data/images/v4n8.png" />
+					</rdg>
+					<rdg wit="#v4n10">
+						<pb facs="data/images/v4n10.png" />
+					</rdg>	
+					<rdg wit="#v4n11">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>	
+					<rdg wit="#v4n13">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>		
+					<rdg wit="#v4n19">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>																			
+				</app>
+
+			<head>
+
+					<l>					
+						<app loc="a1" type="filmic">
+							<rdg wit="#v4n8 #v4n11">
+								<emph rend="underline">FILMBALLAD</emph>
+							</rdg>
+							<rdg wit="#v4n13">
+								<emph rend="underline">FILMBALLAD:</emph>
+							</rdg>						
+						</app>
+					</l>
+
+					<l>	
+						<app loc="a2">
+							<rdg wit="#v4n8 #v4n11">
+								BLOODMONOTONY							
+							</rdg>
+							<rdg wit="#v4n19">
+								<emph rend="underline">BLOODMONOTONY.</emph>							
+							</rdg>
+							<rdg wit="#v4n13">
+								BLOODMONOTONY.							
+							</rdg>
+							<rdg wit="#v4n10">
+								<emph rend="underline">BLOODMONOTONY</emph>							
+							</rdg>							
+						</app>
+					</l>
+
+					<l>
+						<app loc="a2n1" type="filmic">
+							<rdg wit="#v4n10">
+								<emph rend="underline">FILM</emph>							
+							</rdg>
+							<rdg wit="#v4n19">
+								<emph rend="underline">FILM.</emph>							
+							</rdg>																							
+						</app>
+					</l>
+
+					<l>
+						<app loc="a3">
+							<rdg wit="#v4n8 #v4n11 v4n13">
+								WOMBSPOOK
+							</rdg>														
+						</app>
+					</l>
+				
+			</head>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#all">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>			
+
+			<l>
+				<app loc="a4">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						BLOOD
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a5">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						THROBBS
+					</rdg>
+				</app>		
+			</l>
+			<l>
+				<app loc="a6">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						RAPID
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a7">
+					<rdg wit="#v4n8 #v4n13 #v4n19">
+						SOAR-
+					</rdg>
+					<rdg wit="#v4n10">
+						SO<emph rend="underline">A</emph>R
+					</rdg>	
+					<rdg wit="#v4n11">
+						SOAR
+					</rdg>											
+				</app>				
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a8">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						YON
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a9">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						GULF
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a10">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						OF
+					</rdg>
+				</app>		
+			</l>
+			<l>
+				<app loc="a11">
+					<rdg wit="#v4n8 #v4n13 #v4n19">
+						YORE-
+					</rdg>
+					<rdg wit="#v4n11">
+						YORE
+					</rdg>					
+					<rdg wit="#v4n10">
+						YORE<emph rend="underline">_</emph>
+					</rdg>					
+				</app>
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a12">
+					<rdg wit="#v4n11">
+						YOUTHBEND
+					</rdg>
+					<rdg wit="#v4n8 #v4n13 #v4n19">
+						YOUTHBEND-
+					</rdg>
+					<rdg wit="#v4n10">
+						YO<emph rend="underline">U</emph>THBEND
+					</rdg>					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a12n2">
+				<rdg wit="#v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>			
+								
+
+			<l>
+				<app loc="a13">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						TO
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a14">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						REEL
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a15">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						ONCE
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a16">
+					<rdg wit="#v4n11">
+						MORE
+					</rdg>
+					<rdg wit="#v4n8 #v4n13 #v4n19">
+						MORE-
+					</rdg>
+					<rdg wit="#v4n10">
+						MO<emph rend="underline">R</emph>E
+					</rdg>					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n10 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a17">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						SCREEN
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a18">
+					<rdg wit="#v4n11">
+						BEFORE
+					</rdg>
+					<rdg wit="#v4n8 #v4n13 #v4n19">
+						BEFORE-
+					</rdg>
+					<rdg wit="#v4n10">
+						BEFO<emph rend="underline">R</emph>E
+					</rdg>					
+				</app>
+			</l>
+		
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		
+			<l>
+				<app loc="a19">
+					<rdg wit="#v4n19">
+						WOMB-
+					</rdg>
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13">
+						WOMB
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a19n2">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						SOBBREND.
+					</rdg>
+					<rdg wit="#v4n10">
+						SOBBREND
+					</rdg>					
+				</app>				
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a20">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						LASS
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a21">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						SHRUGGS
+					</rdg>
+					<rdg wit="#v4n10 #v4n19">
+						PASSES
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a22">
+					<rdg wit="#v4n11">
+						WISE
+					</rdg>
+					<rdg wit="#v4n8 #v4n13 #v4n19">
+						WISE-
+					</rdg>
+					<rdg wit="#v4n10">
+						WISE<emph rend="underline">_</emph>
+					</rdg>					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a23n2">
+				<rdg wit="#v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a23">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						PONDERING
+					</rdg>
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a23n2">
+				<rdg wit="#v4n11 #v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a24">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						WHY
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a25">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						SHE
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a26">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						CRIES?
+					</rdg>
+				</app>								
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>			
+
+			<l>
+				<app loc="a27">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						SHE
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a28">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						COULD
+					</rdg>
+				</app>				
+			</l>
+			<l>
+				<app loc="a29">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						EXPLAIN
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a30">
+					<rdg wit="#v4n8 #v4n11">
+						NO WISE:
+					</rdg>
+					<rdg wit="#v4n10 #v4n13 #v4n19">
+						NOWISE:
+					</rdg>					
+				</app>	
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a31">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						WHY
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a32">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						SHE
+					</rdg>
+				</app>				
+			</l>
+			<l>
+				<app loc="a33">
+					<rdg wit="#v4n11 #v4n13">
+						WORE
+					</rdg>
+					<rdg wit="#v4n8 #v4n19">
+						WORE-
+					</rdg>
+					<rdg wit="#v4n10">
+						WORE<emph rend="underline">_</emph>
+					</rdg>
+				</app>
+			</l>
+		
+			<app loc="a33n2">
+				<rdg wit="#v4n11">
+					<cb />
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a34">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						STRAY-
+					</rdg>
+					<rdg wit="#v4n10">
+						STRAY<emph rend="underline">_</emph>
+					</rdg>					
+				</app>
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a34n2">
+				<rdg wit="#v4n10 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<app loc="a33a">
+				<rdg wit="#v4n8 #v4n13">
+					<cb />
+				</rdg>
+			</app>
+
+		 
+			<l>
+				<app loc="a35">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						TO
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a36">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						CLAIM
+					</rdg>
+					<rdg wit="#v4n10">
+						PRAY<emph rend="underline">_</emph>
+					</rdg>
+					<rdg wit="#v4n19">
+						PRAY
+					</rdg>										
+				</app>				
+			</l>
+
+			<app loc="a33a">
+				<rdg wit="#v4n10 #v4n19">
+					<cb />
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a37">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						STAY-
+					</rdg>
+					<rdg wit="#v4n10">
+						STAY<emph rend="underline">_</emph>
+					</rdg>						
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+		 
+			<l>
+				<app loc="a38">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						IN
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a39">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						HALL-
+					</rdg>
+					<rdg wit="#v4n10">
+						HALL<emph rend="underline">_</emph>
+					</rdg>					
+				</app>				
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a11n3">
+					<rdg wit="#v4n13">
+						<add place="right">RAPT</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n4">
+					<rdg wit="#v4n13">
+						<add place="right">TO</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n5">
+					<rdg wit="#v4n13">
+						<del place="right">EXPLORE</del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n6">
+					<rdg wit="#v4n13">
+						<del place="right">APT</del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n7">
+					<rdg wit="#v4n13">
+						<del place="right">TO</del>
+					</rdg>
+				</app>
+			</l>			
+			<l>
+				<app loc="a11n8">
+					<rdg wit="#v4n13">
+						<add place="right"><emph rend="underline">ADORE</emph></add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n9">
+					<rdg wit="#v4n13">
+						<add place="right"><del place="above">APT TO</del> <emph rend="underline">EXPLORE</emph></add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n10">
+					<rdg wit="#v4n13">
+						<add place="right">RIDE</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n11">
+					<rdg wit="#v4n13">
+						<add place="right">TALL</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n12">
+					<rdg wit="#v4n13">
+						<del><unclear>xxx</unclear></del><add place="right">BLUE</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n13">
+					<rdg wit="#v4n13">
+						<del><unclear>xxx</unclear></del><add place="right">TIDE</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a11n14">
+					<rdg wit="#v4n13">
+						<add place="right">SELFMORE</add>
+					</rdg>
+				</app>
+			</l>
+			<!--STANZA BREAK-->
+			<app loc="a11n15">
+				<rdg wit="#v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+
+			<l>
+				<app loc="a40">
+					<rdg wit="#v4n19">
+						THAT-
+					</rdg>
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						THAT
+					</rdg>
+					<rdg wit="#v4n10">
+						THAT<emph rend="underline">_</emph>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a41">
+					<rdg wit="#v4n11">
+						ONCE
+					</rdg>
+					<rdg wit="#v4n8 #v4n13 #v4n19">
+						ONCE-
+					</rdg>
+					<rdg wit="#v4n10">
+						ONCE<emph rend="underline">_</emph>
+					</rdg>					
+				</app>				
+			</l>
+					
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a42">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13">
+						HOSTESS
+					</rdg>
+					<rdg wit="#v4n19">
+						HOSTESS- 
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a43">
+					<rdg wit="#v4n19">
+						<add place="above">GALORE-</add>
+					</rdg>
+					<rdg wit="#v4n8 #v4n11">
+						GALORE-
+					</rdg>
+					<rdg wit="#v4n10 #v4n13">
+						<del>GALORE</del>
+					</rdg>					
+				</app>				
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n11 #v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a44">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						SHE
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a45">
+					<rdg wit="#v4n11 #v4n13 #v4n19">
+						SAT-
+					</rdg>
+					<rdg wit="#v4n8">
+						SAT
+					</rdg>
+					<rdg wit="#v4n10">
+						SAT<emph rend="underline">_</emph>
+					</rdg>					
+					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n11 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a46">
+					<rdg wit="#v4n13">
+						KEEN-
+					</rdg>
+					<rdg wit="#v4n11">
+						KEEN--
+					</rdg>
+					<rdg wit="#v4n19">
+						KEEN--- <del place="above"><unclear>xxxx</unclear></del>
+					</rdg>
+					<rdg wit="#v4n8">
+						KEEN---
+					</rdg>
+					<rdg wit="#v4n10">
+						KEE<emph rend="underline">N</emph>
+					</rdg>					
+				</app>								
+			</l>
+		
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a47">
+					<rdg wit="#v4n13">
+						NOR-
+					</rdg>
+					<rdg wit="#v4n8 #v4n11 #v4n19">
+						NOR
+					</rdg>
+					<rdg wit="#v4n10">
+						NOR<emph rend="underline">_</emph>
+					</rdg>					
+				</app>
+			</l>
+
+			<l>
+				<app loc="a47n2">
+					<rdg wit="#v4n19">
+						WITHALL-
+					</rdg>	
+					<rdg wit="#v4n10">
+						WITHAL<emph rend="underline">L</emph>
+					</rdg>					
+				</app>
+			</l>			
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a48">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						HAVING
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a49">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						BEEN-
+					</rdg>
+					<rdg wit="#v4n10">
+						BEEN<emph rend="underline">_</emph>
+					</rdg>					
+				</app>								
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a50">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						TRAPPED
+					</rdg>
+					<rdg wit="#v4n10 #v4n19">
+						STRANGE
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a51">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						BY
+					</rdg>
+					<rdg wit="#v4n10 #v4n19">
+						TO
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a52">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						CLIME-
+					</rdg>
+					<rdg wit="#v4n10">
+						CLIME
+					</rdg>					
+				</app>								
+			</l>
+					
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n11 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a53">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13 #v4n19">
+						OF
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a54">
+					<rdg wit="#v4n8">
+						<del>SP</del>MACE
+					</rdg>
+					<rdg wit="#v4n10 #v4n11 #v4n13 #v4n19">
+						SPACE
+					</rdg>					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a54n2">
+					<rdg wit="#v4n8 #v4n11 #v4n13 #v4n19">
+						TIME-
+					</rdg>
+					<rdg wit="#v4n10">
+						TIME<emph rend="underline">_</emph>
+					</rdg>					
+				</app>								
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a54n3">
+				<rdg wit="#v4n8 v4n10 #v4n11 #v4n13#v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a55">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13#v4n19">
+						FOUNDERING
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a56">
+					<rdg wit="#v4n11">
+						UP
+					</rdg>
+					<rdg wit="#v4n11#v4n19">
+						UPCREST-
+					</rdg>
+					<rdg wit="#v4n8">
+						UPCREST
+					</rdg>
+					<rdg wit="#v4n10">
+						UPCREST<emph rend="underline">_</emph>
+					</rdg>					
+				</app>							
+			</l>
+			<l>
+				<app loc="a56n2">
+					<rdg wit="#v4n13">
+						CREST-
+					</rdg>
+				</app>
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13#v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a57">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						FLAGGED
+					</rdg>
+					<rdg wit="#v4n10">
+						HAILED
+					</rdg>
+					<rdg wit="#v4n19">
+						HAILED-
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a58">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13">
+						FAR
+					</rdg>
+					<rdg wit="#v4n19">
+						FAR-
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a59">
+					<rdg wit="#v4n8 #v4n10 #v4n11 #v4n13">
+						OFF
+					</rdg>
+					<rdg wit="#v4n19">
+						OFF-
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a60">
+					<rdg wit="#v4n19">
+						GUEST-
+					</rdg>
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						GUEST
+					</rdg>
+					<rdg wit="#v4n10">
+						GUEST<emph rend="underline">_</emph>
+					</rdg>
+				</app>															
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8 #v4n10 #v4n11 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a61n2">
+					<rdg wit="#v4n11">
+						TO
+					</rdg>
+					<rdg wit="#v4n13">
+						<del>TO</del> TO
+					</rdg>					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a61n3">
+				<rdg wit="#v4n11">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a61">
+					<rdg wit="#v4n13">
+						<del place="above"><unclear>xxx</unclear></del> <del>ATTEND</del>
+					</rdg>
+					<rdg wit="#v4n8">
+						ATTEND
+					</rdg>
+					<rdg wit="#v4n11">
+						LEND
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a61n2">
+					<rdg wit="#v4n13">
+						LEND
+					</rdg>
+				</app>
+			</l>	
+
+			<app loc="a62n3">
+				<rdg wit="#v4n13">
+					<cb />
+				</rdg>
+			</app>
+
+
+			<l>
+				<app loc="a62">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						SUCCOR-
+					</rdg>
+				</app>												
+			</l>
+
+			<app loc="a62n2">
+				<rdg wit="#v4n11">
+					<cb />
+				</rdg>
+			</app>
+		
+			<!--STANZA BREAK-->
+			<app loc="a62n3">
+				<rdg wit="#v4n8">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a63">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						WHO-
+					</rdg>
+				</app>											
+			</l>
+		
+
+			<app loc="a64">
+				<rdg wit="#v4n8">
+					<cb />
+				</rdg>
+			</app>
+
+		
+
+			<l>
+				<app loc="a64n2">
+					<rdg wit="#v4n11">
+						<del>LAPT TO</del>
+					</rdg>
+					<rdg wit="#v4n13">
+						<add place="right">RAPT</add>
+					</rdg>					
+				</app>
+			</l>
+
+			<l>
+				<app loc="a64n2a">
+					<rdg wit="#v4n13">
+						<add place="right">TO</add>
+					</rdg>					
+				</app>
+			</l>
+
+			<l>
+				<app loc="a64n3">
+					<rdg wit="#v4n11">
+						<del>BY ADORE</del>
+					</rdg>
+					<rdg wit="#v4n13">
+						<add place="right">ADORE</add>
+					</rdg>					
+				</app>
+			</l>
+
+			<l>
+				<app loc="a64n3a">
+					<rdg wit="#v4n13">
+						<unclear>x</unclear> R <del>R</del>APT
+					</rdg>
+				</app>
+			</l>
+
+			<l>
+				<app loc="a64n3b">
+					<rdg wit="#v4n13">
+						BY
+					</rdg>
+				</app>
+			</l>			
+
+			<l>
+				<app loc="a64n4">
+					<rdg wit="#v4n11 #v4n13">
+						<del>TIDE-</del>
+					</rdg>
+				</app>
+			</l>						
+		 
+			<l>
+				<app loc="a65">
+					<rdg wit="#v4n8">
+						TO
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a66">
+					<rdg wit="#v4n8">
+						BLAZE
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a67">
+					<rdg wit="#v4n8">
+						EXPLORE
+					</rdg>
+				</app>														
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+		 
+			<l>
+				<app loc="a68">
+					<rdg wit="#v4n8">
+						<del>EN</del>RAPT
+					</rdg>
+					<rdg wit="#v4n11">
+						RAPT
+					</rdg>
+					<rdg wit="#v4n13">
+						<del place="right">RAPT</del>
+					</rdg>										
+				</app>
+			</l>
+			<l>
+				<app loc="a69">
+					<rdg wit="#v4n8 #v4n11">
+						TO
+					</rdg>
+					<rdg wit="#v4n8 #v4n13">
+						<del place="right">TO</del>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a69n2">
+					<rdg wit="#v4n13">
+						EXPLORE
+					</rdg>
+					<rdg wit="#v4n11">
+						<del place="above">ADORE </del>EXPLORE
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a69n3">
+					<rdg wit="#v4n11">
+						<del place="above">ADORE</del>
+					</rdg>
+				</app>
+			</l>		
+
+			<l>
+				<app loc="a69n4">
+					<rdg wit="#v4n13">
+						<del>RAPT</del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a69n5">
+					<rdg wit="#v4n13">
+						<del>TO</del>
+					</rdg>
+				</app>
+			</l>			
+
+			<l>
+				<app loc="a70">
+					<rdg wit="#v4n8">
+						RACE
+					</rdg>
+					<rdg wit="#v4n11">
+						RIDE
+					</rdg>
+					<rdg wit="#v4n13">
+						<del>RIDE</del>
+					</rdg>										
+				</app>
+			</l>
+
+			<l>
+				<app loc="a70n2">
+					<rdg wit="#v4n13">
+						<del place="right">ST</del> <add place="right">RIDE</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a70n3">
+					<rdg wit="#v4n13">
+						<add place="right">BLUE</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a70n4">
+					<rdg wit="#v4n13">
+						<add place="right">TALL</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a70n5">
+					<rdg wit="#v4n13">
+						<add place="right">-BRIDE</add>
+					</rdg>					
+				</app>
+			</l>
+
+			<l>
+				<app loc="a71">
+					<rdg wit="#v4n13">
+						<del><unclear>xxx</unclear></del> TALL
+					</rdg>
+					<rdg wit="#v4n8 #v4n11">
+						TALL
+					</rdg>				
+				</app>
+			</l>
+			<l>
+				<app loc="a72">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						BLUE
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a72n2">
+					<rdg wit="#v4n11">
+						<del>TIDE TIDE</del>
+					</rdg>
+				</app>
+			</l>	
+
+			<!--STANZA BREAK-->
+			<app loc="a72n3">
+				<rdg wit="#v4n11">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a73">
+					<rdg wit="#v4n13">
+						SELFMORE <del place="above">LORE</del>
+					</rdg>
+					<rdg wit="#v4n8">
+						SELFMORE
+					</rdg>
+					<rdg wit="#v4n11">
+						SELFMORE-
+					</rdg>					
+				</app>
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a73n2">
+				<rdg wit="#v4n8 #v4n11 #v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+
+			<l>
+				<app loc="a73n3">
+					<rdg wit="#v4n11">
+						<add place="right">GAUNT</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a73n4">
+					<rdg wit="#v4n11">
+						<add place="right"><del>FOUL</del></add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a73n5">
+					<rdg wit="#v4n11">
+						<add place="right">HAUNTS</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a73n6">
+					<rdg wit="#v4n11">
+						<add place="right">FOUL <del>GAUNT</del></add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a73n7">
+					<rdg wit="#v4n11">
+						<add place="right">GHOULS</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a73n8">
+					<rdg wit="#v4n11">
+						<add place="right">FLAT</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a73n9">
+					<rdg wit="#v4n11">
+						<add place="right">WOMB</add>
+					</rdg>
+				</app>
+			</l>												
+
+					
+		 
+			<l>
+				<app loc="a74">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						LET
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a75">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						HER
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a76">
+					<rdg wit="#v4n8 #v4n11 #v4n13">
+						SINK
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a77">
+					<rdg wit="#v4n8">
+						INTO++++
+					</rdg>
+					<rdg wit="#v4n11 #v4n13">
+						INTO
+					</rdg>					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a77n2">
+				<rdg wit="#v4n11 #v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a77n2a">
+					<rdg wit="#v4n13">
+						<add place="right">RIDE</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a77n2b">
+					<rdg wit="#v4n13">
+						<add place="right">BRIDE</add> <del place="right">WIDE</del>
+					</rdg>					
+				</app>
+			</l>			
+			<l>
+				<app loc="a77n2c">
+					<rdg wit="#v4n13">
+						<add place="right">TALL</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a77n2d">
+					<rdg wit="#v4n13">
+						<add place="right">BLUE</add>
+					</rdg>					
+				</app>
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a77n3">
+				<rdg wit="#v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>			
+
+			<l>
+				<app loc="a77n3">
+					<rdg wit="#v4n11">
+						<del>STEEP</del>
+					</rdg>
+				</app>
+			</l>
+
+			<l>
+				<app loc="a78">
+					<rdg wit="#v4n8">
+						<del>TOMB</del><add place="above">SPACE</add>-----
+					</rdg>
+				</app>
+			</l>
+		
+			<!--STANZA BREAK-->
+			<app loc="a78n2">
+				<rdg wit="#v4n8 #v4n11">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+		
+
+
+
+			<!--SIGNIFICANT SHIFT-->
+
+
+
+			<l>
+				<app loc="a98">
+					<rdg wit="#v4n10">
+						WHO<emph rend="underline">_</emph>
+					</rdg>
+					<rdg wit="#v4n19">
+						WHO-
+					</rdg>					
+				</app>	
+			</l>
+			<l>
+				<app loc="a99">
+					<rdg wit="#v4n19">
+						FLUSH-
+					</rdg>
+					<rdg wit="#v4n10">
+						FLUSH<emph rend="underline">_</emph>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a100">
+					<rdg wit="#v4n10 #v4n19">
+						TO
+					</rdg>
+				</app>	
+			</l>								 	
+			<l>
+				<app loc="a101">
+					<rdg wit="#v4n10 #v4n19">
+						RUSH
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a102">
+					<rdg wit="#v4n10 #v4n19">
+						BRISK
+					</rdg>
+				</app>	
+			</l>	
+			<l>
+				<app loc="a103">
+					<rdg wit="#v4n10 #v4n19">
+						BULK
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a103a">
+					<rdg wit="#v4n19">
+						ANENT_
+					</rdg>
+					<rdg wit="#v4n10">
+						ANENT<emph rend="underline">_</emph>
+					</rdg>
+				</app>	
+			</l>
+
+			<!--COLUMN BREAK-->
+			<app loc="a104">
+				<rdg wit="#v4n10 #v4n19">
+					<cb />
+				</rdg>
+			</app>						
+
+			<l>
+				<app loc="a105">
+					<rdg wit="#v4n10 #v4n19">
+						NOT
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a106">
+					<rdg wit="#v4n10 #v4n19">
+						COULD
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a107">
+					<rdg wit="#v4n19">
+						TEND-
+					</rdg>
+					<rdg wit="#v4n10">
+						TEND<emph rend="underline">_</emph>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a108">
+					<rdg wit="#v4n19">
+						GASH-
+					</rdg>
+					<rdg wit="#v4n10">
+						GAS<emph rend="underline">H</emph>
+					</rdg>
+				</app>	
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="108a">
+				<rdg wit="#v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a109">
+					<rdg wit="#v4n10 #v4n19">
+						IN
+					</rdg>
+				</app>	
+			</l>	
+			<l>
+				<app loc="a110">
+					<rdg wit="#v4n19">
+						HULK-
+					</rdg>
+					<rdg wit="#v4n10">
+						HULK<emph rend="underline">_</emph>
+					</rdg>
+				</app>	
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="110a">
+				<rdg wit="#v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a111">
+					<rdg wit="#v4n10 #v4n19">
+						AWASH
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a112">
+					<rdg wit="#v4n10 #v4n19">
+						TALL
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a113">
+					<rdg wit="#v4n19">
+						ELEMENT
+					</rdg>
+					<rdg wit="#v4n10">
+						ELEME<emph rend="underline">N</emph>T
+					</rdg>
+				</app>	
+			</l>											
+			
+			<!--STANZA BREAK-->
+			<app loc="a114">
+				<rdg wit="#v4n10 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a115">
+					<rdg wit="#v4n10 #v4n19">
+						RASH
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a116">
+					<rdg wit="#v4n10 #v4n19">
+						SHE
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a117">
+					<rdg wit="#v4n19">
+						SLID
+					</rdg>
+					<rdg wit="#v4n10">
+						SLID<emph rend="underline">_</emph>
+					</rdg>
+				</app>	
+			</l>			
+
+			<!--STANZA BREAK-->
+			<app loc="a118">
+				<rdg wit="#v4n10">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a118n1a">
+					<rdg wit="#v4n13">
+						<del>OF</del>
+					</rdg>					
+				</app>	
+			</l>
+			<l>
+				<app loc="a118n1b">
+					<rdg wit="#v4n13">
+						<del>LORE.</del>
+					</rdg>					
+				</app>	
+			</l>			
+
+			<l>
+				<app loc="a118n2">
+					<rdg wit="#v4n11">
+						WHEREFORE
+					</rdg>
+					<rdg wit="#v4n13">
+						WHEREFORE:
+					</rdg>					
+				</app>	
+			</l>
+
+			<l>
+				<app loc="a118n2a">
+					<rdg wit="#v4n13">
+						<del>THENCE:</del>
+					</rdg>					
+				</app>	
+			</l>
+			<l>
+				<app loc="a118n2b">
+					<rdg wit="#v4n13">
+						<del>DENSE</del> <add place="above">HELL</add>
+					</rdg>					
+				</app>	
+			</l>						
+
+			<app loc="a118n3">
+				<rdg wit="#v4n11">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a119">
+					<rdg wit="#v4n10 #v4n19">
+						GAUNT
+					</rdg>
+					<rdg wit="#v4n11">
+						<del>GAUNT</del><add place="above">FOUL</add>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a120">
+					<rdg wit="#v4n10 #v4n11 #v4n19">
+						GHOULS
+					</rdg>
+					<rdg wit="#v4n13">
+						GHOUL <del>S</del> <del><unlcear>x</unlcear></del> S
+					</rdg>					
+				</app>	
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a121">
+				<rdg wit="#v4n10">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a122">
+					<rdg wit="#v4n10 #v4n19">
+						FLAT
+					</rdg>
+					<rdg wit="#v4n11">
+						<del>DEEP FLAT</del>
+					</rdg>
+					<rdg wit="#v4n13">
+						<del>FLAT</del> <add place="right">HID</add>
+					</rdg>					
+				</app>	
+			</l>
+
+			<l>
+				<app loc="a122n1">
+					<rdg wit="#v4n13">
+						<del place="right">TO</del> <add place="right">SPELL</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a122n2">
+					<rdg wit="#v4n13">
+						<add place="right">FLAT</add> <del place="right"><unclear>xxx</unclear></del> 
+					</rdg>
+				</app>
+			</l>			
+			<l>
+				<app loc="a122n3">
+					<rdg wit="#v4n13">
+						<add place="right">UPON</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a122n4">
+					<rdg wit="#v4n13">
+						<del place="right">YON</del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a122n5">
+					<rdg wit="#v4n13">
+						<del place="right">SWELL</del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a122n6">
+					<rdg wit="#v4n13">
+						<del place="right">UPON</del>
+					</rdg>
+				</app>
+			</l>	
+
+
+			<l>
+				<app loc="a123">
+					<rdg wit="#v4n13">
+						GAUNT
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a123">
+					<rdg wit="#v4n13">
+						HAUNT <del place="above">HID</del>
+					</rdg>
+					<rdg wit="#v4n19">
+						HAUNT-
+					</rdg>
+					<rdg wit="#v4n10">
+						HAUNT<emph rend="underline">_</emph>
+					</rdg>
+					<rdg wit="#v4n11">
+						<del>HID</del>GAUNT HAUNT
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a123n2">
+					<rdg wit="#v4n11">
+						FLAT WOMB
+					</rdg>
+				</app>	
+			</l>
+
+
+
+
+			<l>
+				<app loc="a123n3">
+					<rdg wit="#v4n11">
+						<add place="right">FOUL</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a123n4">
+					<rdg wit="#v4n11">
+						<add place="right">GHOULS</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a123n5">
+					<rdg wit="#v4n11">
+						<add place="right">GAUNT</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a123n6">
+					<rdg wit="#v4n11">
+						<add place="right">HAUNTS</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a123n7">
+					<rdg wit="#v4n11">
+						<add place="right"><del>FLAT</del></add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a123n8">
+					<rdg wit="#v4n11">
+						<add place="right">WOMB</add>
+					</rdg>
+				</app>
+			</l>
+
+
+			<l>
+				<app loc="a123n8a">
+					<rdg wit="#v4n13">
+						<del><unclear>xxx</unclear></del>
+					</rdg>
+				</app>	
+			</l>
+
+			<l>
+				<app loc="a123n9">
+					<rdg wit="#v4n11">
+						<del>HAUNT</del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a123n10">
+					<rdg wit="#v4n13">
+						<del>CAST</del>
+					</rdg>
+					<rdg wit="#v4n11">
+						<del>CAST VAST</del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a123n11">
+					<rdg wit="#v4n11">
+						<add place="left">BLAST</add> <del>SPELL</del>
+					</rdg>
+					<rdg wit="#v4n11">
+						<unclear>xxxx</unclear> BLAST
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a123n12">
+					<rdg wit="#v4n11">
+						<del>SPELL</del> UPON
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a123n13">
+					<rdg wit="#v4n11">
+						<del>UPON</del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a123n14">
+					<rdg wit="#v4n11">
+						<del>AS ON</del>
+					</rdg>
+				</app>	
+			</l>																					
+
+			<!--STANZA BREAK-->
+			<app loc="a124">
+				<rdg wit="#v4n10">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a125">
+					<rdg wit="#v4n10 #v4n19">
+						NOOKED
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a126">
+					<rdg wit="#v4n10 #v4n19">
+						PEST
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a127">
+					<rdg wit="#v4n10 #v4n19">
+						'NEATH
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a128">
+					<rdg wit="#v4n10">
+						TOMB
+					</rdg>
+					<rdg wit="#v4n19">
+						TOMB-
+					</rdg>					
+				</app>	
+			</l>	
+
+			<!--STANZA BREAK-->
+			<app loc="a129">
+				<rdg wit="#v4n10">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a130">
+					<rdg wit="#v4n10">
+						HID
+					</rdg>
+					<rdg wit="#v4n19">
+						HID-
+					</rdg>					
+				</app>	
+			</l>
+			<l>
+				<app loc="a131">
+					<rdg wit="#v4n10 #v4n19">
+						TO
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a132">
+					<rdg wit="#v4n10 #v4n19">
+						GORE
+					</rdg>
+				</app>	
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a133">
+				<rdg wit="#v4n10">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a134">
+					<rdg wit="#v4n19">
+						GUEST-
+					</rdg>
+					<rdg wit="#v4n10">
+						GUEST<emph rend="underline">_</emph> <add place="right">DID<emph rend="underline">_</emph></add>
+					</rdg>
+				</app>	
+			</l>
+
+			<l>
+				<app loc="a134n2">
+					<rdg wit="#v4n19">
+						DID-
+					</rdg>
+				</app>	
+			</l>
+			
+			<l>
+				<app loc="a135">
+					<rdg wit="#v4n10">
+						AS<emph rend="underline">_</emph>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a135n2">
+					<rdg wit="#v4n19">
+						AS - BLOODHIGH
+					</rdg>
+					<rdg wit="#v4n10">
+						<add>BLOODHIGH</add>
+					</rdg>
+				</app>	
+			</l>		
+			<l>
+				<app loc="a136">
+					<rdg wit="#v4n10 #v4n19">
+						UNAWARES
+					</rdg>
+				</app>	
+			</l>			
+			<l>
+				<app loc="a137">
+					<rdg wit="#v4n10 #v4n19">
+						WOMB
+					</rdg>
+				</app>	
+			</l>				
+			<l>
+				<app loc="a138">
+					<rdg wit="#v4n10 #v4n19">
+						SPOOKED
+					</rdg>
+				</app>	
+			</l>	
+
+			<!--STANZA BREAK-->
+			<app loc="a139">
+				<rdg wit="#v4n10">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+
+
+
+
+
+
+
+
+			<l>
+				<app loc="a140">
+					<rdg wit="#v4n10">
+						<del>HI</del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a141">
+					<rdg wit="#v4n10 #v4n19">
+						LASS
+					</rdg>
+				</app>	
+			</l>			
+			<l>
+				<app loc="a142">
+					<rdg wit="#v4n10 #v4n19">
+						RODE
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a143">
+					<rdg wit="#v4n10 #v4n19">
+						BY
+					</rdg>
+				</app>	
+			</l>
+
+			<!--STANZA BREAK-->
+			<app loc="a144">
+				<rdg wit="#v4n10">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a145">
+					<rdg wit="#v4n19">
+						<del>YON</del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a146">
+					<rdg wit="#v4n10">
+						<del>CREST</del>
+					</rdg>
+					<rdg wit="#v4n19">
+						<del>CREST BLOOD</del>
+					</rdg>					
+				</app>	
+			</l>			
+			<l>
+				<app loc="a146n2">
+					<rdg wit="#v4n19">
+						<del><unclear>xxxx</unclear></del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a146n3">
+					<rdg wit="#v4n19">
+						<del>HIGH---</del>
+					</rdg>
+				</app>	
+			</l>			
+			<l>
+				<app loc="a147">
+					<rdg wit="#v4n10">
+						<del>UPON</del>
+					</rdg>
+				</app>	
+			</l>
+
+
+
+
+
+
+
+
+
+
+			<l>
+				<app loc="a79">
+					<rdg wit="#v4n8">
+						WHENCE
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a80">
+					<rdg wit="#v4n8">
+						<del>WOMB</del><del>SHE</del><del>SHE</del>-
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a81">
+					<rdg wit="#v4n8">
+						<del><unclear>xxxxxxxx</unclear>-</del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a82">
+					<rdg wit="#v4n8">
+						BIDING
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a83">
+					<rdg wit="#v4n8">
+						T<del>R</del><add rend="above">R</add>IP-
+					</rdg>
+				</app>
+			</l>
+			
+			<!--STANZA BREAK-->
+			<app loc="a11n2">
+				<rdg wit="#v4n8">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a84">
+					<rdg wit="#v4n8">
+						TILL
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a85">
+					<rdg wit="#v4n8">
+						<del>SHIP</del> BRAIN
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a86">
+					<rdg wit="#v4n8">
+						<del><unclear>XXXX</unclear></del> <del>TIPT</del> SCIPPED
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a87">
+					<rdg wit="#v4n8">
+						RIDING
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a88">
+					<rdg wit="#v4n8">
+						SWELL
+					</rdg>
+					<rdg wit="#v4n11">
+						<del>SWELL TIDE</del>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a89">
+					<rdg wit="#v4n8">
+						<del place="above"><unclear>xxxx</unclear></del>ADIP-
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a90">
+					<rdg wit="#v4n8">
+						<del place="above">THE</del> FOULED
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a91">
+					<rdg wit="#v4n8">
+						<del>SEA</del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a92">
+					<rdg wit="#v4n8">
+						<add>BREAK</add> <del><unlear>xxxxx xxxxxxx</unlear></del>
+					</rdg>
+				</app>
+			</l>
+
+			<app loc="a92a">
+				<rdg wit="#v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+			<l>
+				<app loc="a92b">
+					<rdg wit="#v4n13">			
+						<add place="right">AS</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a92c">
+					<rdg wit="#v4n13">			
+						<add place="right">BRAIN</add>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a92d">
+					<rdg wit="#v4n13">			
+						<add place="right">RODE</add>
+					</rdg>
+				</app>
+			</l>						
+			<l>
+				<app loc="a92e">
+					<rdg wit="#v4n13">			
+						<add place="right">PAST</add>
+					</rdg>
+				</app>
+			</l>			
+			<app loc="a92f">
+				<rdg wit="#v4n13">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a93">
+					<rdg wit="#v4n8">
+						WHIL<del>E</del><add place="below">E</add> <del>AS</del>
+					</rdg>
+					<rdg wit="#v4n11 #v4n13">
+						AS
+					</rdg>					
+				</app>	
+			</l>
+			<l>
+				<app loc="a94">
+					<rdg wit="#v4n8">
+						<del place="above">BRAIN</del> CHILD
+					</rdg>
+					<rdg wit="#v4n11 #v4n13">
+						BRAIN
+					</rdg>					
+				</app>
+			</l>
+			
+			<l>
+				<app loc="a94n1a">
+					<rdg wit="#v4n13">
+						<add>UPON</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a94n1b">
+					<rdg wit="#v4n13">
+						<add>YON</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a94n1c">
+					<rdg wit="#v4n13">
+						<add>SWELL.</add>
+					</rdg>					
+				</app>
+			</l>			
+
+			<l>
+				<app loc="a94n2">
+					<rdg wit="#v4n11 #v4n13">
+						RODE
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a94n3">
+					<rdg wit="#v4n11">
+						<del place="left">R</del> PAST <del place="below">ASTRIDE</del>
+					</rdg>	
+					<rdg wit="#v14n13">
+						<del place="left">BY</del> <del>PAST</del> PAST
+					</rdg>	
+				</app>
+			</l>
+
+			<l>
+				<app loc="a94n3a">
+					<rdg wit="#v4n11">
+						<del>HIGH</del>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a94n3b">
+					<rdg wit="#v4n11">
+						<del>TIDE</del>
+					</rdg>					
+				</app>
+			</l>			
+
+			<l>
+				<app loc="a94n4">
+					<rdg wit="#v4n11">
+						<add>ASTRIDE</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a94n5">
+					<rdg wit="#v4n11">
+						<add>HIGH</add>
+					</rdg>					
+				</app>
+			</l>	
+			<l>
+				<app loc="a94n6">
+					<rdg wit="#v4n11">
+						<add>TIDE</add>
+					</rdg>					
+				</app>
+			</l>
+			<l>
+				<app loc="a94n7">
+					<rdg wit="#v4n11">
+						TOMB
+					</rdg>					
+				</app>
+			</l>																		
+			<l>
+				<app loc="a95">
+					<rdg wit="#v4n8">
+						<del><unclear>xxxxx</unclear></del>
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a96">
+					<rdg wit="#v4n8">
+						TRAILED
+					</rdg>
+				</app>
+			</l>
+			<l>
+				<app loc="a97">
+					<rdg wit="#v4n8">
+						-WAKE
+					</rdg>
+				</app>	
+			</l>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!--STANZA BREAK-->
+			<app loc="a148">
+				<rdg wit="#v4n10 #v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+
+			<l>
+				<app loc="a149">
+					<rdg wit="#v4n19">
+						MAMA
+					</rdg>
+					<rdg wit="#v4n10">
+						MAMA<emph rend="underline">_</emph>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a150">
+					<rdg wit="#v4n19">
+						WHY-
+					</rdg>
+					<rdg wit="#v4n10">
+						WHY<emph rend="underline">___</emph>?
+					</rdg>
+				</app>	
+			</l>
+
+
+			<!--STANZA BREAK-->
+			<app loc="a151">
+				<rdg wit="#v4n19">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>
+			<l>
+				<app loc="a152">
+					<rdg wit="#v4n19">
+						FOR SUPPER WE GAVE
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a153">
+					<rdg wit="#v4n19">
+						HOPS THE WAITER
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a153">
+					<rdg wit="#v4n19">
+						AN ORDER <del>OF</del> <add place="above">OF</add> MUTTON <del>CHOPS</del> <add place="above">CHOPS</add> LATER FRIED
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a154">
+					<rdg wit="#v4n19">
+						TO <del><unclear>xxx</unclear> BLUFF HIS CREW</del> <add place="above">GIVE</add> TH JEW <del>CREW</del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a155">
+					<rdg wit="#v4n19">
+						<del>WITH</del> HIS HULLA BALLOO <del>TOO</del>
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a156">
+					<rdg wit="#v4n19">
+						<del>FRIED AND <unclear>x</unclear></del> LAMB<del>Y</del> <del>DEAR</del> DIED
+					</rdg>
+				</app>	
+			</l>	
+			<l>
+				<app loc="a157">
+					<rdg wit="#v4n19">
+						<del>POOR LITTLE</del> FRIED
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a158">
+					<rdg wit="#v4n19">
+						<del>CRISP</del>..
+					</rdg>
+				</app>	
+			</l>
+			<l>
+				<app loc="a159">
+					<rdg wit="#v4n19">
+						"KOSHER"
+					</rdg>
+				</app>	
+			</l>															
+
+
+
+		</div1>
+
+
+
+
+		</body>
+	</text>
+</TEI>

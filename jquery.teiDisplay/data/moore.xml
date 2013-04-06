@@ -1,0 +1,257 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+
+	<teiHeader> 
+		<fileDesc>
+			<titleStmt>
+				<title>Poetry</title>
+				<author>Marianne Moore</author> 
+				<editor>Robin G. Schulze</editor>
+				<respStmt> 
+					<resp>Text Encoding and Interface Development by</resp> <name>Daniel Carter</name> 
+				</respStmt>
+			</titleStmt>
+
+			<publicationStmt> 
+				<publisher>Adèle Barclay</publisher>
+
+				<address>
+					<addrLine>Maker Lab and ETCL, University of Victoria</addrLine>
+				</address>
+
+			</publicationStmt>
+
+			<notesStmt> 
+				<note> 
+					This document is currently being used for the Modernist Versions Project (MVP) and Integrating New Learning Environments (INKE)
+				</note> 
+			</notesStmt>
+
+			<sourceDesc> 
+				<p>Encoded documents and images are derived from Becoming Marianne Moore: The Early Poems, 1907-1924 and Complete Poems</p>
+
+				<p>Each version is numbered according to its publication date.</p>
+			</sourceDesc>
+
+		</fileDesc> 
+
+		<encodingDesc>
+
+			<variantEncoding method="location-referenced" location="internal"/>
+
+		</encodingDesc>
+
+	</teiHeader>
+
+
+	<text>
+
+		<front>
+			<listWit>
+				<witness xml:id="1919">1919</witness>
+				<witness xml:id="1924">1924</witness>
+				<witness xml:id="1967">1967</witness>
+			
+			</listWit>
+		</front>
+
+	<body> 
+
+			<div1>
+			
+
+				<app loc="a0">
+					<rdg wit="#v4n8">
+						<pb facs="data/images/v4n8.png" />
+					</rdg>
+					<rdg wit="#v4n10">
+						<pb facs="data/images/v4n10.png" />
+					</rdg>	
+					<rdg wit="#v4n11">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>	
+					<rdg wit="#v4n13">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>		
+					<rdg wit="#v4n19">
+						<pb facs="data/images/v4n11.png" />
+					</rdg>																			
+				</app>
+				
+				<head>
+
+					<l>					
+						<app loc="a1" type="filmic">
+							<rdg wit="#1919 #1924 #1967">
+								Poetry
+							</rdg>				
+						</app>
+					</l>
+					
+					
+					<l>	
+						<app loc="a2">
+							<rdg wit="#1919">
+								I too, dislike it: there are things that are important
+								</rdg>
+							<rdg wit="#1924">
+								I too, dislike it: there are things that are important be-							
+							</rdg>
+							<rdg wit="#1967">
+								I, too, dislike it.							
+							</rdg>
+													
+						</app>
+					</l>
+
+					<l>
+						<app loc="a3">
+							<rdg wit="#1919"> beyond all this fiddle.
+							</rdg>
+							<rdg wit="#1924">
+								yond all this fiddle.							
+							</rdg>
+							<rdg wit="#1967">
+								Reading it, however, with a perfect contempt for it, one dis-						
+							</rdg>																							
+						</app>
+					</l>
+
+					<l>
+						<app loc="a4">
+							<rdg wit="#1919"> Reading it, however, with a perfect contempt for it, 
+							</rdg>
+							<rdg wit="#1924">
+								Reading it, however, with a perfect contempt for it, one
+							</rdg>														
+							<rdg wit="#1967"> covers in</rdg>
+						</app>
+					</l>
+					<l> <app loc="a5">
+					<rdg wit="#1919"> one discovers that there is in 
+					</rdg>
+					<rdg wit="#1924">
+					discovers that there is in </rdg>
+					<rdg wit="#1967"> it, after all, a place for the genuine. </rdg> </app> </l>
+					<l> <app loc="a6"> 
+					<rdg wit="#1919"> it after all, a place for the genuine. </rdg>
+					<rdg wit="#1924"> it after all, a place for the genuine. </rdg> 
+					</app>
+					</l>
+					<l> <app loc="a7"> 
+					<rdg wit="1919">
+					Hands that can grasp, eyes
+					</rdg>
+					<rdg wit="#1924">
+					Hands that can grasp, eyes
+					</rdg></app></l>
+					<l> <app loc="a8"> 
+					<rdg wit="#1919"> that can dilate, hair that can rise </rdg>
+					<rdg wit="#1924"> that can dilate, hair that can rise </rdg> </app> </l>
+	
+					<l> <app loc="a9"> 
+					<rdg wit="1919"> if it must be these things are important not because a </rdg>
+					<rdg wit="#1924"> if it must these things are important not because a </rdg></app></l>
+					
+				
+				</head>
+					<!--STANZA BREAK-->
+					<app loc="a10"> <rdg wit="#1919 #1924">
+					<milestone unit="stanza"/>
+					</rdg>
+					</app>
+					<l> <app loc="a11"> <rdg wit="#1919"> high sounding interpretation can be put upon them </rdg>
+					<rdg wit="#1924"> high sound interpretation can be put upon them but be- </rdg> </app> </l>
+					<l> <app loc="a12"> <rdg wit="#1919"> but because they are </rdg>
+					<rdg wit="#1924"> cause they are </rdg> </app> </l>
+					<l> <app loc="a13"> <rdg wit="#1919"> useful; when they become so derivative as to </rdg> 
+					<rdg wit="#1924"> useful; when they become so derivative as to become un- </rdg> </app> </l>
+					<l> <app loc="a14"> <rdg wit="#1919"> become unintelligible, the </rdg> 
+						<rdg wit="1924"> intelligible </rdg>
+						</app> </l>
+						<l> <app loc="a15"> <rdg wit="#1919"> same thing may be said for all of us--that we </rdg>
+						<rdg wit="#1924"> the same thing may be said for all of us, that we </rdg> </app> </l>
+						<l> <app loc="a16"> <rdg wit="#1919 #1924"> do not admire what </rdg> </app> </l>
+						<l> <app loc="a17"> <rdg wit="#1919"> we cannot understand. The bat, </rdg> 
+											<rdg wit="#1924"> we cannot understand: the bat, </rdg> 	</app> </l>
+					
+						<l> <app loc="a18"> <rdg wit="#1919 #1924"> holding upside down or in quest of something to </rdg> </app> </l>
+						<!--STANZA BREAK-->
+					<app loc="a19"> <rdg wit="#1919 #1924">
+					<milestone unit="stanza"/>
+					</rdg></app>
+						
+					
+					<l> <app loc="20"> <rdg wit="#1919"> eat, elephants pushing, a wild horse taking a roll </rdg>
+					<rdg wit="1924"> eat, elephants pushing, a wild horse taking a roll, a tireless </rdg> </app> </l> 
+					
+					<l> <app loc="a21"> <rdg wit="#1919"> a tireless wolf under </rdg> 
+										<rdg wit="#1924"> wolf under </rdg> </app> </l> 
+					
+					<l> <app loc="a22"> <rdg wit="#1919"> a tree, the immovable critic twinkling his skin like a </rdg>
+										<rdg wit="#1924"> a tree, the immovable critic twitching his skin like a horse </rdg> </app> </l> 
+					
+					<l> <app loc="a23"> <rdg wit="#1919"> horse that feels a flea, the base- </rdg>
+										<rdg wit="1924"> that feels a flea, the base- </rdg> </app> </l>
+										
+									
+					<l> <app loc="a24"> <rdg wit="#1919"> ball fan, the statistician--case after case </rdg> 
+										<rdg wit="#1924"> ball fan, the statistician </rdg> </app> </l> 
+					
+					<l> <app loc="a25"> <rdg wit="#1924"> nor is it valid </rdg> </app> </l>
+					<l> <app loc="a25n2"> <rdg wit="#1919"> could be cited did </rdg></app> </l>
+					<l> <app loc="a25n3"> <rdg wit="#1919"> one wish it; nor it is valid </rdg> </app> </l>
+					
+					<l> <app loc="a26"> <rdg wit="#1919 #1924"> to discriminate against "business documents and </rdg> </app> </l>
+					
+					
+			
+
+			<!--STANZA BREAK-->
+			<app loc="a27">
+				<rdg wit="#1919 #1924">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>			
+
+			<l> <app loc="a28"> <rdg wit="#1919"> school-books"; all these phenomena are important. </rdg> 
+			<rdg wit="#1924"> school-books"l all these phenomena are important. One </rdg> </app> </l>
+			
+			<l> <app loc="a29"> <rdg wit="#1919"> One must make a distinction </rdg>
+								<rdg wit="#1924">  must make a distinction </rdg> </app> </l>
+								
+			<l> <app loc="a30"> <rdg wit="#1919 #1924"> however: when dragged into prominence by half poets, </rdg> 
+								</app> </l>
+								
+			<l> <app loc="a31"> <rdg wit="#1919 #1924"> the result is not poetry, </rdg> </app> </l>
+			<l> <app loc="a32"> <rdg wit="#1919"> nor till the autocrats among us can be </rdg>
+								<rdg wit="#1924"> nor till the poets among us can be </rdg> </app> </l>
+			<l> <app loc="a33"> <rdg wit="#1919 #1924"> "literalists of </rdg> </app> </l>
+			<l> <app loc="a34"> <rdg wit="#1919 #1924"> the imagination"--above </rdg> </app> </l>
+			<l> <app loc="a35"> <rdg wit="#1919 #1924"> insolence and triviality and can present </rdg> </app> </l>
+			<!--STANZA BREAK-->
+			<app loc="a36">
+				<rdg wit="#1919 #1924">			
+					<milestone unit="stanza"/>
+				</rdg>
+			</app>	
+			
+			<l> <app loc="a37"> <rdg wit="#1919"> for inspection, imaginary gardens with real toads </rdg>
+								<rdg wit="#1924"> for inspection, imaginary gardens with real toads in them </rdg> </app> </l>
+			<l> <app loc="a38"> <rdg wit="#1919"> in them, shall we have </rdg>
+								<rdg wit="#1924"> shall we have </rdg> </app> </l>
+			<l> <app loc="a39"> <rdg wit="#1919 #1924"> it. In the meantime, if you demand on one hand, </rdg></app></l>
+			<l> <app loc="a40"> <rdg wit="#1919 #1924"> the raw material of poetry in </rdg> </app> </l>
+			<l> <app loc="a41"> <rdg wit="#1919 #1924"> all its rawness and </rdg> </app> </l>
+			<l> <app loc="a42"> <rdg wit="#1919 #1924"> that which is on the other hand, </rdg> </app> </l>
+			<l> <app loc="a43"> <rdg wit="#1919"> genuine then you are interested in poetry. </rdg> 
+								<rdg wit="#1924"> genuine, then you are interested in poetry. </rdg> </app> </l> 	</div1> 
+								
+								</body> 
+	
+	</text>
+</TEI>
+
+			
+		
+			
+			

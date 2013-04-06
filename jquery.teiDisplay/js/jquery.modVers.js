@@ -1,19 +1,19 @@
 (function($) {
 
-    $.fn.teiDisplay = function(method) {
+    $.fn.modVers = function(method) {
 
         var methods = {
 
             init : function(options) {
                 
-                this.teiDisplay.settings = $.extend({}, this.teiDisplay.defaults, options);
+                this.modVers.settings = $.extend({}, this.modVers.defaults, options);
 
                 return this.each(function() {
                     
                     var $element = $(this), // reference to the jQuery version of the current DOM element
                          element = this;      // reference to the actual DOM element                 
 
-                    var data = $element.data('teiDisplay');
+                    var data = $element.data('modVers');
 
                     //add elements to document
                     helpers.addElements($(this));
@@ -40,36 +40,36 @@
  
             addElements: function(holder) {
 
-                holder.append($(this).teiDisplay.settings.advanceButtons); 
-                holder.append($(this).teiDisplay.settings.textHolder); 
-                holder.append($(this).teiDisplay.settings.utility); 
-                holder.append($(this).teiDisplay.settings.annotationPanel); 
+                holder.append($(this).modVers.settings.advanceButtons); 
+                holder.append($(this).modVers.settings.textHolder); 
+                holder.append($(this).modVers.settings.utility); 
+                holder.append($(this).modVers.settings.annotationPanel); 
                 
-                vizPanel = '<div id="teiDisplayVizPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a></div>';
-
+                vizPanel = '<div id="modVersVizPanel" class="modVersPanel"><div style="width: ' + $(this).modVers.settings.textWidth + 'px"><a href="#" class="close">x</a></div>';
                 holder.append(vizPanel); 
 
-                console.log(holder.data('teiDisplay').fixFirst);
+                titlePanel = '<div id="modVersTitlePanel"></div>';
+                holder.append(titlePanel); 
 
                 //Unfix the first text if option
-                if (holder.data('teiDisplay').fixFirst != true && holder.data('teiDisplay').fixFirst != undefined) {
+                if (holder.data('modVers').fixFirst != true && holder.data('modVers').fixFirst != undefined) {
                     holder.addClass('teiFreeFirst');
                 }
 
-                 if (holder.data('teiDisplay').fullscreen != true && holder.data('teiDisplay').fullscreen != undefined) {
+                 if (holder.data('modVers').fullscreen != true && holder.data('modVers').fullscreen != undefined) {
                     holder.css('overflow', 'hidden');
                     holder.addClass('teiNotFullScreen').css('position','relative');
                     $('#teiTexts').css('margin-left', '0px');
                 }               
 
                 //Set the holder height if needed.
-                if (holder.data('teiDisplay').height) {
-                    holder.css('height', holder.data('teiDisplay').height + 'px');
+                if (holder.data('modVers').height) {
+                    holder.css('height', holder.data('modVers').height + 'px');
                 }
 
                 //Add a developer bar if needed
-                if (holder.data('teiDisplay').dev) {
-                    $('body').append('<div id="teiDisplayDev"><p></p></div>');
+                if (holder.data('modVers').dev) {
+                    $('body').append('<div id="modVersDev"><p></p></div>');
                 }
 
 
@@ -99,7 +99,7 @@
                 notes = notesStatement.children('note');
                 sourceDescription = xml.find("sourceDesc").text();
 
-                infoPanel = '<div id="teiDisplayInfoPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a>';
+                infoPanel = '<div id="modVersInfoPanel" class="modVersPanel"><div style="width: ' + $(this).modVers.settings.textWidth + 'px"><a href="#" class="close">x</a>';
                 if (title) {
                     infoPanel += '<h3>Title</h3><p>' + title + '</p>';
                 }
@@ -138,10 +138,10 @@
 
                 //If user has specified witnesses in the plugin options, go through and remove
                 //others from the array.
-                if ($(holder).data('teiDisplay').witnesses) {
+                if ($(holder).data('modVers').witnesses) {
     
                     var includeWitnesses = [];
-                    var includeWitnesses = $.map($(holder).data('teiDisplay').witnesses.split(','), $.trim);
+                    var includeWitnesses = $.map($(holder).data('modVers').witnesses.split(','), $.trim);
 
                     for (var i = witnesses.length; i >= 0; i--) {   
                                                 
@@ -160,7 +160,7 @@
                 witnesses.reverse().each(function() {
 
                     //count the total number of witnesses
-                    $(this).teiDisplay.internals.totalTexts++;
+                    $(this).modVers.internals.totalTexts++;
 
                     var witId = $(this).attr('xml:id');
                     var witName = $(this).text();
@@ -188,11 +188,11 @@
                 helpers.makeWitnesses(holder);
                 helpers.textActions(holder);
 
-                if ($(holder).data('teiDisplay').annotations) {
+                if ($(holder).data('modVers').annotations) {
                     helpers.makeNotes(holder);
                 }
 
-                if ($(holder).data('teiDisplay').highlights) {
+                if ($(holder).data('modVers').highlights) {
                     helpers.makeHighlights(holder);
                 }  
 
@@ -203,13 +203,13 @@
                 //Reads an optional json file with highlight information and adds
                 //highlights to texts.
 
-                $.getJSON($(holder).data('teiDisplay').highlights, function(data) {
+                $.getJSON($(holder).data('modVers').highlights, function(data) {
 
                     //add legend
                     if (data.highlights.items.length > 0) {
-                        $('#teiDisplayActions').append('<a id="teiDisplayShowLegend" href="#"><span class="first"></span><span class="second"></span><span class="third"></span><span class="fourth"></span></a>');
+                        $('#modVersActions').append('<a id="modVersShowLegend" href="#"><span class="first"></span><span class="second"></span><span class="third"></span><span class="fourth"></span></a>');
 
-                        legendPanel = '<div id="teiDisplayLegendPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a><h3>Legend</h3>';
+                        legendPanel = '<div id="modVersLegendPanel" class="modVersPanel"><div style="width: ' + $(this).modVers.settings.textWidth + 'px"><a href="#" class="close">x</a><h3>Legend</h3>';
 
                     }
 
@@ -257,7 +257,7 @@
                 //Reads an optional json file with annotation information and adds
                 //annotations to texts.
 
-                $.getJSON($(holder).data('teiDisplay').annotations, function(data) {
+                $.getJSON($(holder).data('modVers').annotations, function(data) {
 
                   $.each(data.annotations.items, function(i,item) {
            
@@ -267,13 +267,13 @@
 
                         for (var i = includeWitnesses.length; i >= 0; i--) {   
                             $('.text[data-witness-id="' + includeWitnesses[i] + '"] [data-loc="' + item.loc + '"]').prepend(
-                                '<span class="teiDisplayAnnotation" data-annotation-text="' + item.text + '"></span>'
+                                '<span class="modVersAnnotation" data-annotation-text="' + item.text + '"></span>'
                             );
                         }//foreach wit
 
                     } else {
                         $('.text [data-loc="' + item.loc + '"]').prepend(
-                            '<span class="teiDisplayAnnotation" data-annotation-text="' + item.text + '"></span>'
+                            '<span class="modVersAnnotation" data-annotation-text="' + item.text + '"></span>'
                         );
                     }
                   });
@@ -294,7 +294,7 @@
                     $('#' + firstWitId).children().clone().appendTo($(this));
                 })
 
-                 $('#' + firstWitId).children().clone().appendTo($('#teiDisplayVizPanel div:first'));                
+                 $('#' + firstWitId).children().clone().appendTo($('#modVersVizPanel div:first'));                
 
             }, 
 
@@ -327,8 +327,8 @@
 
                 var includeLocs;
                 
-                if ($(holder).data('teiDisplay').locs) {
-                    includeLocs = $.map($(holder).data('teiDisplay').locs.split(','), $.trim);
+                if ($(holder).data('modVers').locs) {
+                    includeLocs = $.map($(holder).data('modVers').locs.split(','), $.trim);
                 }
 
                 if (includeLocs) {
@@ -355,9 +355,9 @@
                     var witTitle = $(this).attr('data-witness-name');
 
                     $(this).children().wrapAll('<div class="teiTextHolder"></div>')
-                    $(this).addClass('color' + i).prepend($(this).teiDisplay.settings.witHeader);
+                    $(this).addClass('color' + i).prepend($(this).modVers.settings.witHeader);
 
-                    $(this).children('.teiDisplayTextActions').prepend('<p class="teiDisplayWitnessTitle">' + witTitle + '</p>');
+                    $(this).children('.modVersTextActions').prepend('<p class="modVersWitnessTitle">' + witTitle + '</p>');
                     
                     i++;
                 })
@@ -451,13 +451,13 @@
 
                 //Moves the texts 1 to the left.
 
-                if ($(this).teiDisplay.internals.currentText < $(this).teiDisplay.internals.totalTexts) {
+                if ($(this).modVers.internals.currentText < $(this).modVers.internals.totalTexts) {
                     var offset = $('#teiTexts').position();
-                    var newOffset = offset.left - $(this).teiDisplay.settings.textWidth;
+                    var newOffset = offset.left - $(this).modVers.settings.textWidth;
                     $('#teiTexts').animate({
                         left: newOffset + 'px',
                     }, 300 );
-                    $(this).teiDisplay.internals.currentText++;
+                    $(this).modVers.internals.currentText++;
                 }
             }, 
 
@@ -465,15 +465,15 @@
 
                 //Moves the texts 1 to the right.
 
-                if ($(this).teiDisplay.internals.currentText > 1) {
+                if ($(this).modVers.internals.currentText > 1) {
 
                     var offset = $('#teiTexts').position();
-                    var newOffset = offset.left + $(this).teiDisplay.settings.textWidth;
+                    var newOffset = offset.left + $(this).modVers.settings.textWidth;
 
                     $('#teiTexts').animate({
                         left: newOffset + 'px',
                     }, 300 );
-                    $(this).teiDisplay.internals.currentText--;
+                    $(this).modVers.internals.currentText--;
                 }
             },
 
@@ -484,7 +484,7 @@
                 $('#teiTexts').animate({
                     left: '0px',
                 }, 300 );
-                $(this).teiDisplay.internals.currentText = 1;                
+                $(this).modVers.internals.currentText = 1;                
 
             },
 
@@ -492,10 +492,10 @@
 
                 //Sets dimensions relative to size of window.
 
-                var textWidth = $('#teiTexts .text').length * $(this).teiDisplay.settings.textWidth + 24;
-                var actionHeight = $('#teiDisplayActions').height();
+                var textWidth = $('#teiTexts .text').length * $(this).modVers.settings.textWidth + 24;
+                var actionHeight = $('#modVersActions').height();
 
-                if ($(holder).data('teiDisplay').fullscreen == true || $(holder).data('teiDisplay').fullscreen == undefined) {
+                if ($(holder).data('modVers').fullscreen == true || $(holder).data('modVers').fullscreen == undefined) {
                     var newHeight = $(window).height() - actionHeight - 60;                    
                 } else {
                     var newHeight = $(holder).height() - actionHeight - 60;                    
@@ -505,7 +505,7 @@
                 $('#teiTexts .text').css('height', newHeight + 'px').append('<div class="textHeightFix"></div>');
                
                 
-                if ($(holder).data('teiDisplay').fullscreen == true || $(holder).data('teiDisplay').fullscreen == undefined) {
+                if ($(holder).data('modVers').fullscreen == true || $(holder).data('modVers').fullscreen == undefined) {
                     newHeight -= 55;
                 } else {
                     newHeight -= 20;
@@ -523,16 +523,16 @@
                     var color = $(this).attr('data-color');     
                     var id = $(this).attr('data-witness-id');
                     var name = $(this).attr('data-witness-name');
-                    $('#teiDisplayWitnesses').append('<div class="witness ' + color + '" data-witness-id="' + id + '"><span class="teiWitnessGrip"></span><p>' + name + '</p></div>')
+                    $('#modVersWitnesses').append('<div class="witness ' + color + '" data-witness-id="' + id + '"><span class="teiWitnessGrip"></span><p>' + name + '</p></div>')
                 })  
 
                 //Sortable
-                $('#teiDisplayWitnesses').sortable({ 
+                $('#modVersWitnesses').sortable({ 
                     axis: 'x', 
                     stop: function( event, ui ) {
                         var last, current;
                         var count = 0;
-                        $('#teiDisplayWitnesses .witness').each(function() {
+                        $('#modVersWitnesses .witness').each(function() {
                             current = $('#teiTexts .text[data-witness-id="' + $(this).attr('data-witness-id') + '"]').remove();
                             if (count != 0) {
                                 last.after(current);
@@ -546,7 +546,7 @@
                 });
 
                 //Double-click action
-                $('#teiDisplayWitnesses .witness').live('dblclick', function() {
+                $('#modVersWitnesses .witness').live('dblclick', function() {
 
                     helpers.makeWitnessActive($(this).attr('data-witness-id'), holder);
 
@@ -567,8 +567,8 @@
 
                     helpers.scrollToElement(activeElement, elementHolder, 1);
                    
-                    var currentWitness = $('#teiDisplayWitnesses .witness[data-witness-id="' + witnessId + '"]').remove();
-                    $('#teiDisplayWitnesses').prepend(currentWitness);
+                    var currentWitness = $('#modVersWitnesses .witness[data-witness-id="' + witnessId + '"]').remove();
+                    $('#modVersWitnesses').prepend(currentWitness);
 
                     helpers.resetTexts(holder);
 
@@ -579,31 +579,31 @@
                 //Adds actions to expand texts, display facsimile images, etc.
 
                 //Clear overlays
-                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').live('click', function() {
+                $('#modVersFacsimileOverlay, #modVersScreen').live('click', function() {
                     helpers.clearOverlays();
                     $('#teiTexts .text').removeClass('expanded');          
                     return false;
                 })
 
                 //Text advance and regress
-                $('#teiDisplayTextAdvance').live('click', function() {
+                $('#modVersTextAdvance').live('click', function() {
                     helpers.advanceText();
                     return false;
                 })
 
-                $('#teiDisplayTextRegress').live('click', function() {
+                $('#modVersTextRegress').live('click', function() {
                     helpers.regressText();
                     return false;
                 })       
 
                 //Annotations
-                $('#teiDisplayAnnotationPanel .teiDisplayAnnotation a.close').live('click', function () {
+                $('#modVersAnnotationPanel .modVersAnnotation a.close').live('click', function () {
                     helpers.clearOverlays();
                     return false;
                 })          
 
                 //Text Expansion
-                $('.text .teiDisplayTextActions .expand').live('click', function() {
+                $('.text .modVersTextActions .expand').live('click', function() {
                     var textParent = $(this).parent().parent();
                     var witnessId = textParent.attr('data-witness-id');
                     helpers.makeWitnessActive(witnessId, holder);
@@ -614,7 +614,7 @@
                     return false;
                 })
 
-                $('.text.expanded .teiDisplayTextActions .expand').live('click', function() {
+                $('.text.expanded .modVersTextActions .expand').live('click', function() {
                     helpers.clearOverlays();
                     $('#teiTexts').removeClass('expanded');
                     $(this).parent().parent().removeClass('expanded');
@@ -628,19 +628,19 @@
                     return false;
                 })
 
-                $('#teiDisplayFacsimileOverlay .close').live('click', function() {
+                $('#modVersFacsimileOverlay .close').live('click', function() {
                     helpers.clearOverlays();
                     return false;
                 });
 
                 //Info/Legend/Viz Panel
-                $('.teiDisplayPanel .close').live('click', function() {
+                $('.modVersPanel .close').live('click', function() {
                     helpers.clearOverlays();
                     return false;
                 })
 
-                $('#teiDisplayActions .teiDisplayShowInfo').live('click', function() {
-                    if ($('#teiDisplayInfoPanel').hasClass('active')) {
+                $('#modVersActions .modVersShowInfo').live('click', function() {
+                    if ($('#modVersInfoPanel').hasClass('active')) {
                         helpers.clearOverlays();
                     } else {
                         helpers.clearOverlays();
@@ -649,8 +649,8 @@
                     return false;
                 })  
 
-                $('#teiDisplayActions #teiDisplayShowLegend').live('click', function() {
-                    if ($('#teiDisplayLegendPanel').hasClass('active')) {
+                $('#modVersActions #modVersShowLegend').live('click', function() {
+                    if ($('#modVersLegendPanel').hasClass('active')) {
                         helpers.clearOverlays();
                     } else {
                         helpers.clearOverlays();
@@ -659,9 +659,9 @@
                     return false;
                 })  
 
-                $('#teiDisplayActions #teiDisplayShowViz').live('click', function() {
+                $('#modVersActions #modVersShowViz').live('click', function() {
                     
-                    if ($('#teiDisplayVizPanel').hasClass('active')) {
+                    if ($('#modVersVizPanel').hasClass('active')) {
                         helpers.clearOverlays();
                     } else {
                         helpers.clearOverlays();
@@ -678,12 +678,12 @@
                 $('.teiTextHolder *[data-loc != "undefined"]').live('click', function() {
 
                     var identifier = $(this).attr('data-loc');
-                    if ($(holder).data('teiDisplay').dev) {
-                        $('#teiDisplayDev p').html('loc: ' + identifier);
+                    if ($(holder).data('modVers').dev) {
+                        $('#modVersDev p').html('loc: ' + identifier);
                     }
                     
                     $('.teiTextHolder .active').removeClass('active');
-                    $('#teiDisplayWitnesses .witness').removeClass('active');
+                    $('#modVersWitnesses .witness').removeClass('active');
 
                     if (identifier != undefined) {
 
@@ -695,7 +695,7 @@
                             var holder = $(this).parents('.teiTextHolder')
                             var wit = holder.parent().attr('data-witness-id');
 
-                            $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
+                            $('#modVersWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
 
                             helpers.scrollToElement($(this), holder);
 
@@ -704,7 +704,7 @@
                     }
 
                     //Annotations
-                    var annotation = $(this).children('.teiDisplayAnnotation');
+                    var annotation = $(this).children('.modVersAnnotation');
 
                     if (annotation.length > 0) {
                         helpers.clearAnnotations();
@@ -732,9 +732,9 @@
                     var baseWit = baseHolder.parent().attr('data-witness-id');
 
                     $('.teiTextHolder .active').removeClass('active');
-                    $('#teiDisplayWitnesses .witness').removeClass('active');
+                    $('#modVersWitnesses .witness').removeClass('active');
 
-                    diffPanel = '<div id="teiDisplayDiffPanel" class="teiDisplayPanel"><div style="width: ' + $(this).teiDisplay.settings.textWidth + 'px"><a href="#" class="close">x</a>';
+                    diffPanel = '<div id="modVersDiffPanel" class="modVersPanel"><div style="width: ' + $(this).modVers.settings.textWidth + 'px"><a href="#" class="close">x</a>';
 
                     $('.text *[data-loc = "' + identifier + '"]').each(function() {
 
@@ -748,8 +748,8 @@
                             witPrefix = 'Base: ';
                         }
 
-                        $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
-                        var witTitle = $('#teiDisplayWitnesses .witness[data-witness-id="' + wit + '"]').text();
+                        $('#modVersWitnesses .witness[data-witness-id="' + wit + '"]').addClass('active');
+                        var witTitle = $('#modVersWitnesses .witness[data-witness-id="' + wit + '"]').text();
 
                         helpers.scrollToElement($(this), holder);
 
@@ -792,7 +792,7 @@
 
                 //Removes all annotations from the annotation panel.
 
-                $('#teiDisplayAnnotationPanel').append('<div class="teiDisplayAnnotation">' + text + '<a href="#" class="close">x</a></div>');
+                $('#modVersAnnotationPanel').append('<div class="modVersAnnotation">' + text + '<a href="#" class="close">x</a></div>');
             
             },
 
@@ -800,7 +800,7 @@
 
                 //Removes all annotations from the annotation panel.
 
-                $('#teiDisplayAnnotationPanel .teiDisplayAnnotation').remove();
+                $('#modVersAnnotationPanel .modVersAnnotation').remove();
             
             },
 
@@ -808,7 +808,7 @@
 
                 //Opens the annotation panel.
 
-                $('#teiDisplayAnnotationPanel').show();
+                $('#modVersAnnotationPanel').show();
             
             }, 
 
@@ -816,7 +816,7 @@
 
                 //Closes the annotation panel.
 
-                $('#teiDisplayAnnotationPanel').hide();
+                $('#modVersAnnotationPanel').hide();
             
             },   
 
@@ -824,46 +824,46 @@
 
                 $('#teiTexts').removeClass('expanded');
                 $('.text').removeClass('expanded');
-                $('.teiDisplayTextActions .expand').html('+');
-                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();
+                $('.modVersTextActions .expand').html('+');
+                $('#modVersFacsimileOverlay, #modVersScreen').remove();
 
             },       
 
             addFacsimileOverlay: function(imageUrl, color) {
                 helpers.clearExpanded();
                 helpers.addOverlay();
-                $('body').append('<div id="teiDisplayFacsimileOverlay" class="' + color + '"><a href="#" title="Close Facsimile" class="close">x</a><img id="teiDisplayFacsimile" src="' + imageUrl + '" style="width: 200px;"/></div>');
-                $('#teiDisplayFacsimile').addimagezoom($(this).teiDisplay.settings.zoomOptions); 
-                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').show();            
+                $('body').append('<div id="modVersFacsimileOverlay" class="' + color + '"><a href="#" title="Close Facsimile" class="close">x</a><img id="modVersFacsimile" src="' + imageUrl + '" style="width: 200px;"/></div>');
+                $('#modVersFacsimile').addimagezoom($(this).modVers.settings.zoomOptions); 
+                $('#modVersFacsimileOverlay, #modVersScreen').show();            
             },
 
             addOverlay: function() {
-                $('body').append('<div id="teiDisplayScreen"></div>');
-                $('#teiDisplayScreen').show();  
+                $('body').append('<div id="modVersScreen"></div>');
+                $('#modVersScreen').show();  
             },
 
             showInfoPanel: function() { 
-                $('#teiDisplayInfoPanel').addClass('active');     
+                $('#modVersInfoPanel').addClass('active');     
             }, 
 
             showLegendPanel: function() { 
-                $('#teiDisplayLegendPanel').addClass('active');     
+                $('#modVersLegendPanel').addClass('active');     
             }, 
 
             showVizPanel: function() { 
-                $('#teiDisplayVizPanel').addClass('active');     
+                $('#modVersVizPanel').addClass('active');     
             }, 
 
             showDiffPanel: function() { 
-                $('#teiDisplayDiffPanel').addClass('active');     
+                $('#modVersDiffPanel').addClass('active');     
             },                                     
 
             clearOverlays: function() {
-                $('#teiDisplayFacsimileOverlay, #teiDisplayScreen').remove();   
+                $('#modVersFacsimileOverlay, #modVersScreen').remove();   
                 $('.featuredimagezoomerhidden, .zoomtracker').remove();
-                $('#teiTexts .teiDisplayTextActions a.expand').html('+');  
-                $('.teiDisplayPanel').removeClass('active');  
-                $('#teiDisplayDiffPanel').remove();    
+                $('#teiTexts .modVersTextActions a.expand').html('+');  
+                $('.modVersPanel').removeClass('active');  
+                $('#modVersDiffPanel').remove();    
                 helpers.clearExpanded();
                 helpers.closeAnnotationPanel();  
             }
@@ -875,12 +875,12 @@
         } else if (typeof method === 'object' || !method) {
             return methods.init.apply(this, arguments);
         } else {
-            $.error( 'Method "' +  method + '" does not exist in teiDisplay plugin!');
+            $.error( 'Method "' +  method + '" does not exist in modVers plugin!');
         }
 
     }
 
-    $.fn.teiDisplay.defaults = {
+    $.fn.modVers.defaults = {
         xmlFile: '',
         height: '',
         fixFirst: true,
@@ -888,11 +888,11 @@
         witnesses: '',
         background: '',
         textWidth: 421,
-        witHeader: '<div class="teiDisplayTextActions"><a href="#" class="expand">+</a></div>',
-        advanceButtons: '<div id="teiDisplayTextAdvance"><div></div></div><div id="teiDisplayTextRegress"><div></div></div>',
+        witHeader: '<div class="modVersTextActions"><a href="#" class="expand">+</a></div>',
+        advanceButtons: '<div id="modVersTextAdvance"><div></div></div><div id="modVersTextRegress"><div></div></div>',
         textHolder: '<div id="teiTexts"><div id="screen"></div></div>',
-        utility: '<div id="teiDisplayActions"><a href="#" id="teiDisplayShowViz" title="Show Visualization">v</a><a href="#" class="teiDisplayShowInfo" title="Show Information">i</a><div id="teiDisplayWitnesses"></div><div id="notes"></div></div>',
-        annotationPanel: '<div id="teiDisplayAnnotationPanel"><div></div></div>',
+        utility: '<div id="modVersActions"><a href="#" id="modVersShowViz" title="Show Visualization">v</a><a href="#" class="modVersShowInfo" title="Show Information">i</a><div id="modVersWitnesses"></div><div id="notes"></div></div>',
+        annotationPanel: '<div id="modVersAnnotationPanel"><div></div></div>',
         zoomOptions: {  
             magnifiersize: [700,630],
             curshade: true
@@ -900,9 +900,9 @@
 
     }
 
-    $.fn.teiDisplay.settings = {}
+    $.fn.modVers.settings = {}
 
-    $.fn.teiDisplay.internals = {
+    $.fn.modVers.internals = {
         currentText: 1,
         totalTexts: 0,
         xml: '',
